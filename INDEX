@@ -25,5 +25,3 @@ ZeroMQ constants
   ZMQ_SUB
   ZMQ_SUBSCRIBE
   ZMQ_UNSUBSCRIBE
-ZeroMQ function overrides
-  close

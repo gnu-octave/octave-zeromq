@@ -34,7 +34,9 @@ DEFUN_DLD (zmq_recv, args, nargout,
 Attempt to recieve up to @var{len} bytes of data from  zeromq socket.\n \
 \n \
 @var{sock} - the socket to recieve from.\n \
+\n \
 @var{len} - number of bytes to read.\n \
+\n \
 @var{flags} - optional flags to pass to recv\n \
 \n \
 The read data is returned as @var{data} in an uint8 array.  \

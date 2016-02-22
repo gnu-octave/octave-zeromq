@@ -38,7 +38,7 @@ Create a zeromq socket.\n \
 \n \
 @var{type} - the socket type to create.\n \
 \n \
-Socket supported socket types are:\n \
+Supported socket types are:\n \
 @table @asis\n \
 @item  @code{ZMQ_PUB} \n \
 Publish socket\n \

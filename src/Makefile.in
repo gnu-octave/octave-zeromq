@@ -1,0 +1,32 @@
+
+MKOCTFILE := @MKOCTFILE@
+CXXFLAGS  := @CXXFLAGS@ @DEFS@
+LIBS      := @LIBS@
+LDFLAGS   := @LDFLAGS@
+
+SRC := socket_class.cc bind.cc close.cc connect.cc getsockopt.cc \
+       globals.cc poll.cc recv.cc send.cc setsockopt.cc socket.cc \
+       strerror.cc version.cc
+
+OBJ := $(SRC:.cc=.o)
+
+all: @TARGETS@
+
+%.o: %.cc
+	$(MKOCTFILE) -c $< $(CXXFLAGS)
+
+zeromq.oct: $(OBJ)
+	$(MKOCTFILE) -o zeromq.oct $(OBJ) $(LDFLAGS) $(LIBS)
+
+.PHONY: clean
+.PHONY: distclean
+.PHONY: all
+
+	
+clean:
+	rm -f *.o
+	rm -f *.oct
+
+distclean: clean
+	rm -rf autom4te.cache
+	rm -f Makefile config.status config.log config.h configure

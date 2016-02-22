@@ -1,0 +1,25 @@
+zeromq >> Octave ZeroMQ bindings
+ZeroMQ functions
+  zmq_bind
+  zmq_close
+  zmq_poll
+  zmq_recv
+  zmq_send
+  zmq_socket
+  zmq_version
+ZeroMQ constants
+  ZMQ_DEALER
+  ZMQ_DONTWAIT
+  ZMQ_PAIR
+  ZMQ_PUB
+  ZMQ_PULL
+  ZMQ_PUSH
+  ZMQ_REP
+  ZMQ_REQ
+  ZMQ_ROUTER
+  ZMQ_SNDMORE
+  ZMQ_SUB
+  ZMQ_SUBSCRIBE
+  ZMQ_UNSUBSCRIBE
+ZeroMQ function overrides
+  close

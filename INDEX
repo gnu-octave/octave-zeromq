@@ -2,10 +2,14 @@ zeromq >> Octave ZeroMQ bindings
 ZeroMQ functions
   zmq_bind
   zmq_close
+  zmq_connect
+  zmq_getsockopt
   zmq_poll
   zmq_recv
   zmq_send
+  zmq_setsockopt
   zmq_socket
+  zmq_strerror
   zmq_version
 ZeroMQ constants
   ZMQ_DEALER

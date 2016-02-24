@@ -9,11 +9,16 @@ syntax: regexp
 (^|/).*\.oct$
 (^|/).*\.octlink$
 (^|/)octave-core$
+(^|/)octave-workspace$
 (^|/).*\.tar\.gz$
 
 (^|/)aclocal\.m4$
 (^|/)configure$
 (^|/)autom4te\.cache($|/)
+(^|/)config\.h$
+(^|/)config\.log$
+(^|/)config\.status$
+(^|/)Makefile$
 
 # e.g. doc/faq/OctaveFAQ.info
 #      doc/interpreter/octave.info-4

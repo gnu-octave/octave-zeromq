@@ -95,7 +95,7 @@ bool octave_zeromq_socket::create (int socket_type)
     
   if (sock == 0)
     {
-      error ("zermomq: failed to create socket - %s\n", zmq_strerror (errno));
+      error ("zeromq: failed to create socket - %s\n", zmq_strerror (errno));
       return false;
     }
   type = socket_type;
@@ -123,7 +123,7 @@ bool octave_zeromq_socket::connect (std::string inendpoint)
 
   if (zmq_connect (sock, inendpoint.c_str ()) != 0)
     {
-      error ("zermomq: failed to connect socket - %s\n", zmq_strerror (errno));
+      error ("zeromq: failed to connect socket - %s\n", zmq_strerror (errno));
       return false;
     }
     
@@ -142,7 +142,7 @@ bool octave_zeromq_socket::bind (std::string inendpoint)
 
   if (zmq_bind (sock, inendpoint.c_str ()))
     {
-      error ("zermomq: failed to bind socket - %s\n", zmq_strerror (errno));
+      error ("zeromq: failed to bind socket - %s\n", zmq_strerror (errno));
       return false;
     }
 
@@ -160,7 +160,7 @@ bool octave_zeromq_socket::setsockopt (int opt, const void * val, size_t len)
     }
   if (zmq_setsockopt (sock, opt, val, len))
     {
-      error ("zermomq: failed to setsockopt - %s\n", zmq_strerror (errno));
+      error ("zeromq: failed to setsockopt - %s\n", zmq_strerror (errno));
       return false;
     }
  
@@ -176,7 +176,7 @@ bool octave_zeromq_socket::getsockopt (int opt, void * val, size_t *len)
     }
   if (zmq_getsockopt (sock, opt, val, len))
     {
-      error ("zermomq: failed to getsockopt - %s\n", zmq_strerror (errno));
+      error ("zeromq: failed to getsockopt - %s\n", zmq_strerror (errno));
       return false;
     }
  

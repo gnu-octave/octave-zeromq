@@ -50,7 +50,7 @@ public:
   ~octave_zeromq_socket ();
 
   /**
-   * access to the zermoq socket
+   * access to the zeromq socket
    */
   const void * socket () const;
   void * socket ();

@@ -33,7 +33,7 @@ DEFUN_DLD (zmq_setsockopt, args, nargout,
         "-*- texinfo -*-\n\
 @deftypefn {Loadable Function} status =  zmq_setsockopt (@var{sock}, @var{optionid}, @var{value})\n \
 \n\
-Set a socket option on a zermoq socket.\n \
+Set a socket option on a zeromq socket.\n \
 \n \
 @var{sock} - the socket to connect.\n \
 \n\

@@ -4,6 +4,10 @@ Dependancies
 ------------
 zmq library and include files http://zeromq.org/
 
+for fedora: yum install zeromq-devel
+
+for ubuntu: apt install libzmq-dev
+
 
 Installing
 ----------

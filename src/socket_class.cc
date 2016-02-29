@@ -151,6 +151,26 @@ bool octave_zeromq_socket::bind (std::string inendpoint)
   return true;
 }
 
+bool octave_zeromq_socket::unbind (std::string inendpoint)
+{
+  if (sock == 0)
+    {
+      error ("zeromq: must create socket before calling unbind\n");
+      return false;
+    }
+
+  if (zmq_unbind (sock, inendpoint.c_str ()))
+    {
+      error ("zeromq: failed to unbind socket - %s\n", zmq_strerror (errno));
+      return false;
+    }
+
+  endpoint = "";
+ 
+  return true;
+}
+
+
 bool octave_zeromq_socket::setsockopt (int opt, const void * val, size_t len)
 {
   if (sock == 0)

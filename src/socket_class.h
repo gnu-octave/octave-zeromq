@@ -78,6 +78,11 @@ public:
   bool bind (std::string endpoint);
 
   /**
+   * unbind socket
+   */
+  bool unbind (std::string endpoint);
+
+  /**
    * send data of size sz bytes
    */
   int send (const uint8_t * data, size_t sz, int flags);

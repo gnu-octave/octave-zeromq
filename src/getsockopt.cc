@@ -47,9 +47,12 @@ Valid @var{optionid}s are:\n \
 @table @asis\n \
 @item @code{ZMQ_RCVMORE}\n \
 Flag for whether a message has been split into multiple messages. The return vaue with be either 0 or 1.\n \
+@item @code{ZMQ_TYPE}\n \
+Socket type for zeromq socket created with zmq_socket.\n \
+Valid types are the same as the socket type value specified with zmq_socket. \n \
 @end table\n \
 \n \
-@seealso{zmq_socket, zmq_setsockopt}\n \
+@seealso{zmq_socket}\n \
 @end deftypefn")
 {
   init_types ();

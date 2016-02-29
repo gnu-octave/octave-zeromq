@@ -4,9 +4,9 @@ CXXFLAGS  := @CXXFLAGS@ @DEFS@
 LIBS      := @LIBS@
 LDFLAGS   := @LDFLAGS@
 
-SRC := socket_class.cc bind.cc close.cc connect.cc getsockopt.cc \
+SRC := socket_class.cc bind.cc close.cc connect.cc errno.cc getsockopt.cc \
        globals.cc poll.cc recv.cc send.cc setsockopt.cc socket.cc \
-       strerror.cc version.cc
+       strerror.cc unbind.cc version.cc
 
 OBJ := $(SRC:.cc=.o)
 

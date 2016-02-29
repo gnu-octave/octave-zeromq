@@ -11,6 +11,7 @@ ZeroMQ functions
   zmq_setsockopt
   zmq_socket
   zmq_strerror
+  zmq_unbind
   zmq_version
 ZeroMQ socket constants
   ZMQ_DEALER

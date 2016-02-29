@@ -141,6 +141,20 @@ Valid types are the same as the socket type value specified with zmq_socket. \n 
     }
     break;    
 #endif
+  case ZMQ_EVENTS:
+    {
+#if ZMQ_VERSION < ZMQ_MAKE_VERSION(3,0,0)
+      uint32_t value = 0;
+#else
+      int value = 0;
+#endif
+      size_t sz = sizeof(value);
+      if(!sock->getsockopt(opt, &value, &sz))
+        error ("zeromq: ZMQ_EVENTS failed getsockopt");
+
+      ret = octave_value(value);
+    }
+    break;
   default:
     error ("zeromq: invalid getsockopt value %d", opt);
     break;

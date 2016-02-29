@@ -127,3 +127,22 @@ DEFUN_DLD (ZMQ_OPT_TYPE, args, nargout,"zeromq option constant")
 #endif
 }
 
+// PKG_ADD: autoload ("ZMQ_OPT_EVENTS", "zeromq.oct");
+DEFUN_DLD (ZMQ_OPT_EVENTS, args, nargout,"zeromq option constant")
+{
+  return octave_value(ZMQ_EVENTS);
+}
+
+// PKG_ADD: autoload ("ZMQ_EVENT_POLLIN", "zeromq.oct");
+DEFUN_DLD (ZMQ_EVENT_POLLIN, args, nargout,"zeromq option event constant")
+{
+  return octave_value(ZMQ_POLLIN);
+}
+
+// PKG_ADD: autoload ("ZMQ_EVENT_POLLOUT", "zeromq.oct");
+DEFUN_DLD (ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
+{
+  return octave_value(ZMQ_POLLOUT);
+}
+
+

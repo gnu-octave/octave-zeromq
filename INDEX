@@ -1,4 +1,6 @@
 zeromq >> Octave ZeroMQ bindings
+ZeroMQ overview
+  zeromq
 ZeroMQ functions
   zmq_bind
   zmq_close
@@ -31,3 +33,4 @@ ZeroMQ get/setsockopt constants
 ZeroMQ recieve send options
   ZMQ_DONTWAIT
   ZMQ_SNDMORE
+

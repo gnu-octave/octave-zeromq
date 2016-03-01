@@ -30,4 +30,9 @@ endfunction
 
 %!assert (ZMQ_TYPE, ZMQ_OPT_TYPE)
 
+%!test
+% s = zmq_socket(ZMQ_SUB);
+% assert(zmq_getsockopt(s, ZMQ_TYPE), ZMQ_SUB)
+% zmq_close(s);
+
 

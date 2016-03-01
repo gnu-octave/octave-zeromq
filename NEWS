@@ -1,11 +1,11 @@
-Summary of important user-visible changes for octave zeromq 1.0.0+:
+Summary of important user-visible changes for octave zeromq 1.1.0:
 -------------------------------------------------------------------
 
   *** added new functions zmq_unbind, zmq_errno.
 
   *** added getsockopt ZMQ_TYPE, ZMQ_EVENTS processing.
 
-  *** added help zeromq implmentation
+  *** added help zeromq implementation
 
   *** added new examples folder/files
 

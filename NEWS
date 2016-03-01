@@ -5,6 +5,10 @@ Summary of important user-visible changes for octave zeromq 1.0.0+:
 
   *** added getsockopt ZMQ_TYPE, ZMQ_EVENTS processing.
 
+  *** added help zeromq implmentation
+
+  *** added new examples folder/files
+
 
 Summary of important user-visible changes for octave zeromq 1.0.0:
 -------------------------------------------------------------------

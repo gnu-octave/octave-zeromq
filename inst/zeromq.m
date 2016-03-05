@@ -77,6 +77,12 @@
 ## @item zmq_example2
 ## Simple server REP socket example that creates the server that the client 
 ## from example 1 will connect to and reponds back to client 'requests'
+## @item zmq_example3
+## Simple server PUB socket example that creates 'weather' server sends
+## weather updates for random zip codes.
+## @item zmq_example4
+## Simple client SUB socket example that creates client that connects to the 'weather' 
+## server and subscribes for weather updates from zipcode 10001.
 ## @end table
 ##
 ## View example code using @code{edit examples/example_name}
@@ -87,7 +93,7 @@
 ## @end example
 ##
 ##
-## @seealso{http://zeromq.org, examples/zmq_example1.m, examples/zmq_example2.m}
+## @seealso{http://zeromq.org, examples/zmq_example1.m, examples/zmq_example2.m examples/zmq_example3.m,  examples/zmq_example4.m}
 ## @end deftypefn
 
  

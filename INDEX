@@ -5,6 +5,7 @@ ZeroMQ functions
   zmq_bind
   zmq_close
   zmq_connect
+  zmq_disconnect
   zmq_errno
   zmq_getsockopt
   zmq_poll

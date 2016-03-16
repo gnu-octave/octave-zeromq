@@ -43,11 +43,13 @@
 ##
 ## @table @asis
 ## @item zmq_bind
-## Bind a zeromq socket to a endpoint.
+## Bind a zeromq socket to an endpoint.
 ## @item zmq_close
 ## Close a zeromq socket.
 ## @item zmq_connect
-## Connect a zeromq socket to a endpoint
+## Connect a zeromq socket to an endpoint
+## @item zmq_disconnect
+## Disonnect a zeromq socket from an endpoint
 ## @item zmq_errno
 ## Get system errno value.
 ## @item zmq_getsockopt

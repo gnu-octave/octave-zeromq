@@ -132,6 +132,26 @@ bool octave_zeromq_socket::connect (std::string inendpoint)
   return true;
 }
 
+bool octave_zeromq_socket::disconnect (std::string inendpoint)
+{
+  if (sock == 0)
+    {
+      error ("zeromq: must create socket before calling disconnect\n");
+      return false;
+    }
+
+  if (zmq_disconnect (sock, inendpoint.c_str ()) != 0)
+    {
+      error ("zeromq: failed to disconnect socket - %s\n", zmq_strerror (errno));
+      return false;
+    }
+    
+  endpoint = inendpoint;
+ 
+  return true;
+}
+
+
 bool octave_zeromq_socket::bind (std::string inendpoint)
 {
   if (sock == 0)

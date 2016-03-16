@@ -73,6 +73,12 @@ public:
   bool connect (std::string endpoint);
 
   /**
+   * disconnect socket 
+   */
+  bool disconnect (std::string endpoint);
+
+
+  /**
    * bind socket
    */
   bool bind (std::string endpoint);

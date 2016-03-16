@@ -1,7 +1,9 @@
 Summary of important user-visible changes for octave zeromq 1.1.0+:
 -------------------------------------------------------------------
 
-  *** added pub/sub exanple code
+  *** added pub/sub example code
+
+  *** added new function zmq_disconnect
 
 Summary of important user-visible changes for octave zeromq 1.1.0:
 -------------------------------------------------------------------

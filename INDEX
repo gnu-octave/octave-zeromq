@@ -16,7 +16,7 @@ ZeroMQ functions
   zmq_strerror
   zmq_unbind
   zmq_version
-ZeroMQ socket constants
+ZeroMQ socket type constants
   ZMQ_DEALER
   ZMQ_PAIR
   ZMQ_PUB
@@ -27,10 +27,14 @@ ZeroMQ socket constants
   ZMQ_ROUTER
   ZMQ_SUB
 ZeroMQ get/setsockopt constants
+  ZMQ_EVENTS
   ZMQ_SUBSCRIBE
   ZMQ_UNSUBSCRIBE
   ZMQ_RCVMORE
   ZMQ_TYPE
+ZeroMQ ZMQ_EVENTS flags
+  ZMQ_POLLIN
+  ZMQ_POLLOUT
 ZeroMQ recieve send options
   ZMQ_DONTWAIT
   ZMQ_SNDMORE

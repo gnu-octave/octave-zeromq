@@ -50,6 +50,13 @@ Flag for whether a message has been split into multiple messages. The return vau
 @item @code{ZMQ_TYPE}\n \
 Socket type for zeromq socket created with zmq_socket.\n \
 Valid types are the same as the socket type value specified with zmq_socket. \n \
+@item @code{ZMQ_EVENTS}\n \
+Get the event state of zeromq socket.\n \
+The returned value is a bit mask that may contain the following set values:\n \
+@itemize\n \
+@item @code{ZMQ_POLLIN} set when at least one message available to read and zmq_recv will not block.\n \
+@item @code{ZMQ_POLLOUT} set when at least one message can be written without zmq_send blocking.\n \
+@end itemize\n \
 @end table\n \
 \n \
 @seealso{zmq_socket}\n \

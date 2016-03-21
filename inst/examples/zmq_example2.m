@@ -14,7 +14,7 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## Example code for a REP socket server whic waits for client commands and sends
+## Example code for a REP socket server which waits for client commands and sends
 ## back a response.
 
 % zeromq package must be installed and loaded to work

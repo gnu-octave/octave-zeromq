@@ -17,7 +17,7 @@
 ## Example code for a REQ socket connected to a server and sending and
 ## receiving responses.
 ##
-## The esample contains comments on the differences between the C API, and the 
+## The example contains comments on the differences between the C API, and the 
 ## Octave bindings.
 
 % zeromq package must be installed and loaded to work

@@ -76,10 +76,12 @@ Unsubscribe from incoming messages\n \
   sock = &((octave_zeromq_socket &)rep);
 
 
-  int opt = args(1).int_value();
+  int opt = args (1).int_value();
   bool ret = false;
 
   std::string strvalue;
+  uint8_t binvalue[256];
+  size_t binsize;
 
   switch(opt)
   {
@@ -89,14 +91,51 @@ Unsubscribe from incoming messages\n \
         error("zeromq: expected string for option value");
        return octave_value(false);
       }
-    strvalue = args(2).string_value();
+    strvalue = args(2).string_value ();
 
-    ret = sock->setsockopt(opt, strvalue.c_str(), strvalue.length());
+    ret = sock->setsockopt (opt, strvalue.c_str (), strvalue.length ());
     
     break;
   case ZMQ_UNSUBSCRIBE:
-    ret = sock->setsockopt(opt, 0,0);
+    ret = sock->setsockopt (opt, 0,0);
+    break;
 
+  case ZMQ_IDENTITY:
+
+    if( args(2).is_string ())
+      {
+        strvalue = args(2).string_value ();
+        binsize = strvalue.length ();
+
+        if (binsize > 255) binsize = 255;
+
+        for (size_t i=0;i<binsize;i++)
+          {
+            binvalue[i] = strvalue[i];
+          }
+      }
+    else if (args(2).is_uint8_type ())
+      { 
+        NDArray data = args(2).array_value ();
+        binsize = data.numel ();
+
+        if (binsize > 255) binsize = 255;
+
+        for (size_t i=0;i<binsize;i++)
+          {
+            binvalue[i] = data(i);
+          }
+      }
+    else
+      {
+        error("zeromq: expected string or uint8 for option value");
+        return octave_value(false);
+      }
+
+    ret = sock->setsockopt (opt, binvalue, binsize);
+    
+    break;
+ 
   default:
     error ("zeromq: invalid setsockopt value %d", opt);
     break;

@@ -32,6 +32,7 @@ ZeroMQ get/setsockopt constants
   ZMQ_UNSUBSCRIBE
   ZMQ_RCVMORE
   ZMQ_TYPE
+  ZMQ_IDENTITY
 ZeroMQ ZMQ_EVENTS flags
   ZMQ_POLLIN
   ZMQ_POLLOUT

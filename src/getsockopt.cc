@@ -57,6 +57,8 @@ The returned value is a bit mask that may contain the following set values:\n \
 @item @code{ZMQ_POLLIN} set when at least one message available to read and zmq_recv will not block.\n \
 @item @code{ZMQ_POLLOUT} set when at least one message can be written without zmq_send blocking.\n \
 @end itemize\n \
+@item @code{ZMQ_IDENTITY}\n \
+Get the socket identity value\n \
 @end table\n \
 \n \
 @seealso{zmq_socket}\n \
@@ -162,6 +164,29 @@ The returned value is a bit mask that may contain the following set values:\n \
       ret = octave_value(value);
     }
     break;
+ case ZMQ_IDENTITY:
+    {
+      uint8_t value[256];
+      size_t sz = sizeof(value);
+
+      if(!sock->getsockopt(opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          uint8NDArray data( dim_vector (1,sz) );
+          for (size_t i=0;i<sz;i++)
+            {
+              data(i) = value[i];
+            }
+
+          ret = data;
+        }
+      else
+        ret = uint8NDArray (dim_vector (1,0));
+    }
+    break;
+
   default:
     error ("zeromq: invalid getsockopt value %d", opt);
     break;

@@ -53,3 +53,10 @@ endfunction
 %! zmq_close (client);
 %! zmq_close (server);
 
+%!test
+%! server = zmq_socket(ZMQ_PUB);
+%! assert (isempty(server));
+%! zmq_setsockopt(server, ZMQ_IDENTITY, [104 101 108 108 111]);
+%! assert(zmq_getsockopt (server, ZMQ_IDENTITY), uint8([104 101 108 108 111]))
+%! zmq_close (server);
+

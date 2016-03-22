@@ -117,6 +117,12 @@ DEFUN_DLD (ZMQ_OPT_RCVMORE, args, nargout,"zeromq option constant")
   return octave_value(ZMQ_RCVMORE);
 }
 
+// PKG_ADD: autoload ("ZMQ_OPT_IDENTITY", "zeromq.oct");
+DEFUN_DLD (ZMQ_OPT_IDENTITY, args, nargout,"zeromq option constant")
+{
+  return octave_value(ZMQ_IDENTITY);
+}
+
 // PKG_ADD: autoload ("ZMQ_OPT_TYPE", "zeromq.oct");
 DEFUN_DLD (ZMQ_OPT_TYPE, args, nargout,"zeromq option constant")
 {

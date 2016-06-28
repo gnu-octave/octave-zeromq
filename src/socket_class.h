@@ -17,15 +17,6 @@
 
 // Octave Includes
 #include <octave/oct.h>
-#include <octave/ops.h>
-#include <octave/ov-base.h>
-#include <octave/ov-typeinfo.h>
-#include <octave/ov.h>
-#include <octave/ov-scalar.h>
-#include <octave/ov-struct.h>
-#include <octave/ov-uint8.h>
-
-#include <octave/defun-dld.h>
 
 // string
 #include <string>

@@ -47,7 +47,7 @@ endfunction
 %! assert (isempty(client));
 %! assert(zmq_connect( client, "tcp://127.0.0.1:8071"))
 %! zmq_setsockopt(client, ZMQ_OPT_SUBSCRIBE, "");
-%! sleep (2)
+%! pause (2)
 %! assert(zmq_send (server, uint8([104 101 108 108 111])), 5);
 %! assert(zmq_recv (client, 10), uint8([104 101 108 108 111]))
 %! zmq_close (client);
@@ -56,7 +56,7 @@ endfunction
 %!test
 %! server = zmq_socket(ZMQ_PUB);
 %! assert (isempty(server));
-%! zmq_setsockopt(server, ZMQ_IDENTITY, [104 101 108 108 111]);
+%! zmq_setsockopt(server, ZMQ_IDENTITY, uint8([104 101 108 108 111]));
 %! assert(zmq_getsockopt (server, ZMQ_IDENTITY), uint8([104 101 108 108 111]))
 %! zmq_close (server);
 

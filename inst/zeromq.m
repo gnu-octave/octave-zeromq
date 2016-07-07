@@ -49,7 +49,7 @@
 ## @item zmq_connect
 ## Connect a zeromq socket to an endpoint
 ## @item zmq_disconnect
-## Disonnect a zeromq socket from an endpoint
+## Disconnect a zeromq socket from an endpoint
 ## @item zmq_errno
 ## Get system errno value.
 ## @item zmq_getsockopt

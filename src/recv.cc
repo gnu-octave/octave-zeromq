@@ -31,9 +31,9 @@ DEFUN_DLD (zmq_recv, args, nargout,
         "-*- texinfo -*-\n \
 @deftypefn {Loadable Function} data =  zmq_recv (@var{sock}, @var{len}[, @var{flags}])\n \
 \n\
-Attempt to recieve up to @var{len} bytes of data from  zeromq socket.\n \
+Attempt to receive up to @var{len} bytes of data from  zeromq socket.\n \
 \n \
-@var{sock} - the socket to recieve from.\n \
+@var{sock} - the socket to receive from.\n \
 \n \
 @var{len} - number of bytes to read.\n \
 \n \

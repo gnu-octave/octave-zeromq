@@ -38,7 +38,7 @@ for update_nbr = 1:100
 
   [zipcode, temperature, relhumidity, count, errmsg] = sscanf (string, "%d %d %d", "C");
   
-  fprintf ("recieved a temp for zipcode '%s' of %dF\n", ...
+  fprintf ("received a temp for zipcode '%s' of %dF\n", ...
      zipfilter, temperature);
 
   total_temp += temperature;

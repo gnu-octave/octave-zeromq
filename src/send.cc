@@ -33,7 +33,7 @@ DEFUN_DLD (zmq_send, args, nargout,
 \n\
 Attempt to send to @var{data} bytes of data to zeromq socket.\n \
 \n \
-@var{sock} - the socket to recieve from.\n \
+@var{sock} - the socket to receive from.\n \
 \n \
 @var{data} - data to send - either string or uint8 type.\n \
 \n \

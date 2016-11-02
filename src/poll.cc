@@ -41,7 +41,7 @@ DEFUN_DLD (zmq_poll, args, nargout,
 @deftypefn {Loadable Function} @var{havedata} =  zmq_poll (@var{sock}, @var{timeout})\n \
 @deftypefnx {Loadable Function} @var{indexlist} =  zmq_poll (@var{socklist}, @var{timeout})\n \
 \n\
-Wait up to timeout time for recieved data on socket.\n \
+Wait up to timeout time for received data on socket.\n \
 \n \
 @var{sock} - the socket to wait on.\n \
 \n \

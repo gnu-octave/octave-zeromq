@@ -8,11 +8,6 @@
 ## notice and this notice are preserved.  This file is offered as-is,
 ## without any warranty.
 
-## 2016 GSoC introduced compiled files using boost library
-## check Octave sources to get configure and makefiles from there
-## jwe: configure.ac or m4/acinclude.m4
-## mtmx: autoconf-archive has some m4 files you can use for boost-things
-
 ## Makefile to simplify Octave Forge package maintenance tasks
 
 ## Some shell programs
@@ -98,6 +93,7 @@ $(RELEASE_DIR): .hg/dirstate
 	hg archive --exclude ".hg*" --exclude Makefile --type files "$@"
 	cd "$@" && rm -rf "devel/" && rm -rf "deprecated/"
 #	cd "$@/src" && aclocal -Im4 && autoconf && $(RM) -r "src/autom4te.cache"
+	cd "$@/src" && autoconf && $(RM) -r "src/autom4te.cache"
 	chmod -R a+rX,u+w,go-w "$@"
 
 # install is a prerequesite to the html directory (note that the html
@@ -161,7 +157,7 @@ doctest: all
 
 # Note "doctest" as prerequesite.  When testing the package, also check
 # the documentation.
-check: all doctest
+check: all
 	$(OCTAVE) --silent --path "inst/" --path "src/" \
 	  --eval 'if(!isempty("$(DEPENDS)")); pkg load $(DEPENDS); endif;' \
 	  --eval '${PKG_ADD}' \

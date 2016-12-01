@@ -15,13 +15,6 @@
 
 // Octave Includes
 #include <octave/oct.h>
-#include <octave/parse.h>
-#include <octave/toplev.h>
-#include <octave/cmd-hist.h>
-#include <octave/symtab.h>
-#include <octave/variables.h>
-#include <octave/Array.h>
-
 #include <octave/defun-dld.h>
 
 // zeromq includes
@@ -151,4 +144,25 @@ DEFUN_DLD (ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
   return octave_value(ZMQ_POLLOUT);
 }
 
-
+#if 0
+%! % check that all the values exist
+%!assert (exist('ZMQ_EVENT_POLLOUT'))
+%!assert (exist('ZMQ_EVENT_POLLIN'))
+%!assert (exist('ZMQ_OPT_EVENTS'))
+%!assert (exist('ZMQ_OPT_TYPE'))
+%!assert (exist('ZMQ_OPT_IDENTITY'))
+%!assert (exist('ZMQ_OPT_RCVMORE'))
+%!assert (exist('ZMQ_OPT_SUBSCRIBE'))
+%!assert (exist('ZMQ_OPT_UNSUBSCRIBE'))
+%!assert (exist('ZMQ_FLAG_DONTWAIT'))
+%!assert (exist('ZMQ_FLAG_SNDMORE'))
+%!assert (exist('ZMQ_SOCK_PUB'))
+%!assert (exist('ZMQ_SOCK_SUB'))
+%!assert (exist('ZMQ_SOCK_REQ'))
+%!assert (exist('ZMQ_SOCK_REP'))
+%!assert (exist('ZMQ_SOCK_PUSH'))
+%!assert (exist('ZMQ_SOCK_PULL'))
+%!assert (exist('ZMQ_SOCK_DEALER'))
+%!assert (exist('ZMQ_SOCK_ROUTER'))
+%!assert (exist('ZMQ_SOCK_PAIR'))
+#endif

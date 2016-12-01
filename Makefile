@@ -39,13 +39,15 @@ OCTAVE    := octave --no-gui
 ## Remove if not needed, most packages do not have PKG_ADD directives.
 M_SOURCES   := $(wildcard inst/*.m)
 CC_SOURCES  := $(wildcard src/*.cc)
+CC_TST_SOURCES := $(shell $(GREP) --files-with-matches '^%!' $(CC_SOURCES))
+TST_SOURCES := $(patsubst src/%.cc,inst/test/%.cc-tst,$(CC_TST_SOURCES))
 PKG_ADD     := $(shell $(GREP) -sPho '(?<=(//|\#\#) PKG_ADD: ).*' \
                          $(CC_SOURCES) $(M_SOURCES))
 AUTOCONF_TARGETS := src/configure src/Makefile
 
 ## Targets that are not filenames.
 ## https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html
-.PHONY: help dist html release install all check run clean autoconf_target
+.PHONY: help dist html release install all check run clean autoconf_target test_files
 
 ## make will display the command before runnning them.  Use @command
 ## to not display it (makes specially sense for echo).
@@ -94,6 +96,7 @@ $(RELEASE_DIR): .hg/dirstate
 	cd "$@" && rm -rf "devel/" && rm -rf "deprecated/"
 #	cd "$@/src" && aclocal -Im4 && autoconf && $(RM) -r "src/autom4te.cache"
 	cd "$@/src" && autoconf && $(RM) -r "src/autom4te.cache"
+	cd "$@" && $(MAKE) test_files
 	chmod -R a+rX,u+w,go-w "$@"
 
 # install is a prerequesite to the html directory (note that the html
@@ -121,10 +124,21 @@ install: $(RELEASE_TARBALL)
 clean:
 	$(RM) -r $(RELEASE_DIR) $(RELEASE_TARBALL) $(HTML_TARBALL) $(HTML_DIR)
 	$(MAKE) -C src clean
+	$(RM) -rf inst/test
 
 #
 # Recipes for testing purposes
 #
+
+inst/test:
+	@mkdir -p "$@"
+
+$(TST_SOURCES): inst/test/%.cc-tst: src/%.cc | inst/test
+	@echo "Extracting tests from $< ..."
+	@$(RM) -f "$@" "$@-t"
+	@(	echo "## Generated from $<"; \
+                $(GREP) '^%!' "$<") > "$@"
+
 src/configure: src/configure.ac
 	cd src && autoconf
 
@@ -132,6 +146,8 @@ src/Makefile: src/Makefile.in src/configure
 	cd src && ./configure
 
 autoconf_target: $(AUTOCONF_TARGETS)
+
+test_files: $(TST_SOURCES)
 
 # Build any requires oct files.  Some packages may not need this at all.
 # Other packages may require a configure file to be created and run first.
@@ -157,8 +173,8 @@ doctest: all
 
 # Note "doctest" as prerequesite.  When testing the package, also check
 # the documentation.
-check: all
+check: all test_files
 	$(OCTAVE) --silent --path "inst/" --path "src/" \
 	  --eval 'if(!isempty("$(DEPENDS)")); pkg load $(DEPENDS); endif;' \
 	  --eval '${PKG_ADD}' \
-	  --eval 'cellfun(@(x)runtests (x), {"inst", "src"});'
+	  --eval "__run_test_suite__ ({'.'}, {})"

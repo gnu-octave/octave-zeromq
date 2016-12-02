@@ -51,3 +51,8 @@ Close a zeromq socket.\n \
   return octave_value ();
 }
 
+#if 0
+%!error <Invalid call to zmq_close> zmq_close()
+%!error <Invalid call to zmq_close> zmq_close(10)
+#endif
+

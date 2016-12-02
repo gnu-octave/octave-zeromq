@@ -92,3 +92,16 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
   return octave_value (retvalue);
 }
 
+#if 0
+%!error <Invalid call to zmq_socket> zmq_socket()
+
+%!test
+%! s = zmq_socket(ZMQ_SOCK_SUB);
+%! assert(isempty(s))
+%! zmq_close(s);
+
+%!test
+%! s = zmq_socket(ZMQ_SOCK_SUB);
+%! assert(isa(s, 'octave_zeromq_socket'))
+%! zmq_close(s);
+#endif

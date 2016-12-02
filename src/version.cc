@@ -52,3 +52,10 @@ Returns the @var{major}, @var{minor} and @var{patch} level version of the ZerMQ 
   return return_list;
 }
 
+#if 0
+%!test
+%! [a,b,c] = zmq_version ();
+%! assert(~isempty(a));
+%! assert(~isempty(b));
+%! assert(~isempty(c));
+#endif

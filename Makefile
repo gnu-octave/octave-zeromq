@@ -92,11 +92,13 @@ html: $(HTML_TARBALL)
 $(RELEASE_DIR): .hg/dirstate
 	@echo "Creating package version $(VERSION) release ..."
 	$(RM) -r "$@"
-	hg archive --exclude ".hg*" --exclude Makefile --type files "$@"
+#	hg archive --exclude ".hg*" --exclude Makefile --type files "$@"
+	hg archive --exclude ".hg*" --type files "$@"
 	cd "$@" && rm -rf "devel/" && rm -rf "deprecated/"
 #	cd "$@/src" && aclocal -Im4 && autoconf && $(RM) -r "src/autom4te.cache"
 	cd "$@/src" && autoconf && $(RM) -r "src/autom4te.cache"
 	cd "$@" && $(MAKE) test_files
+	cd "$@" && $(RM) Makefile
 	chmod -R a+rX,u+w,go-w "$@"
 
 # install is a prerequesite to the html directory (note that the html

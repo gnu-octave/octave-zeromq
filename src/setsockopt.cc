@@ -17,6 +17,10 @@
 #include <octave/oct.h>
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 #include <zmq.h>
@@ -56,7 +60,7 @@ Unsubscribe from incoming messages\n \
       return octave_value (false);  
     }
 
-  if (args(1).is_integer_type () && !args(1).is_float_type ())
+  if (args(1).OV_ISINTEGER () && !args(1).OV_ISFLOAT ())
     {
       print_usage ();
       return octave_value (false);  

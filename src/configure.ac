@@ -4,6 +4,7 @@
 AC_PREREQ([2.67])
 AC_INIT([octave zeromq package], [1.1.0])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIRS([m4])
 
 # Checks for programs.
 AC_PROG_CXX
@@ -22,6 +23,55 @@ AC_CHECK_HEADERS([zmq.h],
 if [ test "$have_zmq" != "yes" ]; then
   AC_MSG_ERROR([$PACKAGE_NAME requires zeromq library])
 fi
+
+# Checks for octave depreciated symbols
+## Simple symbol alternatives of different Octave versions.
+save_altsyms_CXX="$CXX"
+save_altsyms_CXXFLAGS="$CXXFLAGS"
+save_altsyms_LDFLAGS="$LDFLAGS"
+save_altsyms_LIBS="$LIBS"
+OCTINCLUDEDIR=${OCTINCLUDEDIR:-`$MKOCTFILE -p INCFLAGS`}
+OCTLIBDIR=${OCTLIBDIR:-`$MKOCTFILE -p OCTLIBDIR`}
+CXX=`${MKOCTFILE} -p CXX`
+CXXFLAGS="$OCTINCLUDEDIR $CXXFLAGS"
+LDFLAGS="-L$OCTLIBDIR $LDFLAGS"
+LIBS="-loctinterp $LIBS"
+
+OF_OCTAVE_LIST_ALT_SYMS([
+[dnl
+  [is_float_type],
+  [isfloat],
+  [[octave_value ().isfloat ();]],
+  [OV_ISFLOAT],
+  [],
+  []
+],
+
+[dnl
+  [is_integer_type],
+  [isinteger],
+  [[octave_value ().isinteger ();]],
+  [OV_ISINTEGER],
+  [],
+  []
+],
+
+[dnl
+  [is_cell],
+  [iscell],
+  [[octave_value ().iscell ();]],
+  [OV_ISCELL],
+  [],
+  []
+]
+
+],[oct-alt-includes.h])
+
+CXX=$save_altsyms_CXX
+CXXFLAGS=$save_altsyms_CXXFLAGS
+LDFLAGS=$save_altsyms_LDFLAGS
+LIBS=$save_altsyms_LIBS
+
 
 TARGETS=zeromq.oct
 AC_SUBST(TARGETS)

@@ -3,6 +3,10 @@ Summary of important user-visible changes for octave zeromq 1.2.1+:
 
   *** spelling check
 
+  *** add generation and install of oct file tests
+
+  *** updated configuration for use of depreciated symbols
+
 Summary of important user-visible changes for octave zeromq 1.2.1:
 -------------------------------------------------------------------
 

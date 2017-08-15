@@ -17,6 +17,10 @@
 #include <octave/oct.h>
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // zeromq includes

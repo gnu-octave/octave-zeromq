@@ -17,6 +17,10 @@
 #include <octave/oct.h>
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // zeromq includes
@@ -57,7 +61,7 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
       return octave_value ();  
     }
 
-  if(!args (1).is_integer_type () && !args (1).is_float_type ())
+  if(!args (1).OV_ISINTEGER () && !args (1).OV_ISFLOAT ())
     {
       error ("zeromq: expected time as integer or float type");
     }
@@ -76,7 +80,7 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
     {
       sockcount = 1;
     }
-  else if(args (0).is_cell ())
+  else if(args (0).OV_ISCELL ())
     {
       sockcount = args (0).cell_value ().numel ();
     }

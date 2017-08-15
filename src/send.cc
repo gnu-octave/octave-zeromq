@@ -19,6 +19,10 @@
 
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // PKG_ADD: autoload ("zmq_send", "zeromq.oct");
@@ -52,7 +56,7 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
 
   if (args.length () > 2)
     {
-      if (args(2).is_integer_type () && !args(2).is_float_type ())
+      if (args(2).OV_ISINTEGER () && !args(2).OV_ISFLOAT ())
         {
           print_usage ();
           return octave_value (-1);  

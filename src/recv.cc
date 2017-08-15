@@ -18,6 +18,10 @@
 #include <octave/Array.h>
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // PKG_ADD: autoload ("zmq_recv", "zeromq.oct");
@@ -42,7 +46,7 @@ The read data is returned as @var{data} in an uint8 array.  \
 
   if (args.length () < 2  
     || args (0).type_id () != octave_zeromq_socket::static_type_id () 
-    || (!args (1).is_integer_type () && !args (1).is_float_type ()))
+    || (!args (1).OV_ISINTEGER () && !args (1).OV_ISFLOAT ()))
     {
       print_usage ();
       return octave_value (-1);  
@@ -60,7 +64,7 @@ The read data is returned as @var{data} in an uint8 array.  \
 
   if (args.length () > 2)
     {
-      if (args (2).is_integer_type () && !args(2).is_float_type ())
+      if (args (2).OV_ISINTEGER () && !args(2).OV_ISFLOAT ())
         {
           print_usage ();
           return octave_value (-1);  

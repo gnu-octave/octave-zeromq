@@ -17,6 +17,10 @@
 #include <octave/oct.h>
 #include <octave/defun-dld.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // zeromq includes
@@ -68,7 +72,7 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
 
   if (args.length () > 0)
     {
-      if (args (0).is_integer_type () || args (0).is_float_type ())
+      if (args (0).OV_ISINTEGER () || args (0).OV_ISFLOAT ())
         {
           socktype = args (0).int_value ();
         }

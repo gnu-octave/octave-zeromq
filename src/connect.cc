@@ -60,3 +60,6 @@ On success, connect will return a @var{status} of true \n \
   return octave_value (ret);
 }
 
+#if 0
+%!error <Invalid call to zmq_connect> zmq_connect()
+#endif

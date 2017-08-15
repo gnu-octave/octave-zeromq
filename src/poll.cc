@@ -180,3 +180,8 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
   return return_list;
 }
 
+#if 0
+%!error <Invalid call to zmq_poll> zmq_poll()
+
+%!error <Invalid call to zmq_poll> zmq_poll(1)
+#endif

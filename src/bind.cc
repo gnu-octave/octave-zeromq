@@ -60,3 +60,8 @@ On success, bind will return a @var{status} of true \n \
   return octave_value (ret);
 }
 
+#if 0
+%!error <Invalid call to zmq_bind> zmq_bind()
+
+%!error <Invalid call to zmq_bind> zmq_bind(1)
+#endif

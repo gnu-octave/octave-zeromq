@@ -101,4 +101,8 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
 
   return octave_value (retval);
 }
+#if 0
+%!error <Invalid call to zmq_send> zmq_send()
 
+%!error <Invalid call to zmq_send> zmq_send(1)
+#endif

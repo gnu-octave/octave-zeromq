@@ -179,4 +179,4 @@ check: all test_files
 	$(OCTAVE) --silent --path "inst/" --path "src/" \
 	  --eval 'if(!isempty("$(DEPENDS)")); pkg load $(DEPENDS); endif;' \
 	  --eval '${PKG_ADD}' \
-	  --eval "__run_test_suite__ ({'.'}, {})"
+	  --eval "__run_test_suite__ ({'inst'}, {})"

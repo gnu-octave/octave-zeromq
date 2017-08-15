@@ -58,5 +58,9 @@ Close a zeromq socket.\n \
 #if 0
 %!error <Invalid call to zmq_close> zmq_close()
 %!error <Invalid call to zmq_close> zmq_close(10)
+
+%!test
+%! a = zmq_socket();
+%! zmq_close(a);
 #endif
 

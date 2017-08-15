@@ -107,4 +107,8 @@ The read data is returned as @var{data} in an uint8 array.  \
 
   return return_value;
 }
+#if 0
+%!error <Invalid call to zmq_recv> zmq_recv()
 
+%!error <Invalid call to zmq_recv> zmq_recv(1)
+#endif

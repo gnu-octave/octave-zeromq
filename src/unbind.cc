@@ -59,4 +59,8 @@ On success, unbind will return a @var{status} of true \n \
 
   return octave_value (ret);
 }
+#if 0
+%!error <Invalid call to zmq_unbind> zmq_unbind()
 
+%!error <Invalid call to zmq_unbind> zmq_unbind(1)
+#endif

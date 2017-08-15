@@ -60,3 +60,8 @@ On success, disconnect will return a @var{status} of true \n \
   return octave_value (ret);
 }
 
+#if 0
+%!error <Invalid call to zmq_disconnect> zmq_disconnect()
+
+%!error <Invalid call to zmq_disconnect> zmq_disconnect(1)
+#endif

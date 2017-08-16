@@ -2,6 +2,7 @@ zeromq >> Octave ZeroMQ bindings
 ZeroMQ overview
   zeromq
 ZeroMQ functions
+  iszmq
   zmq_bind
   zmq_close
   zmq_connect

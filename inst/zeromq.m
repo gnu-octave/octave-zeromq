@@ -70,6 +70,8 @@
 ## Get the zeromq library version numbers.
 ## @end table
 ##
+## In addition, a iszmq function is provided to verify whether a object is a zeromq socket
+##
 ## Example code files for zeromq usage:
 ##
 ## @table @asis

@@ -142,7 +142,7 @@ $(TST_SOURCES): inst/test/%.cc-tst: src/%.cc | inst/test
                 $(GREP) '^%!' "$<") > "$@"
 
 src/configure: src/configure.ac
-	cd src && autoconf
+	cd src && ./bootstrap
 
 src/Makefile: src/Makefile.in src/configure
 	cd src && ./configure

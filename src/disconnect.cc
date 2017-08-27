@@ -55,7 +55,7 @@ On success, disconnect will return a @var{status} of true \n \
 
   sock = &((octave_zeromq_socket &)rep);
 
-  bool ret = sock->disconnect(args(1).string_value());
+  bool ret = sock->disconnect (args (1).string_value ());
 
   return octave_value (ret);
 }

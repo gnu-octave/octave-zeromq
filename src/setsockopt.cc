@@ -54,13 +54,13 @@ Unsubscribe from incoming messages\n \
   init_types ();
 
   if (args.length () != 3 || 
-      args(0).type_id () != octave_zeromq_socket::static_type_id ())
+      args (0).type_id () != octave_zeromq_socket::static_type_id ())
     {
       print_usage ();
       return octave_value (false);  
     }
 
-  if (args(1).OV_ISINTEGER () && !args(1).OV_ISFLOAT ())
+  if (args (1).OV_ISINTEGER () && !args (1).OV_ISFLOAT ())
     {
       print_usage ();
       return octave_value (false);  
@@ -73,7 +73,7 @@ Unsubscribe from incoming messages\n \
   sock = &((octave_zeromq_socket &)rep);
 
 
-  int opt = args (1).int_value();
+  int opt = args (1).int_value ();
   bool ret = false;
 
   std::string strvalue;
@@ -83,12 +83,12 @@ Unsubscribe from incoming messages\n \
   switch(opt)
   {
   case ZMQ_SUBSCRIBE:
-    if( !args(2).is_string ())
+    if( !args (2).is_string ())
       {
         error("zeromq: expected string for option value");
-       return octave_value(false);
+       return octave_value (false);
       }
-    strvalue = args(2).string_value ();
+    strvalue = args (2).string_value ();
 
     ret = sock->setsockopt (opt, strvalue.c_str (), strvalue.length ());
     
@@ -99,34 +99,34 @@ Unsubscribe from incoming messages\n \
 
   case ZMQ_IDENTITY:
 
-    if( args(2).is_string ())
+    if (args (2).is_string ())
       {
-        strvalue = args(2).string_value ();
+        strvalue = args (2).string_value ();
         binsize = strvalue.length ();
 
         if (binsize > 255) binsize = 255;
 
-        for (size_t i=0;i<binsize;i++)
+        for (size_t i=0; i<binsize; i++)
           {
             binvalue[i] = strvalue[i];
           }
       }
     else if (args(2).is_uint8_type ())
       { 
-        NDArray data = args(2).array_value ();
+        NDArray data = args (2).array_value ();
         binsize = data.numel ();
 
         if (binsize > 255) binsize = 255;
 
-        for (size_t i=0;i<binsize;i++)
+        for (size_t i=0; i<binsize; i++)
           {
-            binvalue[i] = data(i);
+            binvalue[i] = data (i);
           }
       }
     else
       {
         error("zeromq: expected string or uint8 for option value");
-        return octave_value(false);
+        return octave_value (false);
       }
 
     ret = sock->setsockopt (opt, binvalue, binsize);

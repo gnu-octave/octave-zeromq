@@ -42,8 +42,8 @@ On success, unbind will return a @var{status} of true \n \
   init_types ();
 
   if (args.length () != 2 
-    ||  args(0).type_id () != octave_zeromq_socket::static_type_id ()
-    || ! args(1).is_string ())
+    ||  args (0).type_id () != octave_zeromq_socket::static_type_id ()
+    || ! args (1).is_string ())
     {
       print_usage ();
       return octave_value (false);  

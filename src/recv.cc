@@ -69,7 +69,7 @@ The read data is returned as @var{data} in an uint8 array.  \
           print_usage ();
           return octave_value (-1);  
         }
-      flags = args (2).int_value();
+      flags = args (2).int_value ();
     }
   
   unsigned char* buf = new unsigned char[ len ];
@@ -93,8 +93,8 @@ The read data is returned as @var{data} in an uint8 array.  \
   if (read >= 0)
     {
       uint8NDArray data( dim_vector (1,read) );
-      for (int i=0;i<read;i++)
-        data(i) = buf[i];
+      for (int i=0; i<read; i++)
+        data (i) = buf[i];
 
       return_value = data;
 

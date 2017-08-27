@@ -61,7 +61,7 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
           print_usage ();
           return octave_value (-1);  
         }
-      flags = args(2).int_value();
+      flags = args(2).int_value ();
     }
   
   octave_zeromq_socket * sock = NULL;
@@ -72,13 +72,13 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
 
   int retval = -1;
 
-  if (args(1).is_string ())
+  if (args (1).is_string ())
   {
-     retval = sock->send (args(1).string_value (), flags);
+     retval = sock->send (args (1).string_value (), flags);
   }
   else if(args(1).is_uint8_type ())
   {
-    NDArray data = args(1).array_value ();
+    NDArray data = args (1).array_value ();
 
     uint8_t * buf = new uint8_t[data.numel ()];
 
@@ -86,7 +86,7 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
       error ("zeromq: could allocate memory for send message.\n");
     else
     {
-       for(int i=0;i<data.numel ();i++)
+       for(int i=0; i<data.numel (); i++)
          buf[i] = data(i);
 
        retval = sock->send (buf, data.numel (), flags);

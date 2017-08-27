@@ -69,7 +69,7 @@ Get the socket identity value\n \
       return octave_value ();  
     }
 
-  if (args(1).OV_ISINTEGER () && !args(1).OV_ISFLOAT ())
+  if (args (1).OV_ISINTEGER () && !args (1).OV_ISFLOAT ())
     {
       print_usage ();
       return octave_value ();  
@@ -81,7 +81,7 @@ Get the socket identity value\n \
 
   sock = &((octave_zeromq_socket &)rep);
 
-  int opt = args(1).int_value();
+  int opt = args (1).int_value ();
 
   std::string strvalue;
 
@@ -95,22 +95,22 @@ Get the socket identity value\n \
 #else
       int flag = 0;
 #endif
-      size_t sz = sizeof(flag);
-      if (!sock->getsockopt(opt, &flag, &sz))
+      size_t sz = sizeof (flag);
+      if (! sock->getsockopt (opt, &flag, &sz))
         error ("zeromq: failed getsockopt");
 
-      ret = octave_value(flag);
+      ret = octave_value (flag);
     }
     break;
 #if ZMQ_VERSION < ZMQ_MAKE_VERSION(3,0,0)
  case ZMQ_HWM:
     {
       uint64_t value = 0;
-      size_t sz = sizeof(value);
-      if(!sock->getsockopt(opt, &value, &sz))
+      size_t sz = sizeof (value);
+      if (! sock->getsockopt (opt, &value, &sz))
         error ("zeromq: failed getsockopt");
 
-      ret = octave_value(value);
+      ret = octave_value (value);
     }
     break;
 #endif
@@ -118,11 +118,11 @@ Get the socket identity value\n \
  case ZMQ_SNDHWM:
     {
       int value = 0;
-      size_t sz = sizeof(value);
-      if(!sock->getsockopt(opt, &value, &sz))
+      size_t sz = sizeof (value);
+      if ( !sock->getsockopt (opt, &value, &sz))
         error ("zeromq: failed getsockopt");
 
-      ret = octave_value(value);
+      ret = octave_value (value);
     }
     break;
 #endif
@@ -130,18 +130,18 @@ Get the socket identity value\n \
  case ZMQ_RCVHWM:
     {
       int value = 0;
-      size_t sz = sizeof(value);
-      if(!sock->getsockopt(opt, &value, &sz))
+      size_t sz = sizeof (value);
+      if (! sock->getsockopt (opt, &value, &sz))
         error ("zeromq: failed getsockopt");
 
-      ret = octave_value(value);
+      ret = octave_value (value);
     }
     break;
 #endif    
 #if ZMQ_VERSION >= ZMQ_MAKE_VERSION(2,1,0)
  case ZMQ_TYPE:
     {
-      ret = octave_value(sock->socktype());
+      ret = octave_value (sock->socktype ());
     }
     break;    
 #endif
@@ -152,19 +152,19 @@ Get the socket identity value\n \
 #else
       int value = 0;
 #endif
-      size_t sz = sizeof(value);
-      if(!sock->getsockopt(opt, &value, &sz))
+      size_t sz = sizeof (value);
+      if (! sock->getsockopt (opt, &value, &sz))
         error ("zeromq: ZMQ_EVENTS failed getsockopt");
 
-      ret = octave_value(value);
+      ret = octave_value (value);
     }
     break;
  case ZMQ_IDENTITY:
     {
       uint8_t value[256];
-      size_t sz = sizeof(value);
+      size_t sz = sizeof (value);
 
-      if(!sock->getsockopt (opt, value, &sz))
+      if (! sock->getsockopt (opt, value, &sz))
         error ("zeromq: failed getsockopt");
 
       if (sz > 0)

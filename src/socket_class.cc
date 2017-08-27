@@ -39,13 +39,15 @@ DEFINE_OCTAVE_ALLOCATOR (octave_zeromq_socket);
 DEFINE_OV_TYPEID_FUNCTIONS_AND_DATA (octave_zeromq_socket, "octave_zeromq_socket", "octave_zeromq_socket");
 
 octave_zeromq_socket::octave_zeromq_socket (void)
- : fieldnames(3)
+ : fieldnames(5)
 {
   sock = 0;
   type = -1;
   fieldnames[0] = "type";
   fieldnames[1] = "endpoint";
   fieldnames[2] = "identity";
+  fieldnames[3] = "recvmore";
+  fieldnames[3] = "events";
 }
 
 octave_zeromq_socket::octave_zeromq_socket (const octave_zeromq_socket &s)

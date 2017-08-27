@@ -61,6 +61,14 @@ Internal function to get properties from a zmq socket\
       ovl (1) = ZMQ_IDENTITY;
       props.assign ("identity", OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1));
 
+      ovl (0) = args (0);
+      ovl (1) = ZMQ_RCVMORE;
+      props.assign ("recvmore", OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1));
+
+      ovl (0) = args (0);
+      ovl (1) = ZMQ_EVENTS;
+      props.assign ("events", OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1));
+
       ret = octave_value (props);
     }
   else if (args.length() == 2)
@@ -76,6 +84,20 @@ Internal function to get properties from a zmq socket\
           octave_value_list ovl;
           ovl (0) = args (0);
           ovl (1) = ZMQ_IDENTITY;
+          ret = OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1);
+        }
+      else if (prop == "recvmore")
+        {
+          octave_value_list ovl;
+          ovl (0) = args (0);
+          ovl (1) = ZMQ_RCVMORE;
+          ret = OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1);
+        }
+      else if (prop == "events")
+        {
+          octave_value_list ovl;
+          ovl (0) = args (0);
+          ovl (1) = ZMQ_EVENTS;
           ret = OCTAVE__FEVAL (std::string ("zmq_getsockopt"), ovl, 1);
         }
       else
@@ -111,10 +133,17 @@ Internal function to get properties from a zmq socket\
 %! assert(props.type, "ZMQ_PUB")
 %!
 %! assert(__zmq_properties__(a, "type"), "ZMQ_PUB")
+%! assert(__zmq_properties__(a, "recvmore"), 0)
+%!
+%! fail ("__zmq_properties__ (a,'invalid')", "unknown property");
 %!
 %! id = uint8([ 1, 2, 3 ]);
 %! __zmq_properties__(a, "identity", id);
 %! assert(__zmq_properties__(a, "identity"), id);
 %! zmq_close(a);
+
+%!error <Invalid call to __zmq_properties__> __zmq_properties__ ()
+
+%!error <Invalid call to __zmq_properties__> __zmq_properties__ ()
 #endif
 

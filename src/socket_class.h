@@ -25,7 +25,7 @@
 
 #include <errno.h>
 
-void init_types();
+void init_types(void);
 
 class octave_zeromq_socket : public octave_base_value
 {
@@ -33,20 +33,26 @@ public:
   /**
    * default constructor 
    */
-  octave_zeromq_socket ();
+  octave_zeromq_socket (void);
 
   /**
    * deconstructor
    */
-  ~octave_zeromq_socket ();
+  ~octave_zeromq_socket (void);
 
   /**
    * access to the zeromq socket
    */
-  const void * socket () const;
-  void * socket ();
+  const void * socket (void) const;
+  void * socket (void);
 
-  int socktype () const;
+  std::string getendpoint(void) const { return endpoint; }
+
+  int socktype (void) const;
+
+  // convert sock type
+  std::string gettypestr(int intype=-1) const;
+  static int gettypeval(const std::string &str);
 
   /**
    * create socket
@@ -56,28 +62,27 @@ public:
   /**
    * close created socket
    */ 
-  void close ();
+  void close (void);
 
   /**
    * connect socket 
    */
-  bool connect (std::string endpoint);
+  bool connect (const std::string &endpoint);
 
   /**
    * disconnect socket 
    */
-  bool disconnect (std::string endpoint);
-
+  bool disconnect (const std::string &endpoint);
 
   /**
    * bind socket
    */
-  bool bind (std::string endpoint);
+  bool bind (const std::string &endpoint);
 
   /**
    * unbind socket
    */
-  bool unbind (std::string endpoint);
+  bool unbind (const std::string &endpoint);
 
   /**
    * send data of size sz bytes
@@ -87,7 +92,7 @@ public:
   /**
    * send data string
    */
-  int send (std::string data, int flags);
+  int send (const std::string &data, int flags);
  
   /**
    * read data of up to sz bytes in size
@@ -107,8 +112,12 @@ public:
   bool is_defined (void) const { return true;}
   bool is_object (void) const { return true; }
 
-  octave_base_value * clone () const;
-  octave_base_value * empty_clone () const;
+  // required to use subsasn
+  string_vector map_keys (void) const { return fieldnames; }
+  dim_vector dims (void) const { static dim_vector dv(1, 1); return dv; }
+
+  octave_base_value * clone (void) const;
+  octave_base_value * empty_clone (void) const;
 
  /**
   * Overloaded methods to print sock as the zeromq id
@@ -117,13 +126,26 @@ public:
   void print (std::ostream& os, bool pr_as_read_syntax = false); 
   void print_raw (std::ostream& os, bool pr_as_read_syntax) const;
 
+ /**
+  * overloaded methods to get properties
+  */
+  octave_value_list subsref (const std::string& type, const std::list<octave_value_list>& idx, int nargout);
+
+  octave_value subsref (const std::string& type, const std::list<octave_value_list>& idx)
+  {
+    octave_value_list retval = subsref (type, idx, 1);
+    return (retval.length () > 0 ? retval(0) : octave_value ());
+  }
+
+  octave_value subsasgn (const std::string& type, const std::list<octave_value_list>& idx, const octave_value& rhs);
+
 private:
   octave_zeromq_socket (const octave_zeromq_socket &);
 
   void * sock;
   int type;
   std::string endpoint;
-
+  string_vector fieldnames;
 #ifdef DECLARE_OCTAVE_ALLOCATOR
   DECLARE_OCTAVE_ALLOCATOR
 #endif

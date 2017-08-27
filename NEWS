@@ -1,13 +1,17 @@
 Summary of important user-visible changes for octave zeromq 1.2.1+:
 -------------------------------------------------------------------
 
-  *** spelling check
+  *** spelling check in docs
 
   *** add generation and install of oct file tests
 
   *** updated configuration for use of depreciated symbols
 
-  *** added new function iszmq
+  *** added new functions iszmq, get, set
+
+  *** added dot notation for access of get/set of properties
+
+  *** corrected display of socket type for dealer, pair, push, pull types
 
 Summary of important user-visible changes for octave zeromq 1.2.1:
 -------------------------------------------------------------------

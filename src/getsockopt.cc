@@ -164,7 +164,7 @@ Get the socket identity value\n \
       uint8_t value[256];
       size_t sz = sizeof(value);
 
-      if(!sock->getsockopt(opt, value, &sz))
+      if(!sock->getsockopt (opt, value, &sz))
         error ("zeromq: failed getsockopt");
 
       if (sz > 0)

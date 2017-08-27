@@ -16,6 +16,10 @@
 // Octave Includes
 #include <octave/oct.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 #include "socket_class.h"
 
 // zeromq includes
@@ -34,10 +38,14 @@ DEFINE_OCTAVE_ALLOCATOR (octave_zeromq_socket);
 #endif
 DEFINE_OV_TYPEID_FUNCTIONS_AND_DATA (octave_zeromq_socket, "octave_zeromq_socket", "octave_zeromq_socket");
 
-octave_zeromq_socket::octave_zeromq_socket ()
+octave_zeromq_socket::octave_zeromq_socket (void)
+ : fieldnames(3)
 {
   sock = 0;
   type = -1;
+  fieldnames[0] = "type";
+  fieldnames[1] = "endpoint";
+  fieldnames[2] = "identity";
 }
 
 octave_zeromq_socket::octave_zeromq_socket (const octave_zeromq_socket &s)
@@ -45,39 +53,46 @@ octave_zeromq_socket::octave_zeromq_socket (const octave_zeromq_socket &s)
   // should never be called
   sock = 0;
   type = s.type;
+  fieldnames = s.fieldnames;
 }
 
-octave_zeromq_socket::~octave_zeromq_socket()
+octave_zeromq_socket::~octave_zeromq_socket(void)
 {
   close ();
 }
 
-octave_base_value * octave_zeromq_socket::empty_clone () const 
+octave_base_value *
+octave_zeromq_socket::empty_clone (void) const 
 {
   return new octave_zeromq_socket();
 }
 
-octave_base_value * octave_zeromq_socket::clone () const 
+octave_base_value *
+octave_zeromq_socket::clone (void) const 
 {
   return new octave_zeromq_socket (*this);
 }
 
-void * octave_zeromq_socket::socket ()
+void *
+octave_zeromq_socket::socket (void)
 {
   return sock;
 }
 
-const void * octave_zeromq_socket::socket () const
+const void *
+octave_zeromq_socket::socket (void) const
 {
   return sock;
 }
 
-int octave_zeromq_socket::socktype () const
+int
+octave_zeromq_socket::socktype (void) const
 {
   return type;
 }
 
-bool octave_zeromq_socket::create (int socket_type)
+bool
+octave_zeromq_socket::create (int socket_type)
 {
   if (sock)
     {
@@ -97,7 +112,8 @@ bool octave_zeromq_socket::create (int socket_type)
   return true;
 }
 
-void octave_zeromq_socket::close ()
+void
+octave_zeromq_socket::close (void)
 {
   if (sock) 
     zmq_close (sock);
@@ -107,7 +123,8 @@ void octave_zeromq_socket::close ()
   endpoint = "";
 }
 
-bool octave_zeromq_socket::connect (std::string inendpoint)
+bool
+octave_zeromq_socket::connect (const std::string &inendpoint)
 {
   if (sock == 0)
     {
@@ -126,7 +143,8 @@ bool octave_zeromq_socket::connect (std::string inendpoint)
   return true;
 }
 
-bool octave_zeromq_socket::disconnect (std::string inendpoint)
+bool
+octave_zeromq_socket::disconnect (const std::string &inendpoint)
 {
   if (sock == 0)
     {
@@ -146,7 +164,8 @@ bool octave_zeromq_socket::disconnect (std::string inendpoint)
 }
 
 
-bool octave_zeromq_socket::bind (std::string inendpoint)
+bool
+octave_zeromq_socket::bind (const std::string &inendpoint)
 {
   if (sock == 0)
     {
@@ -165,7 +184,8 @@ bool octave_zeromq_socket::bind (std::string inendpoint)
   return true;
 }
 
-bool octave_zeromq_socket::unbind (std::string inendpoint)
+bool
+octave_zeromq_socket::unbind (const std::string &inendpoint)
 {
   if (sock == 0)
     {
@@ -185,7 +205,8 @@ bool octave_zeromq_socket::unbind (std::string inendpoint)
 }
 
 
-bool octave_zeromq_socket::setsockopt (int opt, const void * val, size_t len)
+bool
+octave_zeromq_socket::setsockopt (int opt, const void * val, size_t len)
 {
   if (sock == 0)
     {
@@ -201,7 +222,8 @@ bool octave_zeromq_socket::setsockopt (int opt, const void * val, size_t len)
   return true;
 }
 
-bool octave_zeromq_socket::getsockopt (int opt, void * val, size_t *len)
+bool
+octave_zeromq_socket::getsockopt (int opt, void * val, size_t *len)
 {
   if (sock == 0)
     {
@@ -217,12 +239,14 @@ bool octave_zeromq_socket::getsockopt (int opt, void * val, size_t *len)
   return true;
 }
 
-int octave_zeromq_socket::send (std::string str, int flags)
+int
+octave_zeromq_socket::send (const std::string &str, int flags)
 {
   return send ((const uint8_t *)str.c_str (), str.length (), flags) ;
 }
 
-int octave_zeromq_socket::send (const uint8_t *data, size_t sz, int flags)
+int
+octave_zeromq_socket::send (const uint8_t *data, size_t sz, int flags)
 {
   if (sock == 0)
     {
@@ -246,7 +270,8 @@ int octave_zeromq_socket::send (const uint8_t *data, size_t sz, int flags)
   return len;
 }
 
-int octave_zeromq_socket::recv (uint8_t *data, size_t sz, int flags)
+int
+octave_zeromq_socket::recv (uint8_t *data, size_t sz, int flags)
 {
   if (sock == 0)
     {
@@ -291,59 +316,173 @@ int octave_zeromq_socket::recv (uint8_t *data, size_t sz, int flags)
   if (len > 0)
     {
       if (len > sz) len = sz;
-      memcpy (data, zmq_msg_data(&msg), len);
+      memcpy (data, zmq_msg_data (&msg), len);
     }
-  zmq_msg_close(&msg);
+  zmq_msg_close (&msg);
 #else
-  len = zmq_recv(sock, data, sz, flags);
+  len = zmq_recv (sock, data, sz, flags);
   if (len >= 0 && len > sz) len = sz;
 #endif
 
   return len;
 }
 
-void octave_zeromq_socket::print (std::ostream& os, bool pr_as_read_syntax) const
+int
+octave_zeromq_socket::gettypeval (const std::string &str)
+{
+  if(str == "ZMQ_PUB") return ZMQ_PUB;
+  if(str == "ZMQ_SUB") return ZMQ_SUB;
+  if(str == "ZMQ_REQ") return ZMQ_REQ;
+  if(str == "ZMQ_REP") return ZMQ_REP;
+  if(str == "ZMQ_DEALER") return ZMQ_DEALER;
+  if(str == "ZMQ_PAIR") return ZMQ_PAIR;
+  if(str == "ZMQ_ROUTER") return ZMQ_ROUTER;
+  if(str == "ZMQ_PUSH") return ZMQ_PUSH;
+  if(str == "ZMQ_PULL") return ZMQ_PULL;
+  error ("ctave_zeromq_socket: unknown socktype '%s'", str);
+  return -1;
+}
+ 
+std::string
+octave_zeromq_socket::gettypestr (int intype) const
+{
+  std::string s = "";
+  if(intype == -1) intype = type;
+  switch(intype)
+    {
+    case ZMQ_PUB: s = "ZMQ_PUB"; break;
+    case ZMQ_SUB: s = "ZMQ_SUB"; break;
+    case ZMQ_REQ: s = "ZMQ_REQ"; break;
+    case ZMQ_REP: s = "ZMQ_REP"; break;
+    case ZMQ_PUSH: s = "ZMQ_PUSH"; break;
+    case ZMQ_PULL: s = "ZMQ_PULL"; break;
+    case ZMQ_DEALER: s = "ZMQ_DEALER"; break;
+    case ZMQ_PAIR: s = "ZMQ_PAIR"; break;
+    case ZMQ_ROUTER: s = "ZMQ_ROUTER"; break;
+    default:  s = "NONE"; break;
+    }
+  return s;
+}
+ 
+void
+octave_zeromq_socket::print (std::ostream& os, bool pr_as_read_syntax) const
 {
   print_raw (os, pr_as_read_syntax);
   newline (os);
 }
 
-void octave_zeromq_socket::print (std::ostream& os, bool pr_as_read_syntax)
+void
+octave_zeromq_socket::print (std::ostream& os, bool pr_as_read_syntax)
 {
   print_raw (os, pr_as_read_syntax);
   newline (os);
 }
 
-void octave_zeromq_socket::print_raw (std::ostream& os, bool pr_as_read_syntax) const
+void
+octave_zeromq_socket::print_raw (std::ostream& os, bool pr_as_read_syntax) const
 {
   os << "  ZeroMQ socket"; newline (os);
   
   if(sock)
-  {
-    os << "    type: ";
-    switch(type)
     {
-      case ZMQ_PUB: os << "    ZMQ_SOCK_PUB"; break;
-      case ZMQ_SUB: os << "    ZMQ_SOCK_SUB"; break;
-      case ZMQ_REQ: os << "    ZMQ_SOCK_REQ"; break;
-      case ZMQ_REP: os << "    ZMQ_SOCK_REP"; break;
-      default:  os << "    NONE"; break;
-    }
-    newline(os);
+      os << "    type:     " << gettypestr();
     
-    os << "    endpoint: " << endpoint;
-    newline(os);
-  }
+      newline(os);
+    
+      os << "    endpoint: " << endpoint;
+      newline(os);
+    }
   else
-  {
-    os << "    Invalid"; newline(os);
-  }
+    {
+      os << "    Invalid"; newline(os);
+    }
 }
 
+octave_value_list
+octave_zeromq_socket::subsref (const std::string& type, const std::list<octave_value_list>& idx, int nargout)
+{
+  octave_value_list retval;
+  int skip = 1;
+
+  switch (type[0])
+    {
+    default:
+      error ("octave_zeromq_socket object cannot be indexed with %c", type[0]);
+      break;
+    case '.':
+      {
+        octave_value_list ovl;
+        // inc ref count as assign this to octave_value
+        count++; 
+        ovl (0) = octave_value (this);
+        ovl (1) = (idx.front ()) (0);
+        retval = OCTAVE__FEVAL (std::string ("__zmq_properties__"), ovl, 1);
+      }
+      break;
+    }
+
+  if (idx.size () > 1 && type.length () > 1)
+    retval = retval (0).next_subsref (nargout, type, idx, skip);
+
+  return retval;
+}
+
+octave_value
+octave_zeromq_socket::subsasgn (const std::string& type, const std::list<octave_value_list>& idx, const octave_value& rhs)
+{
+  octave_value retval;
+
+  switch (type[0])
+    {
+    default:
+      error ("octave_zeromq_socket object cannot be indexed with %c", type[0]);
+      break;
+    case '.':
+      if (type.length () == 1)
+        {
+          octave_value_list ovl;
+          // inc ref count as assign this to octave_value
+          count++; 
+          ovl (0) = octave_value (this);
+          ovl (1) = (idx.front ()) (0);
+          ovl (2) = rhs;
+          OCTAVE__FEVAL (std::string ("__zmq_properties__"), ovl, 1);
+ 
+          // property assignment
+          if (! error_state)
+            {
+              count++;
+              retval = octave_value (this);
+            }
+        }
+      else if (type.length () > 1 && type[1] == '.')
+        {
+          // pass along any further assignments
+          octave_value_list u = subsref (type.substr (0, 1), idx, 1);
+          if (! error_state)
+            {
+              std::list<octave_value_list> next_idx (idx);
+              next_idx.erase (next_idx.begin ());
+              u (0).subsasgn(type.substr (1), next_idx, rhs);
+              if (!error_state)
+                {
+                  count++;
+                  retval = octave_value (this);
+                }
+            } 
+        }
+      else
+        {
+          error ("octave_zeromq_socket invalid index");
+        }
+
+    }
+  return retval;
+}
 
 static bool type_loaded = false;
 
-void init_types()
+void init_types(void)
 {
   if (!type_loaded)
     {
@@ -353,7 +492,7 @@ void init_types()
   if (!global_context)
     {
 #if ZMQ_VERSION < ZMQ_MAKE_VERSION(3,0,0)  
-      global_context = zmq_init(1);
+      global_context = zmq_init (1);
 #else
       global_context = zmq_ctx_new ();
 #endif   

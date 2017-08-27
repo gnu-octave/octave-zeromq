@@ -76,6 +76,10 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
         {
           socktype = args (0).int_value ();
         }
+      else if (args (0).is_string ())
+        {
+          socktype = octave_zeromq_socket::gettypeval(args (0).string_value ());
+        }
       else
         {
           print_usage ();
@@ -101,7 +105,7 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
 
 %!test
 %! s = zmq_socket(ZMQ_SOCK_SUB);
-%! assert(isempty(s))
+%! assert(!isempty(s))
 %! zmq_close(s);
 
 %!test

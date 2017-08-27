@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_PUB ()
-  v = ZMQ_SOCK_PUB;
+  v = __ZMQ_SOCK_PUB;
 endfunction
 
-%!assert (ZMQ_PUB, ZMQ_SOCK_PUB)
+%!assert (ZMQ_PUB, __ZMQ_SOCK_PUB)
 
 

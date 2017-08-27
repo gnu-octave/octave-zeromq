@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_ROUTER ()
-  v = ZMQ_SOCK_ROUTER;
+  v = __ZMQ_SOCK_ROUTER;
 endfunction
 
-%!assert (ZMQ_ROUTER, ZMQ_SOCK_ROUTER)
+%!assert (ZMQ_ROUTER, __ZMQ_SOCK_ROUTER)
 
 

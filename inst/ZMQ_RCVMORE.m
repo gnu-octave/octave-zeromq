@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_RCVMORE ()
-  v = ZMQ_OPT_RCVMORE;
+  v = __ZMQ_OPT_RCVMORE;
 endfunction
 
-%!assert (ZMQ_RCVMORE, ZMQ_OPT_RCVMORE)
+%!assert (ZMQ_RCVMORE, __ZMQ_OPT_RCVMORE)
 
 

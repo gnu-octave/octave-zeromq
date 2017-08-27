@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_REP ()
-  v = ZMQ_SOCK_REP;
+  v = __ZMQ_SOCK_REP;
 endfunction
 
-%!assert (ZMQ_REP, ZMQ_SOCK_REP)
+%!assert (ZMQ_REP, __ZMQ_SOCK_REP)
 
 

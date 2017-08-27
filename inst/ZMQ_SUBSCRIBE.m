@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_SUBSCRIBE ()
-  v = ZMQ_OPT_SUBSCRIBE;
+  v = __ZMQ_OPT_SUBSCRIBE;
 endfunction
 
-%!assert (ZMQ_SUBSCRIBE, ZMQ_OPT_SUBSCRIBE)
+%!assert (ZMQ_SUBSCRIBE, __ZMQ_OPT_SUBSCRIBE)
 
 

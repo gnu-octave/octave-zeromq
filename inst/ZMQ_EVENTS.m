@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_EVENTS ()
-  v = ZMQ_OPT_EVENTS;
+  v = __ZMQ_OPT_EVENTS;
 endfunction
 
-%!assert (ZMQ_EVENTS, ZMQ_OPT_EVENTS)
+%!assert (ZMQ_EVENTS, __ZMQ_OPT_EVENTS)
 
 

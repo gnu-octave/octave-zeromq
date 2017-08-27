@@ -29,5 +29,5 @@ function close (s)
 endfunction
 
 %!test
-%! server = zmq_socket(ZMQ_SOCK_PUB);
+%! server = zmq_socket(ZMQ_PUB);
 %! close (server);

@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_POLLOUT ()
-  v = ZMQ_EVENT_POLLOUT;
+  v = __ZMQ_EVENT_POLLOUT;
 endfunction
 
-%!assert (ZMQ_POLLOUT, ZMQ_EVENT_POLLOUT)
+%!assert (ZMQ_POLLOUT, __ZMQ_EVENT_POLLOUT)
 
 

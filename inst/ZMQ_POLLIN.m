@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_POLLIN ()
-  v = ZMQ_EVENT_POLLIN;
+  v = __ZMQ_EVENT_POLLIN;
 endfunction
 
-%!assert (ZMQ_POLLIN, ZMQ_EVENT_POLLIN)
+%!assert (ZMQ_POLLIN, __ZMQ_EVENT_POLLIN)
 
 

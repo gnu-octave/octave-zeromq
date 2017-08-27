@@ -195,10 +195,10 @@ Get the socket identity value\n \
 %!error <Invalid call to zmq_getsockopt> zmq_getsockopt(10)
 
 %!test
-%! s = zmq_socket(ZMQ_SOCK_SUB);
-%! assert(zmq_getsockopt(s, ZMQ_OPT_TYPE), ZMQ_SOCK_SUB);
-%! zmq_setsockopt(s, ZMQ_OPT_IDENTITY, uint8([104 101 108 108 111]));
-%! assert(zmq_getsockopt(s, ZMQ_OPT_IDENTITY), uint8([104 101 108 108 111]));
+%! s = zmq_socket(ZMQ_SUB);
+%! assert(zmq_getsockopt(s, ZMQ_TYPE), ZMQ_SUB);
+%! zmq_setsockopt(s, ZMQ_IDENTITY, uint8([104 101 108 108 111]));
+%! assert(zmq_getsockopt(s, ZMQ_IDENTITY), uint8([104 101 108 108 111]));
 %! zmq_close(s);
 
 #endif

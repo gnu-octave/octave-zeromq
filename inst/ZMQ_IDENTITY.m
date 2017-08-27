@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_IDENTITY ()
-  v = ZMQ_OPT_IDENTITY;
+  v = __ZMQ_OPT_IDENTITY;
 endfunction
 
-%!assert (ZMQ_IDENTITY, ZMQ_OPT_IDENTITY)
+%!assert (ZMQ_IDENTITY, __ZMQ_OPT_IDENTITY)
 
 

@@ -37,7 +37,7 @@ function output = get (varargin)
 endfunction
 
 %!test
-%! server = zmq_socket(ZMQ_SOCK_PUB);
+%! server = zmq_socket(ZMQ_PUB);
 %! props = get(server);
 %! assert(props.type, "ZMQ_PUB")
 %!

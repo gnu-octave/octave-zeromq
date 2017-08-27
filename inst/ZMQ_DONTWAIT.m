@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_DONTWAIT ()
-  v = ZMQ_FLAG_DONTWAIT;
+  v = __ZMQ_FLAG_DONTWAIT;
 endfunction
 
-%!assert (ZMQ_DONTWAIT, ZMQ_FLAG_DONTWAIT)
+%!assert (ZMQ_DONTWAIT, __ZMQ_FLAG_DONTWAIT)
 
 

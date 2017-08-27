@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_PUSH ()
-  v = ZMQ_SOCK_PUSH;
+  v = __ZMQ_SOCK_PUSH;
 endfunction
 
-%!assert (ZMQ_PUSH, ZMQ_SOCK_PUSH)
+%!assert (ZMQ_PUSH, __ZMQ_SOCK_PUSH)
 
 

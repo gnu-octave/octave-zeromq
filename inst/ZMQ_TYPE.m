@@ -25,10 +25,10 @@
 ## @end deftypefn
 
 function v = ZMQ_TYPE ()
-  v = ZMQ_OPT_TYPE;
+  v = __ZMQ_OPT_TYPE;
 endfunction
 
-%!assert (ZMQ_TYPE, ZMQ_OPT_TYPE)
+%!assert (ZMQ_TYPE, __ZMQ_OPT_TYPE)
 
 %!test
 % s = zmq_socket(ZMQ_SUB);

@@ -25,9 +25,9 @@
 ## @end deftypefn
 
 function v = ZMQ_SNDMORE ()
-  v = ZMQ_FLAG_SNDMORE;
+  v = __ZMQ_FLAG_SNDMORE;
 endfunction
 
-%!assert (ZMQ_SNDMORE, ZMQ_FLAG_SNDMORE)
+%!assert (ZMQ_SNDMORE, __ZMQ_FLAG_SNDMORE)
 
 

@@ -16,6 +16,7 @@
 // Octave Includes
 #include <octave/oct.h>
 #include <octave/defun-dld.h>
+#include <octave/oct-map.h>
 
 #ifdef HAVE_CONFIG_H
 #  include "config.h"

@@ -341,7 +341,7 @@ octave_zeromq_socket::gettypeval (const std::string &str)
   if(str == "ZMQ_ROUTER") return ZMQ_ROUTER;
   if(str == "ZMQ_PUSH") return ZMQ_PUSH;
   if(str == "ZMQ_PULL") return ZMQ_PULL;
-  error ("ctave_zeromq_socket: unknown socktype '%s'", str);
+  error ("octave_zeromq_socket: unknown socktype '%s'", str.c_str ());
   return -1;
 }
  

@@ -4,6 +4,11 @@
 AC_PREREQ([2.67])
 AC_INIT([octave zeromq package], [1.1.0])
 AC_CONFIG_HEADERS([config.h])
+
+# Avoid warnings for redefining AH-generated preprocessor symbols of
+# Octave.
+AH_TOP([#include "undef-ah-octave.h"])
+
 AC_CONFIG_MACRO_DIRS([m4])
 
 # Checks for programs.

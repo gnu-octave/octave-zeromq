@@ -104,6 +104,11 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
 %!error <Invalid call to zmq_socket> zmq_socket()
 
 %!test
+%! s = zmq_socket();
+%! assert(!isempty(s))
+%! zmq_close(s);
+
+%!test
 %! s = zmq_socket(ZMQ_SUB);
 %! assert(!isempty(s))
 %! zmq_close(s);
@@ -112,4 +117,12 @@ zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the resu
 %! s = zmq_socket(ZMQ_SUB);
 %! assert(isa(s, 'octave_zeromq_socket'))
 %! zmq_close(s);
+
+%!test
+%! s = zmq_socket("ZMQ_SUB");
+%! assert(!isempty(s))
+%! zmq_close(s);
+
+%!error <unknown socktype> a = zmq_socket("invalid");
+
 #endif

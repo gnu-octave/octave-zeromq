@@ -111,4 +111,12 @@ The read data is returned as @var{data} in an uint8 array.  \
 %!error <Invalid call to zmq_recv> zmq_recv()
 
 %!error <Invalid call to zmq_recv> zmq_recv(1)
+
+%!test
+%! s = zmq_socket("ZMQ_SUB");
+%! assert(!isempty(s))
+%! data = zmq_recv(s, 10, ZMQ_DONTWAIT);
+%! assert(length(data), 0)
+%! zmq_close(s);
+
 #endif

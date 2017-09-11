@@ -63,4 +63,11 @@ On success, unbind will return a @var{status} of true \n \
 %!error <Invalid call to zmq_unbind> zmq_unbind()
 
 %!error <Invalid call to zmq_unbind> zmq_unbind(1)
+
+%!test
+%! s = zmq_socket("ZMQ_PUB");
+%! zmq_bind(s, "tcp://127.0.0.1:10000");
+%! zmq_unbind(s, "tcp://127.0.0.1:10000");
+%! zmq_close(s);
+
 #endif

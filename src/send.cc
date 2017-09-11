@@ -105,4 +105,11 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
 %!error <Invalid call to zmq_send> zmq_send()
 
 %!error <Invalid call to zmq_send> zmq_send(1)
+
+%!test
+%! s = zmq_socket("ZMQ_PUB");
+%! assert(!isempty(s))
+%! assert(zmq_send(s, "test"), 4);
+%! zmq_close(s);
+
 #endif

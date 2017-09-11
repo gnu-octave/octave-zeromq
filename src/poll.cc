@@ -184,4 +184,10 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
 %!error <Invalid call to zmq_poll> zmq_poll()
 
 %!error <Invalid call to zmq_poll> zmq_poll(1)
+
+%!test
+%! s = zmq_socket("ZMQ_SUB");
+%! zmq_poll(s, 0);
+%! zmq_close(s);
+
 #endif

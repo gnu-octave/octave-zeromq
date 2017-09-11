@@ -141,3 +141,11 @@ Unsubscribe from incoming messages\n \
   return octave_value (ret);
 }
 
+#if 0
+%!error <Invalid call to zmq_setsockopt> zmq_setsockopt()
+
+%!error <Invalid call to zmq_setsockopt> zmq_setsockopt(1)
+
+// valid test of setsockopt in getsockopt
+#endif
+

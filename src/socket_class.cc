@@ -47,7 +47,7 @@ octave_zeromq_socket::octave_zeromq_socket (void)
   fieldnames[1] = "endpoint";
   fieldnames[2] = "identity";
   fieldnames[3] = "recvmore";
-  fieldnames[3] = "events";
+  fieldnames[4] = "events";
 }
 
 octave_zeromq_socket::octave_zeromq_socket (const octave_zeromq_socket &s)

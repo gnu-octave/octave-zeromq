@@ -317,13 +317,13 @@ octave_zeromq_socket::recv (uint8_t *data, size_t sz, int flags)
 
   if (len > 0)
     {
-      if (len > sz) len = sz;
+      if (static_cast<size_t>(len) > sz) len = sz;
       memcpy (data, zmq_msg_data (&msg), len);
     }
   zmq_msg_close (&msg);
 #else
   len = zmq_recv (sock, data, sz, flags);
-  if (len >= 0 && len > sz) len = sz;
+  if (len >= 0 && static_cast<size_t>(len) > sz) len = sz;
 #endif
 
   return len;

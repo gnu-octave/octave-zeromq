@@ -89,7 +89,7 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
       error ("zeromq: expected  argument of octave_zeromq_socket or array of octave_zeromq_socket");
     }
 
-  zmq_pollitem_t pitem[sockcount];
+  zmq_pollitem_t * pitem = new zmq_pollitem_t[sockcount];
 
   if(args (0).type_id () == octave_zeromq_socket::static_type_id ())
     {
@@ -124,6 +124,8 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
 
   if (sockcount == 0)
     {
+      delete [] pitem;
+
       error ("zeromq: expected  argument of octave_zeromq_socket or array of octave_zeromq_socket");
     }
 
@@ -176,6 +178,8 @@ A value of 0 will return wtout waiting. A value of -1 will wait until there is d
           return_list (0) = Cell (dim_vector (0,0));
 	}
     }
+
+  delete [] pitem;
 
   return return_list;
 }

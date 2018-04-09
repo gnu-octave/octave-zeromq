@@ -1,4 +1,4 @@
-# Copyright (C) 2017 Olaf Till <i7tiol@t-online.de>
+# Copyright (C) 2017-2018 Olaf Till <i7tiol@t-online.de>
 # Modifications to print what is searching for by JohnD
 #
 # This program is free software; you can redistribute it and/or modify

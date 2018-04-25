@@ -20,7 +20,7 @@
 % zeromq package must be installed and loaded to work
 
 
-% dont buffer output
+% don't buffer output
 more off
 
 publisher = zmq_socket (ZMQ_PUB);

@@ -45,7 +45,7 @@ Wait up to timeout time for received data on socket.\n \
 @var{socklist} - the array of sockets to wait on.\n \
 \n \
 @var{timeout} - timeout time in milliseconds.\n \
-A value of 0 will return wtout waiting. A value of -1 will wait until there is data.\n \
+A value of 0 will return without waiting. A value of -1 will wait until there is data.\n \
 \n \
 @var{havedata} - value of 1 if have data.\n \
 \n \

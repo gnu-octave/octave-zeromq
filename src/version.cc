@@ -34,7 +34,7 @@ DEFUN_DLD (zmq_version, args, nargout,
 \n\
 Get the ZeroMQ library version.\n \
 \n \
-Returns the @var{major}, @var{minor} and @var{patch} level version of the ZerMQ library. \
+Returns the @var{major}, @var{minor} and @var{patch} level version of the ZeroMQ library. \
 \n \
 @end deftypefn")
 {

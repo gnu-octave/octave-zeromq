@@ -44,7 +44,7 @@ zmq_connect (requester, \"tcp://localhost:5555\");\n \
 %% send some data\n \
 zmq_send (requester, uint8(\"Hello\"), 5, 0); \n \
 %% try to read up to 10 bytes of reply data.\n \
-recieved = zmq_recv (requester, 10, 0);\n \
+received = zmq_recv (requester, 10, 0);\n \
 \n \
 zmq_close (requester);\n \
 @end example\n \
@@ -87,10 +87,10 @@ Example code files for zeromq usage:\n \
 @table @asis\n \
 @item zmq_example1\n \
 Simple client REQ socket example that attempts to connect to a server and\n \
-send a hello command and get back the reponse.\n \
+send a hello command and get back the response.\n \
 @item zmq_example2\n \
 Simple server REP socket example that creates the server that the client \n \
-from example 1 will connect to and reponds back to client 'requests'\n \
+from example 1 will connect to and responds back to client 'requests'\n \
 @item zmq_example3\n \
 Simple server PUB socket example that creates 'weather' server sends\n \
 weather updates for random zip codes.\n \

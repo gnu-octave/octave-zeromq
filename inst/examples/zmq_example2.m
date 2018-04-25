@@ -19,7 +19,7 @@
 
 % zeromq package must be installed and loaded to work
 
-% dont buffer output
+% don't buffer output
 more off
 
 printf ("Connecting to hello world server...\n");

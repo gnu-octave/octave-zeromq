@@ -41,7 +41,7 @@ Get the current value of an option.\n \
 Valid @var{optionid}s are:\n \
 @table @asis\n \
 @item @code{ZMQ_RCVMORE}\n \
-Flag for whether a message has been split into multiple messages. The return vaue with be either 0 or 1.\n \
+Flag for whether a message has been split into multiple messages. The return value with be either 0 or 1.\n \
 @item @code{ZMQ_TYPE}\n \
 Socket type for zeromq socket created with zmq_socket.\n \
 Valid types are the same as the socket type value specified with zmq_socket. \n \

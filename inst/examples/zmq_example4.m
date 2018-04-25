@@ -17,7 +17,7 @@
 ## Example code for a SUB socket client which subscribes to a 'weather' server 
 ## for weather updates for zipcode 10001.
 
-% dont buffer output
+% don't buffer output
 more off
 
 subscriber = zmq_socket (ZMQ_SUB);

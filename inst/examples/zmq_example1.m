@@ -22,17 +22,17 @@
 
 % zeromq package must be installed and loaded to work
 
-% dont buffer output
+% don't buffer output
 more off
 
 printf ("Connecting to hello world server...\n");
 
-% dont need to create context in octave binding
+% don't need to create context in octave binding
 % % ZeroMQ API: context = zmq_ctx_new ();
 
 % Create socket and connect to server
 
-% since context in internal, ay function that requires a context is used
+% since context in internal, a function that requires a context is used
 % without specifying the context.
 % ZeroMQ API: requester = zmq_socket (context, ZMQ_REQ);
 requester = zmq_socket (ZMQ_REQ);
@@ -48,13 +48,13 @@ for request_nbr = [1:10]
   % The ZeroMQ API fills a buffer and returns a count of bytes
   % Octave binding returns a buffer of the size received.
   % ZeroMQ API: zmq_recv (requester, buffer, 10, 0);
-  recieved = zmq_recv (requester, 10, 0);
+  received = zmq_recv (requester, 10, 0);
   printf ("Received World %d\n", request_nbr);
 endfor
     
 zmq_close (requester);
     
-% Binding handles context, so dont need to destroy it   
+% Binding handles context, so don't need to destroy it   
 % ZeroMQ API: zmq_ctx_destroy (context);
 
 %!test 

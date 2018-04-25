@@ -30,7 +30,7 @@ DEFUN_DLD (zmq_disconnect, args, nargout,
 \n\
 Disconnect a zeromq socket from an endpoint.\n \
 \n \
-@var{sock} - the socket to diconnect from.\n \
+@var{sock} - the socket to disconnect from.\n \
 \n \
 @var{endpoint} - a previously connected endpoint string to disconnect.\n \
 \n \

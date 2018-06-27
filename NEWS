@@ -4,7 +4,7 @@ Summary of important user-visible changes for octave zeromq 1.3.0+:
 
   *** added new functions zmq_has
 
-  *** added ZMQ_LAST_ENDPOINT to getsockopts
+  *** added ZMQ_LAST_ENDPOINT, ZMQ_CONNECT_TIMEOUT to getsockopts
 
 Summary of important user-visible changes for octave zeromq 1.3.0:
 -------------------------------------------------------------------

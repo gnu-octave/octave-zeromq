@@ -54,9 +54,13 @@ The returned value is a bit mask that may contain the following set values:\n \
 @end itemize\n \
 @item @code{ZMQ_IDENTITY}\n \
 Get the socket identity value\n \
+@item @code{ZMQ_LAST_ENDPOINT}\n \
+Get the last endpoint the socket was connected to\n \
+@item @code{ZMQ_CONNECT_TIMEOUT}\n \
+Get the connect timeout value\n \
 @end table\n \
 \n \
-@seealso{zmq_socket}\n \
+@seealso{zmq_socket, zmq_setsockopt}\n \
 @end deftypefn")
 {
   init_types ();
@@ -199,6 +203,19 @@ Get the socket identity value\n \
         strvalue = "";
 
       ret = octave_value(strvalue);
+    }
+    break;
+#endif
+#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,2,0)
+  case ZMQ_CONNECT_TIMEOUT:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
     }
     break;
 #endif

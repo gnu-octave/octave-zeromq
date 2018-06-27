@@ -46,9 +46,11 @@ Known valid @var{optionid}s are:\n \
 Subscribe to incoming messages matching the value. The value is either a string or a uint8 array that must match the start of any incoming message\n \
 @item @code{ZMQ_UNSUBSCRIBE}\n \
 Unsubscribe from incoming messages\n \
+@item @code{ZMQ_CONNECT_TIMEOUT}\n \
+Set timeout for connect calls\n \
 @end table\n \
 \n \
-@seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE}\n \
+@seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE, ZMQ_CONNECT_TIMEOUT}\n \
 @end deftypefn")
 {
   init_types ();
@@ -72,7 +74,6 @@ Unsubscribe from incoming messages\n \
 
   sock = &((octave_zeromq_socket &)rep);
 
-
   int opt = args (1).int_value ();
   bool ret = false;
 
@@ -86,7 +87,7 @@ Unsubscribe from incoming messages\n \
     if( !args (2).is_string ())
       {
         error("zeromq: expected string for option value");
-       return octave_value (false);
+        return octave_value (false);
       }
     strvalue = args (2).string_value ();
 
@@ -96,6 +97,21 @@ Unsubscribe from incoming messages\n \
   case ZMQ_UNSUBSCRIBE:
     ret = sock->setsockopt (opt, 0,0);
     break;
+
+#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,2,0)
+  case ZMQ_CONNECT_TIMEOUT:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, value, sizeof(value));
+      }
+    break;
+#endif
 
   case ZMQ_IDENTITY:
 

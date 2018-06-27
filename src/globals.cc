@@ -133,8 +133,18 @@ DEFUN_DLD (__ZMQ_OPT_TYPE, args, nargout,"zeromq option constant")
 // PKG_ADD: autoload ("__ZMQ_OPT_LAST_ENDPOINT", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_LAST_ENDPOINT, args, nargout,"zeromq option constant")
 {
-#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(3,3,0)
+#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(3,2,0)
   return octave_value(ZMQ_LAST_ENDPOINT);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_CONNECT_TIMEOUT", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_CONNECT_TIMEOUT, args, nargout,"zeromq option constant")
+{
+#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,2,0)
+  return octave_value(ZMQ_CONNECT_TIMEOUT);
 #else
   return octave_value(-1);
 #endif
@@ -169,6 +179,7 @@ DEFUN_DLD (__ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
 %!assert (exist('__ZMQ_OPT_SUBSCRIBE'))
 %!assert (exist('__ZMQ_OPT_UNSUBSCRIBE'))
 %!assert (exist('__ZMQ_OPT_LAST_ENDPOINT'))
+%!assert (exist('__ZMQ_OPT_CONNECT_TIMEOUT'))
 %!assert (exist('__ZMQ_FLAG_DONTWAIT'))
 %!assert (exist('__ZMQ_FLAG_SNDMORE'))
 %!assert (exist('__ZMQ_SOCK_PUB'))

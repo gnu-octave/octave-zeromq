@@ -9,6 +9,7 @@ ZeroMQ functions
   zmq_disconnect
   zmq_errno
   zmq_getsockopt
+  zmq_has
   zmq_poll
   zmq_recv
   zmq_send

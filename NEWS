@@ -2,6 +2,8 @@ Summary of important user-visible changes for octave zeromq 1.3.0+:
 -------------------------------------------------------------------
   *** additional spelling checks
 
+  *** added new functions zmq_has
+
 Summary of important user-visible changes for octave zeromq 1.3.0:
 -------------------------------------------------------------------
 

@@ -5,7 +5,7 @@ LDFLAGS   := @LDFLAGS@
 
 SRC := socket_class.cc bind.cc close.cc connect.cc disconnect.cc errno.cc \
        getsockopt.cc globals.cc poll.cc recv.cc send.cc setsockopt.cc socket.cc \
-       strerror.cc unbind.cc version.cc properties.cc zeromq.cc
+       strerror.cc unbind.cc version.cc properties.cc zeromq.cc has.cc
 
 OBJ := $(SRC:.cc=.o)
 

@@ -182,6 +182,27 @@ Get the socket identity value\n \
     }
     break;
 
+#if ZMQ_VERSION >= ZMQ_MAKE_VERSION(3,2,0)
+  case ZMQ_LAST_ENDPOINT:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+
   default:
     error ("zeromq: invalid getsockopt value %d", opt);
     break;

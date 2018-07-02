@@ -28,6 +28,8 @@ ZeroMQ socket type constants
   ZMQ_REQ
   ZMQ_ROUTER
   ZMQ_SUB
+  ZMQ_XPUB
+  ZMQ_XSUB
 ZeroMQ get/setsockopt constants
   ZMQ_EVENTS
   ZMQ_SUBSCRIBE

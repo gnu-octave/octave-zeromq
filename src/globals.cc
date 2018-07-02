@@ -80,6 +80,18 @@ DEFUN_DLD (__ZMQ_SOCK_PAIR, args, nargout,"zeromq socket type constant")
   return octave_value(ZMQ_PAIR);
 }
 
+// PKG_ADD: autoload ("__ZMQ_SOCK_XPUB", "zeromq.oct");
+DEFUN_DLD (__ZMQ_SOCK_XPUB, args, nargout,"zeromq constant")
+{
+  return octave_value(ZMQ_XPUB);
+}
+
+// PKG_ADD: autoload ("__ZMQ_SOCK_XSUB", "zeromq.oct");
+DEFUN_DLD (__ZMQ_SOCK_XSUB, args, nargout,"zeromq socket type constant")
+{
+  return octave_value(ZMQ_XSUB);
+}
+
 // socket send/recv flags --------------------
 // PKG_ADD: autoload ("__ZMQ_FLAG_SNDMORE", "zeromq.oct");
 DEFUN_DLD (__ZMQ_FLAG_SNDMORE, args, nargout,"zeromq flag constant")
@@ -191,4 +203,6 @@ DEFUN_DLD (__ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
 %!assert (exist('__ZMQ_SOCK_DEALER'))
 %!assert (exist('__ZMQ_SOCK_ROUTER'))
 %!assert (exist('__ZMQ_SOCK_PAIR'))
+%!assert (exist('__ZMQ_SOCK_XPUB'))
+%!assert (exist('__ZMQ_SOCK_XSUB'))
 #endif

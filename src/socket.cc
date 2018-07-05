@@ -55,11 +55,15 @@ Pair socket\n \
 Dealer socket\n \
 @item  @code{ZMQ_ROUTER}\n \
 Router socket\n \
+@item  @code{ZMQ_XPUB} \n \
+Publish socket\n \
+@item  @code{ZMQ_XSUB} \n \
+Subscribe socket\n \
 @end table\n \
 \n \
 zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the result.\n \
 \n \
-@seealso {ZMQ_PUB, ZMQ_SUB, ZMQ_PUSH, ZMQ_PULL, ZMQ_REQ, ZMQ_REP, ZMQ_PAIR, ZMQ_DEALER, ZMQ_ROUTER}\n \
+@seealso {ZMQ_PUB, ZMQ_SUB, ZMQ_PUSH, ZMQ_PULL, ZMQ_REQ, ZMQ_REP, ZMQ_PAIR, ZMQ_DEALER, ZMQ_ROUTER, ZMQ_XPUB, ZMQ_XSUB}\n \
 @end deftypefn")
 {
   if (nargout != 1)

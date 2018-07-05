@@ -64,6 +64,8 @@ Disconnect a zeromq socket from an endpoint\n \
 Get system errno value.\n \
 @item zmq_getsockopt\n \
 Get current value of a zeromq socket option.\n \
+@item zmq_has\n \
+CHeck zmq for a given feature. \n \
 @item zmq_poll\n \
 Poll a socket or sockets for a timeout or incoming data available.\n \
 @item zmq_recv\n \

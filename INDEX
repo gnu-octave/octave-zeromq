@@ -27,6 +27,7 @@ ZeroMQ socket type constants
   ZMQ_REP
   ZMQ_REQ
   ZMQ_ROUTER
+  ZMQ_STREAM
   ZMQ_SUB
   ZMQ_XPUB
   ZMQ_XSUB

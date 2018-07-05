@@ -80,6 +80,16 @@ DEFUN_DLD (__ZMQ_SOCK_PAIR, args, nargout,"zeromq socket type constant")
   return octave_value(ZMQ_PAIR);
 }
 
+// PKG_ADD: autoload ("__ZMQ_SOCK_STREAM", "zeromq.oct");
+DEFUN_DLD (__ZMQ_SOCK_STREAM, args, nargout,"zeromq constant")
+{
+#if defined(ZMQ_STREAM) 
+  return octave_value(ZMQ_STREAM);
+#else
+  return octave_value(-1);
+#endif
+}
+
 // PKG_ADD: autoload ("__ZMQ_SOCK_XPUB", "zeromq.oct");
 DEFUN_DLD (__ZMQ_SOCK_XPUB, args, nargout,"zeromq constant")
 {
@@ -205,4 +215,5 @@ DEFUN_DLD (__ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
 %!assert (exist('__ZMQ_SOCK_PAIR'))
 %!assert (exist('__ZMQ_SOCK_XPUB'))
 %!assert (exist('__ZMQ_SOCK_XSUB'))
+%!assert (exist('__ZMQ_SOCK_STREAM'))
 #endif

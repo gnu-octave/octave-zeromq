@@ -334,6 +334,8 @@ octave_zeromq_socket::gettypeval (const std::string &str)
 {
   if(str == "ZMQ_PUB") return ZMQ_PUB;
   if(str == "ZMQ_SUB") return ZMQ_SUB;
+  if(str == "ZMQ_XPUB") return ZMQ_XPUB;
+  if(str == "ZMQ_XSUB") return ZMQ_XSUB;
   if(str == "ZMQ_REQ") return ZMQ_REQ;
   if(str == "ZMQ_REP") return ZMQ_REP;
   if(str == "ZMQ_DEALER") return ZMQ_DEALER;
@@ -341,6 +343,9 @@ octave_zeromq_socket::gettypeval (const std::string &str)
   if(str == "ZMQ_ROUTER") return ZMQ_ROUTER;
   if(str == "ZMQ_PUSH") return ZMQ_PUSH;
   if(str == "ZMQ_PULL") return ZMQ_PULL;
+#ifdef ZMQ_STREAM
+  if(str == "ZMQ_STREAM") return ZMQ_STREAM;
+#endif
   error ("octave_zeromq_socket: unknown socktype '%s'", str.c_str ());
   return -1;
 }
@@ -354,6 +359,8 @@ octave_zeromq_socket::gettypestr (int intype) const
     {
     case ZMQ_PUB: s = "ZMQ_PUB"; break;
     case ZMQ_SUB: s = "ZMQ_SUB"; break;
+    case ZMQ_XPUB: s = "ZMQ_XPUB"; break;
+    case ZMQ_XSUB: s = "ZMQ_XSUB"; break;
     case ZMQ_REQ: s = "ZMQ_REQ"; break;
     case ZMQ_REP: s = "ZMQ_REP"; break;
     case ZMQ_PUSH: s = "ZMQ_PUSH"; break;
@@ -361,6 +368,9 @@ octave_zeromq_socket::gettypestr (int intype) const
     case ZMQ_DEALER: s = "ZMQ_DEALER"; break;
     case ZMQ_PAIR: s = "ZMQ_PAIR"; break;
     case ZMQ_ROUTER: s = "ZMQ_ROUTER"; break;
+#ifdef ZMQ_STREAM
+    case ZMQ_STREAM: s = "ZMQ_STREAM"; break;
+#endif
     default:  s = "NONE"; break;
     }
   return s;

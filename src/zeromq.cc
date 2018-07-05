@@ -99,6 +99,9 @@ weather updates for random zip codes.\n \
 @item zmq_example4\n \
 Simple client SUB socket example that creates client that connects to the 'weather' \n \
 server and subscribes for weather updates from zipcode 10001.\n \
+@item zmq_example5\n \
+Simple client STREAM socket example that creates client that connects to octave.org \n \
+and posts HEAD request.\n \
 @end table\n \
 \n \
 View example code using @code{edit examples/example_name}\n \
@@ -109,7 +112,7 @@ edit examples/zmq_example1\n \
 @end example\n \
 \n \
 \n \
-@seealso{http://zeromq.org, examples/zmq_example1.m, examples/zmq_example2.m examples/zmq_example3.m,  examples/zmq_example4.m}\n \
+@seealso{http://zeromq.org, examples/zmq_example1.m, examples/zmq_example2.m, examples/zmq_example3.m,  examples/zmq_example4.m, examples/zmq_example5.m}\n \
 @end deftypefn")
 {
 	return octave_value();

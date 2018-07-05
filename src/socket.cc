@@ -59,11 +59,13 @@ Router socket\n \
 Publish socket\n \
 @item  @code{ZMQ_XSUB} \n \
 Subscribe socket\n \
+@item  @code{ZMQ_STREAM} \n \
+Stream socket\n \
 @end table\n \
 \n \
 zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the result.\n \
 \n \
-@seealso {ZMQ_PUB, ZMQ_SUB, ZMQ_PUSH, ZMQ_PULL, ZMQ_REQ, ZMQ_REP, ZMQ_PAIR, ZMQ_DEALER, ZMQ_ROUTER, ZMQ_XPUB, ZMQ_XSUB}\n \
+@seealso {ZMQ_PUB, ZMQ_SUB, ZMQ_PUSH, ZMQ_PULL, ZMQ_REQ, ZMQ_REP, ZMQ_PAIR, ZMQ_DEALER, ZMQ_ROUTER, ZMQ_XPUB, ZMQ_XSUB, ZMQ_STREAM}\n \
 @end deftypefn")
 {
   if (nargout != 1)

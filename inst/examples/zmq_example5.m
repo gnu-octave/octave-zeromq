@@ -67,3 +67,6 @@ printf("Closing socket ...\n");
 % close the socket
     
 zmq_close (sock);
+
+%!test
+% % interactive script - nothing to do

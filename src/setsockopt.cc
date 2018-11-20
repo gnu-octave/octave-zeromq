@@ -108,7 +108,7 @@ Set timeout for connect calls\n \
     else
       {
         int value = args (2).int_value ();
-        ret = sock->setsockopt (opt, value, sizeof(value));
+        ret = sock->setsockopt (opt, &value, sizeof(value));
       }
     break;
 #endif

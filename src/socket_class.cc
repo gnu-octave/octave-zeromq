@@ -148,6 +148,9 @@ octave_zeromq_socket::connect (const std::string &inendpoint)
 bool
 octave_zeromq_socket::disconnect (const std::string &inendpoint)
 {
+#if ZMQ_VERSION < ZMQ_MAKE_VERSION(3,0,0)  
+  warning ("zeromq: this version of the zmq library does not support disconnect");
+#else
   if (sock == 0)
     {
       error ("zeromq: must create socket before calling disconnect\n");
@@ -159,8 +162,7 @@ octave_zeromq_socket::disconnect (const std::string &inendpoint)
       error ("zeromq: failed to disconnect socket - %s\n", zmq_strerror (errno));
       return false;
     }
-    
-  endpoint = inendpoint;
+#endif    
  
   return true;
 }
@@ -189,6 +191,9 @@ octave_zeromq_socket::bind (const std::string &inendpoint)
 bool
 octave_zeromq_socket::unbind (const std::string &inendpoint)
 {
+#if ZMQ_VERSION < ZMQ_MAKE_VERSION(3,0,0)  
+  warning ("zeromq: this version of the zmq library does not support unbind");
+#else
   if (sock == 0)
     {
       error ("zeromq: must create socket before calling unbind\n");
@@ -202,6 +207,7 @@ octave_zeromq_socket::unbind (const std::string &inendpoint)
     }
 
   endpoint = "";
+#endif
  
   return true;
 }
@@ -264,6 +270,8 @@ octave_zeromq_socket::send (const uint8_t *data, size_t sz, int flags)
     }
   memcpy(zmq_msg_data(&msg), data, sz);
   int len = zmq_send (sock, &msg, flags);
+  // zmq 2.2 returns 0 if sent ok, we  want bytes written
+  if (len == 0) len = sz;
   zmq_msg_close(&msg);
 #else
   // new versions of zmq have a zmq_send for data
@@ -315,9 +323,10 @@ octave_zeromq_socket::recv (uint8_t *data, size_t sz, int flags)
 
   len = zmq_recv (sock, &msg, flags);
 
-  if (len > 0)
+  if (len == 0)
     {
-      if (static_cast<size_t>(len) > sz) len = sz;
+      len = static_cast<int>(zmq_msg_size(&msg));
+      if (len > sz) len = sz;
       memcpy (data, zmq_msg_data (&msg), len);
     }
   zmq_msg_close (&msg);

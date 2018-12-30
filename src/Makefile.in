@@ -21,7 +21,6 @@ zeromq.oct: $(OBJ)
 .PHONY: distclean
 .PHONY: all
 
-	
 clean:
 	rm -f *.o
 	rm -f *.oct

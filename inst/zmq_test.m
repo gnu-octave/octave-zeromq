@@ -19,7 +19,7 @@
 ## -*- texinfo -*-
 ## @deftypefn  {Command} {} zmq_test
 ##
-## Perform zeromq Octave tests to exercize the oct file functionality.
+## Perform zeromq Octave tests to exercise the oct file functionality.
 ##
 ## @end deftypefn
 

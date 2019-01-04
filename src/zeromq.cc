@@ -26,7 +26,7 @@ DEFUN_DLD (zeromq, args, nargout,
         "-*- texinfo -*-\n\
 @deftypefn {Package} {} zeromq\n \
 The zeromq package provides GNU Octave bindings to the ZeroMQ library to provide\n \
-fast distributed messaging options using IPC, TCP, TIPC and multicasting.\n \
+fast distributed messaging options using IPC, TCP, TIPC and multi-casting.\n \
 \n \
 The usage is very close to the ZeroMQ library C language bindings for the socket \n \
 creation and manipulation with the exception of creating a zeromq context, \n \
@@ -65,7 +65,7 @@ Get system errno value.\n \
 @item zmq_getsockopt\n \
 Get current value of a zeromq socket option.\n \
 @item zmq_has\n \
-CHeck zmq for a given feature. \n \
+Check zmq for a given feature. \n \
 @item zmq_poll\n \
 Poll a socket or sockets for a timeout or incoming data available.\n \
 @item zmq_recv\n \
@@ -98,7 +98,7 @@ Simple server PUB socket example that creates 'weather' server sends\n \
 weather updates for random zip codes.\n \
 @item zmq_example4\n \
 Simple client SUB socket example that creates client that connects to the 'weather' \n \
-server and subscribes for weather updates from zipcode 10001.\n \
+server and subscribes for weather updates from zip-code 10001.\n \
 @item zmq_example5\n \
 Simple client STREAM socket example that creates client that connects to octave.org \n \
 and posts HEAD request.\n \

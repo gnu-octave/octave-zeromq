@@ -76,7 +76,7 @@ The read data is returned as @var{data} in an uint8 array.  \
 
   if (buf == 0)
     {
-      error ("zeromq: error allocating bufferfor recv\n");
+      error ("zeromq: error allocating buffer for recv\n");
       return octave_value (-1);  
     }
 

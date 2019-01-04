@@ -96,7 +96,7 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
   } 
   else
   {
-     error ("zeromq: invalid data type. Must be a string or uin8 data");
+     error ("zeromq: invalid data type. Must be a string or uint8 data");
   }
 
   return octave_value (retval);

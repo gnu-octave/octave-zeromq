@@ -17,6 +17,7 @@ TAR ?= tar
 GREP ?= grep
 CUT ?= cut
 TR ?= tr
+TEXI2PDF  ?= texi2pdf -q
 
 ## Note the use of ':=' (immediate set) and not just '=' (lazy set).
 ## http://stackoverflow.com/a/448939/1609556
@@ -137,11 +138,31 @@ endif
 #	cd "$@/src" && ./configure && $(MAKE) prebuild && \
 #	  $(MAKE) clean && $(RM) Makefile
 ##
+	$(MAKE) -C "$@" docs
 	cd "$@" && $(MAKE) tests
+	# remove dev stuff
+	cd "$@" && $(RM) -rf "devel" && $(RM) -f doc/mkfuncdocs.py
 	${FIX_PERMISSIONS} "$@"
 
 run_in_place = $(OCTAVE) --eval ' pkg ("local_list", "$(package_list)"); ' \
                          --eval ' pkg ("load", "$(package)"); '
+
+.PHONY: docs
+docs: doc/$(package).pdf
+
+.PHONY: clean-docs
+clean-docs:
+	$(RM) -f doc/$(package).info
+	$(RM) -f doc/$(package).pdf
+	$(RM) -f doc/functions.texi
+
+doc/$(package).pdf: doc/$(package).texi doc/functions.texi
+	cd doc && $(TEXI2PDF) $(package).texi
+	# remove temp files
+	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
+
+doc/functions.texi:
+	cd doc && ./mkfuncdocs.py --src-dir=../inst/ --src-dir=../src/ --func-prefix=zmq_ --ignore=zeromq ../INDEX > functions.texi
 
 # html_options = --eval 'options = get_html_options ("octave-forge");'
 ## Uncomment this for package documentation.
@@ -233,7 +254,7 @@ check: $(install_stamp)
 
 .PHONY: clean
 
-clean: clean-tarballs clean-unpacked-release clean-install
+clean: clean-tarballs clean-unpacked-release clean-install clean-docs
 	test -e inst/test && rmdir inst/test || true
 	test -e $(target_dir)/fntests.log && rm -f $(target_dir)/fntests.log || true
 	@echo "## Removing target directory (if empty)..."

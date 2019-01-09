@@ -10,6 +10,8 @@ Summary of important user-visible changes for octave zeromq 1.3.0+:
 
   *** added zmq_example5.m for STREAM type example
 
+  *** added package documentation
+
 Summary of important user-visible changes for octave zeromq 1.3.0:
 -------------------------------------------------------------------
 

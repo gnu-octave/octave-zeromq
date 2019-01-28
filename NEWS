@@ -12,6 +12,8 @@ Summary of important user-visible changes for octave zeromq 1.4.0:
 
   *** added package documentation
 
+  *** lock oct file on pkg load
+
 Summary of important user-visible changes for octave zeromq 1.3.0:
 -------------------------------------------------------------------
 

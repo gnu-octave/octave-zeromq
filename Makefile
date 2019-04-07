@@ -51,6 +51,12 @@ MKOCTFILE ?= mkoctfile
 ## Command used to set permissions before creating tarballs
 FIX_PERMISSIONS ?= chmod -R a+rX,u+w,go-w,ug-s
 
+HG           := hg
+HG_CMD        = $(HG) --config alias.$(1)=$(1) --config defaults.$(1)= $(1)
+HG_ID        := $(shell $(call HG_CMD,identify) --id | sed -e 's/+//' )
+HG_TIMESTAMP := $(firstword $(shell $(call HG_CMD,log) --rev $(HG_ID) --template '{date|hgdate}'))
+
+
 ## Detect which VCS is used
 vcs := $(if $(wildcard .hg),hg,$(if $(wildcard .git),git,unknown))
 ifeq ($(vcs),hg)
@@ -60,6 +66,8 @@ ifeq ($(vcs),git)
 release_dir_dep := .git/index
 endif
 
+TAR_REPRODUCIBLE_OPTIONS := --sort=name --mtime="@$(HG_TIMESTAMP)" --owner=0 --group=0 --numeric-owner
+TAR_OPTIONS  := --format=ustar $(TAR_REPRODUCIBLE_OPTIONS)
 
 ## .PHONY indicates targets that are not filenames
 ## (https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)
@@ -98,7 +106,7 @@ html: $(html_tarball)
 
 ## An implicit rule with a recipe to build the tarballs correctly.
 %.tar.gz: %
-	$(TAR) -c -f - --posix -C "$(target_dir)/" "$(notdir $<)" | gzip -9n > "$@"
+	$(TAR) -cf - $(TAR_OPTIONS) -C "$(target_dir)/" "$(notdir $<)" | gzip -9n > "$@"
 
 clean-tarballs:
 	@echo "## Cleaning release tarballs (package + html)..."
@@ -157,7 +165,7 @@ clean-docs:
 	$(RM) -f doc/functions.texi
 
 doc/$(package).pdf: doc/$(package).texi doc/functions.texi
-	cd doc && $(TEXI2PDF) $(package).texi
+	cd doc && SOURCE_DATE_EPOCH=$(HG_TIMESTAMP) $(TEXI2PDF) $(package).texi
 	# remove temp files
 	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
 

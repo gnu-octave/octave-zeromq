@@ -43,7 +43,7 @@ library supports the pgm:// protocol\n \
 library supports the tipc:// protocol\n \
 @item 'norm'\n \
 library supports the norm:// protocol\n \
-@item 'curv'\n \
+@item 'curve'\n \
 library supports the CURVE security mechanism\n \
 @item 'gssapi'\n \
 library supports the GSSAPI security mechanism\n \

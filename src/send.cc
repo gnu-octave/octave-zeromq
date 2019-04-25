@@ -80,7 +80,8 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
   {
     NDArray data = args (1).array_value ();
 
-    uint8_t * buf = new uint8_t[data.numel ()];
+    //uint8_t * buf = new uint8_t[data.numel ()];
+    OCTAVE_LOCAL_BUFFER (uint8_t, buf, data.numel ());
 
     if (!buf)
       error ("zeromq: could allocate memory for send message.\n");
@@ -90,8 +91,6 @@ Returns @var{count} of bytes written to socket, or -1 on error.\n \
          buf[i] = data(i);
 
        retval = sock->send (buf, data.numel (), flags);
-
-       delete [] buf;
     }
   } 
   else

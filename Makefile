@@ -266,7 +266,7 @@ clean: clean-tarballs clean-unpacked-release clean-install clean-docs
 	test -e inst/test && rmdir inst/test || true
 	test -e $(target_dir)/fntests.log && rm -f $(target_dir)/fntests.log || true
 	@echo "## Removing target directory (if empty)..."
-	-rmdir $(target_dir)
+	test -e $(target_dir) && rmdir $(target_dir) || true
 	@echo
 	@echo "## Cleaning done"
 	@echo

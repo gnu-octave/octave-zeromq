@@ -72,7 +72,8 @@ The read data is returned as @var{data} in an uint8 array.  \
       flags = args (2).int_value ();
     }
   
-  unsigned char* buf = new unsigned char[ len ];
+  //unsigned char* buf = new unsigned char[ len ];
+  OCTAVE_LOCAL_BUFFER(unsigned char, buf, len);
 
   if (buf == 0)
     {
@@ -97,8 +98,6 @@ The read data is returned as @var{data} in an uint8 array.  \
         data (i) = buf[i];
 
       return_value = data;
-
-      delete [] buf;
     }
   else
     {

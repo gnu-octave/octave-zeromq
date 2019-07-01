@@ -118,6 +118,7 @@ public:
 
   octave_base_value * clone (void) const;
   octave_base_value * empty_clone (void) const;
+  octave_base_value * unique_clone (void);
 
  /**
   * Overloaded methods to print sock as the zeromq id

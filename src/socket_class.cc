@@ -75,6 +75,12 @@ octave_zeromq_socket::clone (void) const
   return new octave_zeromq_socket (*this);
 }
 
+octave_base_value *
+octave_zeromq_socket::unique_clone (void) 
+{
+  return this;
+}
+
 void *
 octave_zeromq_socket::socket (void)
 {

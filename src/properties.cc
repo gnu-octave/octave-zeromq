@@ -141,6 +141,10 @@ Internal function to get properties from a zmq socket\
 %! id = uint8([ 1, 2, 3 ]);
 %! __zmq_properties__(a, "identity", id);
 %! assert(__zmq_properties__(a, "identity"), id);
+%! id = uint8([ 1, 2, 3, 4 ]);
+%! a.identity = id;
+%! assert(__zmq_properties__(a, "identity"), id);
+%! assert (isa (a, 'octave_zeromq_socket'))
 %! zmq_close(a);
 
 %!error <Invalid call to __zmq_properties__> __zmq_properties__ ()

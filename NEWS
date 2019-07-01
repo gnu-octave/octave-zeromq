@@ -2,6 +2,10 @@ Summary of important user-visible changes for octave zeromq 1.4.0+:
 -------------------------------------------------------------------
   *** use OCTAVE_LOCAL_BUFFER for temp mem usage
 
+  *** minor doc updates
+
+  *** bugfix octave_zeromq_socket subsasgn access
+
 Summary of important user-visible changes for octave zeromq 1.4.0:
 -------------------------------------------------------------------
   *** additional spelling checks

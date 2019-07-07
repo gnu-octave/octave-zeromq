@@ -6,6 +6,8 @@ ZeroMQ functions
   zmq_bind
   zmq_close
   zmq_connect
+  zmq_curve_keypair
+  zmq_curve_public
   zmq_disconnect
   zmq_errno
   zmq_getsockopt
@@ -18,6 +20,8 @@ ZeroMQ functions
   zmq_strerror
   zmq_unbind
   zmq_version
+  zmq_z85_decode
+  zmq_z85_encode
 ZeroMQ socket type constants
   ZMQ_DEALER
   ZMQ_PAIR
@@ -40,6 +44,10 @@ ZeroMQ get/setsockopt constants
   ZMQ_IDENTITY
   ZMQ_LAST_ENDPOINT
   ZMQ_CONNECT_TIMEOUT
+  ZMQ_CURVE_PUBLICKEY
+  ZMQ_CURVE_SECRETKEY
+  ZMQ_CURVE_PUBLICKEY
+  ZMQ_CURVE_SERVER
 ZeroMQ ZMQ_EVENTS flags
   ZMQ_POLLIN
   ZMQ_POLLOUT

@@ -6,6 +6,8 @@ Summary of important user-visible changes for octave zeromq 1.4.0+:
 
   *** bugfix octave_zeromq_socket subsasgn access
 
+  *** add initial curve functions
+
 Summary of important user-visible changes for octave zeromq 1.4.0:
 -------------------------------------------------------------------
   *** additional spelling checks

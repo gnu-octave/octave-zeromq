@@ -58,6 +58,14 @@ Get the socket identity value\n \
 Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Get the connect timeout value\n \
+@item @code{ZMQ_CURVE_SERVER}\n \
+Set whether socket is a curve server (1) or not (0)\n \
+@item @code{ZMQ_CURVE_PRIVATEKEY}\n \
+Set a the curve socket private key (string)\n \
+@item @code{ZMQ_CURVE_PUBLICKEY}\n \
+Set a the curve socket public key (string)\n \
+@item @code{ZMQ_CURVE_SERVERKEY}\n \
+Set a the curve socket public key (string)\n \
 @end table\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \
@@ -219,7 +227,80 @@ Get the connect timeout value\n \
     }
     break;
 #endif
+#ifdef ZMQ_CURVE_SERVER
+  case ZMQ_CURVE_SERVER:
+    {
+      int value;
+      size_t sz = sizeof (value);
 
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
+
+#ifdef ZMQ_CURVE_PUBLICKEY
+  case ZMQ_CURVE_PUBLICKEY:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+#ifdef ZMQ_CURVE_SERVERKEY
+  case ZMQ_CURVE_SERVERKEY:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+#ifdef ZMQ_CURVE_SECRETKEY
+  case ZMQ_CURVE_SECRETKEY:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
   default:
     error ("zeromq: invalid getsockopt value %d", opt);
     break;

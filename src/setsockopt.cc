@@ -48,6 +48,16 @@ Subscribe to incoming messages matching the value. The value is either a string 
 Unsubscribe from incoming messages\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Set timeout for connect calls\n \
+@item @code{ZMQ_IDENTITY}\n \
+Set the identity of a socket (string or uint8 data)\n \
+@item @code{ZMQ_CURVE_SERVER}\n \
+Set whether socket is a curve server (1) or not (0)\n \
+@item @code{ZMQ_CURVE_PRIVATEKEY}\n \
+Set a the curve socket private key (string)\n \
+@item @code{ZMQ_CURVE_PUBLICKEY}\n \
+Set a the curve socket public key (string)\n \
+@item @code{ZMQ_CURVE_SERVERKEY}\n \
+Set a the curve socket public key (string)\n \
 @end table\n \
 \n \
 @seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE, ZMQ_CONNECT_TIMEOUT}\n \
@@ -113,8 +123,67 @@ Set timeout for connect calls\n \
     break;
 #endif
 
-  case ZMQ_IDENTITY:
+#ifdef ZMQ_CURVE_SERVER
+  case ZMQ_CURVE_SERVER:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, &value, sizeof(value));
+      }
+    break;
+#endif
+#ifdef ZMQ_CURVE_PUBLICKEY
+  case ZMQ_CURVE_PUBLICKEY:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string for option value");
+        return octave_value (false);
+      }
 
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
+#ifdef ZMQ_CURVE_SECRETKEY
+  case ZMQ_CURVE_SECRETKEY:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string option value");
+        return octave_value (false);
+      }
+
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
+#ifdef ZMQ_CURVE_SERVERKEY
+  case ZMQ_CURVE_SERVERKEY:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string option value");
+        return octave_value (false);
+      }
+
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
+
+  case ZMQ_IDENTITY:
     if (args (2).is_string ())
       {
         strvalue = args (2).string_value ();

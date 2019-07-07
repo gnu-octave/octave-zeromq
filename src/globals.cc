@@ -172,6 +172,46 @@ DEFUN_DLD (__ZMQ_OPT_CONNECT_TIMEOUT, args, nargout,"zeromq option constant")
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_CURVE_SERVER", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_CURVE_SERVER, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_CURVE
+  return octave_value(ZMQ_CURVE_SERVER);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_CURVE_SECRETKEY", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_CURVE_SECRETKEY, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_CURVE
+  return octave_value(ZMQ_CURVE_SECRETKEY);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_CURVE_PUBLICKEY", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_CURVE_PUBLICKEY, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_CURVE
+  return octave_value(ZMQ_CURVE_PUBLICKEY);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_CURVE_SERVERKEY", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_CURVE_SERVERKEY, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_CURVE
+  return octave_value(ZMQ_CURVE_SERVERKEY);
+#else
+  return octave_value(-1);
+#endif
+}
+
 // PKG_ADD: autoload ("__ZMQ_OPT_EVENTS", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_EVENTS, args, nargout,"zeromq option constant")
 {

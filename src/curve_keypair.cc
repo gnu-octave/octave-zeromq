@@ -67,7 +67,7 @@ Generate a random private/public keypair\n \
 %!error <Invalid call to zmq_curve_keypair()> zmq_curve_keypair(1)
 
 %!test
-%! [pub, priv] = zmq_curve_keypair()
+%! [pub, priv] = zmq_curve_keypair();
 %! assert(!isempty(pub))
 %! assert(!isempty(priv))
 

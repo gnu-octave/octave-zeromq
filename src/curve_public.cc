@@ -81,10 +81,10 @@ Derive the public key from a private key\n \
 %!error <zeromq: input string key size must be 40> zmq_curve_public("12345")
 
 %!xtest
-%! [pub, priv] = zmq_curve_keypair()
+%! [pub, priv] = zmq_curve_keypair();
 %! assert(!isempty(pub))
 %! assert(!isempty(priv))
-%! check = zmq_curve_public(priv)
+%! check = zmq_curve_public(priv);
 %! assert(check, pub)
 
 #endif

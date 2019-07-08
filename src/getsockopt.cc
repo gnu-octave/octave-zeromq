@@ -219,7 +219,7 @@ Get the name of the gssiapi service principal (string)\n \
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -259,14 +259,14 @@ Get the name of the gssiapi service principal (string)\n \
   case ZMQ_CURVE_PUBLICKEY:
     {
       char value[1024];
-      size_t sz = sizeof (value);
+      size_t sz = 41;
 
       if (! sock->getsockopt (opt, value, &sz))
         error ("zeromq: failed getsockopt");
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -279,14 +279,14 @@ Get the name of the gssiapi service principal (string)\n \
   case ZMQ_CURVE_SERVERKEY:
     {
       char value[1024];
-      size_t sz = sizeof (value);
+      size_t sz = 41;
 
       if (! sock->getsockopt (opt, value, &sz))
         error ("zeromq: failed getsockopt");
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -299,14 +299,14 @@ Get the name of the gssiapi service principal (string)\n \
   case ZMQ_CURVE_SECRETKEY:
     {
       char value[1024];
-      size_t sz = sizeof (value);
+      size_t sz = 41;
 
       if (! sock->getsockopt (opt, value, &sz))
         error ("zeromq: failed getsockopt");
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -340,7 +340,7 @@ Get the name of the gssiapi service principal (string)\n \
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -360,7 +360,7 @@ Get the name of the gssiapi service principal (string)\n \
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -396,10 +396,8 @@ Get the name of the gssiapi service principal (string)\n \
     }
     break;
 #endif 
-
-
-#ifdef ZMQ_PLAIN_PRINCIPAL
-  case ZMQ_PLAIN_PRINCIPAL:
+#ifdef ZMQ_GSSAPI_PRINCIPAL
+  case ZMQ_GSSAPI_PRINCIPAL:
     {
       char value[1024];
       size_t sz = sizeof (value);
@@ -409,7 +407,7 @@ Get the name of the gssiapi service principal (string)\n \
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";
@@ -419,8 +417,8 @@ Get the name of the gssiapi service principal (string)\n \
     break;
 #endif
 
-#ifdef ZMQ_PLAIN_SERVICE_PRINCIPAL
-  case ZMQ_PLAIN_SERVICE_PRINCIPAL:
+#ifdef ZMQ_GSSAPI_SERVICE_PRINCIPAL
+  case ZMQ_GSSAPI_SERVICE_PRINCIPAL:
     {
       char value[1024];
       size_t sz = sizeof (value);
@@ -430,7 +428,7 @@ Get the name of the gssiapi service principal (string)\n \
 
       if (sz > 0)
         {
-          strvalue = std::string(value, sz);
+          strvalue = std::string(value, sz-1);
         }
       else
         strvalue = "";

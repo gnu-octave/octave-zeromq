@@ -64,6 +64,14 @@ Set whether socket server will use plain authenication (1) or not (0)\n \
 Set the plain socket username (string)\n \
 @item @code{ZMQ_PLAIN_PASSWORD}\n \
 Set the plain socket password (string)\n \
+@item @code{ZMQ_GSSAPI_SERVER}\n \
+Set whether socket server will use gssi authenication (1) or not (0)\n \
+@item @code{ZMQ_GSSAPI_PLAINTEXT}\n \
+Set whether socket will encrypt gssi authenication (1) or not (0)\n \
+@item @code{ZMQ_GSSAPI_PRINCIPAL}\n \
+Set the name of the gssiapi principal (string)\n \
+@item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
+Set the name of the gssiapi service principal (string)\n \
 @end table\n \
 \n \
 @seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE, ZMQ_CONNECT_TIMEOUT}\n \
@@ -220,6 +228,64 @@ Set the plain socket password (string)\n \
 #endif
 #ifdef ZMQ_PLAIN_PASSWORD
   case ZMQ_PLAIN_PASSWORD:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string for option value");
+        return octave_value (false);
+      }
+
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
+#ifdef ZMQ_GSSAPI_SERVER
+  case ZMQ_GSSAPI_SERVER:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, &value, sizeof(value));
+      }
+    break;
+#endif
+#ifdef ZMQ_GSSAPI_PLAINTEXT
+  case ZMQ_GSSAPI_PLAINTEXT:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, &value, sizeof(value));
+      }
+    break;
+#endif
+#ifdef ZMQ_GSSAPI_PRINCIPAL
+  case ZMQ_GSSAPI_PRINCIPAL:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string for option value");
+        return octave_value (false);
+      }
+
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
+#ifdef ZMQ_GSSAPI_SERVICE_PRINCIPAL
+  case ZMQ_GSSAPI_SERVICE_PRINCIPAL:
     if (args (2).is_string ())
       {
         strvalue = args (2).string_value ();

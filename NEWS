@@ -8,7 +8,9 @@ Summary of important user-visible changes for octave zeromq 1.4.0+:
 
   *** add initial curve functions and authentication
 
-  *** add plain authenticatin options
+  *** add plain authentication options
+
+  *** add gssapi authentication options
 
 Summary of important user-visible changes for octave zeromq 1.4.0:
 -------------------------------------------------------------------

@@ -59,19 +59,27 @@ Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Get the connect timeout value\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
-Set whether socket is a curve server (1) or not (0)\n \
+Get whether socket is a curve server (1) or not (0)\n \
 @item @code{ZMQ_CURVE_PRIVATEKEY}\n \
-Set a the curve socket private key (string)\n \
+Get a the curve socket private key (string)\n \
 @item @code{ZMQ_CURVE_PUBLICKEY}\n \
-Set a the curve socket public key (string)\n \
+Get a the curve socket public key (string)\n \
 @item @code{ZMQ_CURVE_SERVERKEY}\n \
-Set a the curve socket public key (string)\n \
+Get a the curve socket public key (string)\n \
 @item @code{ZMQ_PLAIN_SERVER}\n \
-Set whether socket server will use plain authenication (1) or not (0)\n \
+Get whether socket server will use plain authenication (1) or not (0)\n \
 @item @code{ZMQ_PLAIN_USERNAME}\n \
-Set the plain socket username (string)\n \
+Get the plain socket username (string)\n \
 @item @code{ZMQ_PLAIN_PASSWORD}\n \
-Set the plain socket password (string)\n \
+Get the plain socket password (string)\n \
+@item @code{ZMQ_GSSAPI_SERVER}\n \
+Get whether socket server will use gssi authenication (1) or not (0)\n \
+@item @code{ZMQ_GSSAPI_PLAINTEXT}\n \
+Get whether socket will encrypt gssi authenication (1) or not (0)\n \
+@item @code{ZMQ_GSSAPI_PRINCIPAL}\n \
+Get the name of the gssiapi principal (string)\n \
+@item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
+Get the name of the gssiapi service principal (string)\n \
 @end table\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \
@@ -343,6 +351,76 @@ Set the plain socket password (string)\n \
 #endif
 #ifdef ZMQ_PLAIN_PASSWORD
   case ZMQ_PLAIN_PASSWORD:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+#ifdef ZMQ_GSSAPI_SERVER
+  case ZMQ_GSSAPI_SERVER:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
+
+#ifdef ZMQ_GSSAPI_PLAINTEXT
+  case ZMQ_GSSAPI_PLAINTEXT:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
+
+
+#ifdef ZMQ_PLAIN_PRINCIPAL
+  case ZMQ_PLAIN_PRINCIPAL:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+
+#ifdef ZMQ_PLAIN_SERVICE_PRINCIPAL
+  case ZMQ_PLAIN_SERVICE_PRINCIPAL:
     {
       char value[1024];
       size_t sz = sizeof (value);

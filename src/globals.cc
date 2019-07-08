@@ -242,6 +242,46 @@ DEFUN_DLD (__ZMQ_OPT_PLAIN_PASSWORD, args, nargout,"zeromq option constant")
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_GSSAPI_SERVER", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_GSSAPI_SERVER, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_GSSAPI_SERVER
+  return octave_value(ZMQ_GSSAPI_SERVER);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_GSSAPI_PLAINTEXT", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_GSSAPI_PLAINTEXT, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_GSSAPI_PLAINTEXT
+  return octave_value(ZMQ_GSSAPI_PLAINTEXT);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_GSSAPI_PRINCIPAL", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_GSSAPI_PRINCIPAL, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_GSSAPI_PRINCIPAL
+  return octave_value(ZMQ_GSSAPI_PRINCIPAL);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_GSSAPI_SERVICE_PRINCIPAL", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_GSSAPI_SERVICE_PRINCIPAL, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_GSSAPI_SERVICE_PRINCIPAL
+  return octave_value(ZMQ_GSSAPI_SERVICE_PRINCIPAL);
+#else
+  return octave_value(-1);
+#endif
+}
+
 // PKG_ADD: autoload ("__ZMQ_OPT_EVENTS", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_EVENTS, args, nargout,"zeromq option constant")
 {

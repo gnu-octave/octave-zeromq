@@ -212,6 +212,36 @@ DEFUN_DLD (__ZMQ_OPT_CURVE_SERVERKEY, args, nargout,"zeromq option constant")
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_PLAIN_SERVER", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_PLAIN_SERVER, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_PLAIN_SERVER
+  return octave_value(ZMQ_PLAIN_SERVER);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_PLAIN_USERNAME", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_PLAIN_USERNAME, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_PLAIN_USERNAME
+  return octave_value(ZMQ_PLAIN_USERNAME);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_PLAIN_PASSWORD", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_PLAIN_PASSWORD, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_PLAIN_PASSWORD
+  return octave_value(ZMQ_PLAIN_PASSWORD);
+#else
+  return octave_value(-1);
+#endif
+}
+
 // PKG_ADD: autoload ("__ZMQ_OPT_EVENTS", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_EVENTS, args, nargout,"zeromq option constant")
 {

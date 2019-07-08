@@ -66,6 +66,12 @@ Set a the curve socket private key (string)\n \
 Set a the curve socket public key (string)\n \
 @item @code{ZMQ_CURVE_SERVERKEY}\n \
 Set a the curve socket public key (string)\n \
+@item @code{ZMQ_PLAIN_SERVER}\n \
+Set whether socket server will use plain authenication (1) or not (0)\n \
+@item @code{ZMQ_PLAIN_USERNAME}\n \
+Set the plain socket username (string)\n \
+@item @code{ZMQ_PLAIN_PASSWORD}\n \
+Set the plain socket password (string)\n \
 @end table\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \
@@ -301,6 +307,61 @@ Set a the curve socket public key (string)\n \
     }
     break;
 #endif
+#ifdef ZMQ_PLAIN_SERVER
+  case ZMQ_PLAIN_SERVER:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
+
+#ifdef ZMQ_PLAIN_USERNAME
+  case ZMQ_PLAIN_USERNAME:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+#ifdef ZMQ_PLAIN_PASSWORD
+  case ZMQ_PLAIN_PASSWORD:
+    {
+      char value[1024];
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
+    }
+    break;
+#endif
+
   default:
     error ("zeromq: invalid getsockopt value %d", opt);
     break;

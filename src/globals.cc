@@ -282,12 +282,24 @@ DEFUN_DLD (__ZMQ_OPT_GSSAPI_SERVICE_PRINCIPAL, args, nargout,"zeromq option cons
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_MECHANISM", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_MECHANISM, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_MECHANISM
+  return octave_value(ZMQ_MECHANISM);
+#else
+  return octave_value(-1);
+#endif
+}
+
+
 // PKG_ADD: autoload ("__ZMQ_OPT_EVENTS", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_EVENTS, args, nargout,"zeromq option constant")
 {
   return octave_value(ZMQ_EVENTS);
 }
 
+// ZMQ_EVENT constants
 // PKG_ADD: autoload ("__ZMQ_EVENT_POLLIN", "zeromq.oct");
 DEFUN_DLD (__ZMQ_EVENT_POLLIN, args, nargout,"zeromq option event constant")
 {
@@ -299,6 +311,49 @@ DEFUN_DLD (__ZMQ_EVENT_POLLOUT, args, nargout,"zeromq option event constant")
 {
   return octave_value(ZMQ_POLLOUT);
 }
+
+// ZMQ_MECHANISM constants
+
+// PKG_ADD: autoload ("__ZMQ_MECHANISM_NULL", "zeromq.oct");
+DEFUN_DLD (__ZMQ_MECHANISM_NULL, args, nargout,"zeromq option mechanism constant")
+{
+#ifdef ZMQ_NULL
+  return octave_value(ZMQ_NULL);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_MECHANISM_PLAIN", "zeromq.oct");
+DEFUN_DLD (__ZMQ_MECHANISM_PLAIN, args, nargout,"zeromq option mechanism constant")
+{
+#ifdef ZMQ_PLAIN
+  return octave_value(ZMQ_PLAIN);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_MECHANISM_CURVE", "zeromq.oct");
+DEFUN_DLD (__ZMQ_MECHANISM_CURVE, args, nargout,"zeromq option mechanism constant")
+{
+#ifdef ZMQ_CURVE
+  return octave_value(ZMQ_CURVE);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_MECHANISM_GSSAPI", "zeromq.oct");
+DEFUN_DLD (__ZMQ_MECHANISM_GSSAPI, args, nargout,"zeromq option mechanism constant")
+{
+#ifdef ZMQ_GSSAPI
+  return octave_value(ZMQ_GSSAPI);
+#else
+  return octave_value(-1);
+#endif
+}
+
 
 #if 0
 %! % check that all the values exist

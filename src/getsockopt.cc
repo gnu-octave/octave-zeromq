@@ -80,6 +80,8 @@ Get whether socket will encrypt gssi authenication (1) or not (0)\n \
 Get the name of the gssiapi principal (string)\n \
 @item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
 Get the name of the gssiapi service principal (string)\n \
+@item @code{ZMQ_MECHANISM}\n \
+Get the security mechinsm (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
 @end table\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \
@@ -437,6 +439,20 @@ Get the name of the gssiapi service principal (string)\n \
     }
     break;
 #endif
+
+#ifdef ZMQ_MECHANISM
+  case ZMQ_MECHANISM:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
 
   default:
     error ("zeromq: invalid getsockopt value %d", opt);

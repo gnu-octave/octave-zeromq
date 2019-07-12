@@ -50,6 +50,8 @@ Unsubscribe from incoming messages\n \
 Set timeout for connect calls\n \
 @item @code{ZMQ_IDENTITY}\n \
 Set the identity of a socket (string or uint8 data)\n \
+@item @code{ZMQ_SOCKS_PROXY}\n \
+Set the socks5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
 Set whether socket is a curve server (1) or not (0)\n \
 @item @code{ZMQ_CURVE_PRIVATEKEY}\n \
@@ -136,7 +138,21 @@ Set the name of the gssiapi service principal (string)\n \
       }
     break;
 #endif
+#ifdef ZMQ_SOCKS_PROXY
+  case ZMQ_SOCKS_PROXY:
+    if (args (2).is_string ())
+      {
+        strvalue = args (2).string_value ();
+      }
+    else
+      {
+        error("zeromq: expected string option value");
+        return octave_value (false);
+      }
 
+    ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
+    break;
+#endif
 #ifdef ZMQ_CURVE_SERVER
   case ZMQ_CURVE_SERVER:
     if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())

@@ -1,4 +1,4 @@
-// Copyright (C) 2014-2018 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2014-2019 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -171,6 +171,17 @@ DEFUN_DLD (__ZMQ_OPT_CONNECT_TIMEOUT, args, nargout,"zeromq option constant")
   return octave_value(-1);
 #endif
 }
+
+// PKG_ADD: autoload ("__ZMQ_OPT_SOCKS_PROXY", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_SOCKS_PROXY, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_SOCKS_PROXY
+  return octave_value(ZMQ_SOCKS_PROXY);
+#else
+  return octave_value(-1);
+#endif
+}
+
 
 // PKG_ADD: autoload ("__ZMQ_OPT_CURVE_SERVER", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_CURVE_SERVER, args, nargout,"zeromq option constant")

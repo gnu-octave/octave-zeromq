@@ -58,6 +58,8 @@ Get the socket identity value\n \
 Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Get the connect timeout value\n \
+@item @code{ZMQ_SOCKS_PROXY}\n \
+Get the socks5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
 Get whether socket is a curve server (1) or not (0)\n \
 @item @code{ZMQ_CURVE_PRIVATEKEY}\n \
@@ -240,6 +242,26 @@ Get the security mechinsm (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
         error ("zeromq: failed getsockopt");
 
       ret = octave_value (value);
+    }
+    break;
+#endif
+#ifdef ZMQ_SOCKS_PROXY
+  case ZMQ_SOCKS_PROXY:
+    {
+      char value[1024];
+      size_t sz = sizeof(value);
+
+      if (! sock->getsockopt (opt, value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      if (sz > 0)
+        {
+          strvalue = std::string(value, sz-1);
+        }
+      else
+        strvalue = "";
+
+      ret = octave_value(strvalue);
     }
     break;
 #endif

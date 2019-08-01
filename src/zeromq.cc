@@ -82,6 +82,18 @@ Unbind a previously bound zeromq socket.\n \
 Get the zeromq library version numbers.\n \
 @end table\n \
 \n \
+Implemented functions depending on versionof libzmq are:\n \
+@table @asis\n \
+@item zmq_curve_keypair\n \
+Generate a random private/public keypair.\n \
+@item zmq_curve_public\n \
+Derive the public key from a private key.\n \
+@item zmq_z85_decode\n \
+decode a z85 encoded string to a binary key.\n \
+@item zmq_z85_encode\n \
+encode a binary key as Z85 printable text.\n \
+@end table\n \
+\n \
 In addition, a iszmq function is provided to verify whether a object is a zeromq socket\n \
 \n \
 Example code files for zeromq usage:\n \

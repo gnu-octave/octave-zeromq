@@ -29,7 +29,7 @@ DEFUN_DLD (zmq_z85_encode, args, nargout,
         "-*- texinfo -*-\n \
 @deftypefn {Loadable Function} @var{dest} =  zmq_z85_encode (@var{data})\n \
 \n\
-encode a binary key as Z85 printable text.\n \
+Encode a binary key as Z85 printable text.\n \
 \n \
 @var{data} is uint8 data that must have a size divisible by 4.\n \
 \n \

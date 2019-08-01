@@ -29,7 +29,7 @@ DEFUN_DLD (zmq_z85_decode, args, nargout,
         "-*- texinfo -*-\n \
 @deftypefn {Loadable Function} @var{data} =  zmq_z85_decode (@var{instr})\n \
 \n\
-deccode a z85 encoded string to a binary key.\n \
+Decode a z85 encoded string to a binary key.\n \
 \n \
 @var{instr} is a string encoded data\
 \n \

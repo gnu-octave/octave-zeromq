@@ -1,6 +1,6 @@
-## This file is part of Octave.
+## Copyright (C) 2017-2019 John Donoghue <john.donoghue@ieee.org>
 ##
-## Copyright (C) 2017-2018 John Donoghue <john.donoghue@ieee.org>
+## This file is part of Octave.
 ##
 ## Octave is free software; you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Function File} {@var{tf} =} iszmq (@var{h})
+## @deftypefn {Function File} {@var{tf} =} iszmq (@var{h})
 ##
 ## Determine whether @var{h} is a zeromq socket object.
 ##
@@ -40,5 +40,3 @@ endfunction
 %! a = zmq_socket (ZMQ_SUB);
 %! assert (iszmq (a));
 %! zmq_close(a);
-
-

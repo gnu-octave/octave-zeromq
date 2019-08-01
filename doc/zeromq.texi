@@ -75,6 +75,11 @@ To download a copy of the @acronym{GNU} Octave zeromq package, please visit
 @end titlepage
 @c %*** End of TITLEPAGE
 
+@dircategory Math
+@direntry
+* Octave ZeroMQ: (zeromq).          ZeroMQ Toolkit for Octave
+@end direntry
+
 @c %*** Start of BODY
 @contents
 @ifnottex

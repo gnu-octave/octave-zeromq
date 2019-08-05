@@ -69,11 +69,14 @@ Encode a binary key as Z85 printable text.\n \
          inbuf[i] = data(i);
 
        char * out = zmq_z85_encode(outbuf, inbuf, data.numel());
-       if (!out)
+       if (out)
+         {
+           retval = octave_value (std::string (out));
+         }
+       else
          {
            error ("zeromq: couldn't encode data");
          }
-       retval = octave_value (std::string (out));
     }
 #else
   error ("zeromq: curve functions not implemented by this version of libzmq");

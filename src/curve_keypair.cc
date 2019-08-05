@@ -43,7 +43,7 @@ Generate a random private/public keypair\n \
   if (args.length () != 0)
     {
         print_usage ();
-        return octave_value (-1);  
+        return retval;
     }
 
 #ifdef ZMQ_CURVE
@@ -54,6 +54,7 @@ Generate a random private/public keypair\n \
   if (rc != 0)
     {
       error ("zeromq: couldn't encode data");
+      return retval;
     }
 
   retval(0) = octave_value (std::string (publickey));

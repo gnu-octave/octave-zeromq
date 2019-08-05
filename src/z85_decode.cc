@@ -43,12 +43,13 @@ Decode a z85 encoded string to a binary key.\n \
   if (args.length () != 1)
     {
         print_usage ();
-        return octave_value (-1);  
+        return octave_value ();  
     }
 
   if(!args(0).is_string ())
     {
       error ("zeromq: expected input to be a string");
+      return octave_value ();  
     }
 
   std::string in = args (0).string_value ();
@@ -57,6 +58,7 @@ Decode a z85 encoded string to a binary key.\n \
   if (len % 5 != 0 || len == 0)
     {
       error ("zeromq: input string size must be divisible by 5");
+      return octave_value ();  
     }
 
 #ifdef ZMQ_CURVE
@@ -66,7 +68,10 @@ Decode a z85 encoded string to a binary key.\n \
 
 
   if (!outbuf)
-    error ("zeromq: could allocate memory for decoding.\n");
+    {
+      error ("zeromq: could allocate memory for decoding.\n");
+      return octave_value ();  
+    }
   else
     {
       uint8_t * out = zmq_z85_decode(outbuf, in.c_str());
@@ -74,6 +79,7 @@ Decode a z85 encoded string to a binary key.\n \
       if (!out)
          {
            error ("zeromq: couldn't decode data");
+           return octave_value ();  
          }
 
       uint8NDArray data( dim_vector (1,len) );

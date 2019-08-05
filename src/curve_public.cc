@@ -43,12 +43,13 @@ Derive the public key from a private key\n \
   if (args.length () != 1)
     {
         print_usage ();
-        return octave_value (-1);  
+        return octave_value ();  
     }
 
   if(!args(0).is_string ())
     {
       error ("zeromq: expected input to be a string");
+      return octave_value ();  
     }
 
   std::string in = args (0).string_value ();
@@ -57,6 +58,7 @@ Derive the public key from a private key\n \
   if (len != 40)
     {
       error ("zeromq: input string key size must be 40");
+      return octave_value ();  
     }
 
 #if ZMQ_VERSION >= ZMQ_MAKE_VERSION(4,2,0)
@@ -67,7 +69,10 @@ Derive the public key from a private key\n \
     {
       error ("zeromq: couldn't create public key");
     }
-    retval = octave_value (std::string (publickey));
+  else
+    {
+      retval = octave_value (std::string (publickey));
+    }
 #else
   error ("zeromq: curve_public function not implemented by this version of libzmq");
 #endif

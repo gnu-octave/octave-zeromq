@@ -42,12 +42,13 @@ Encode a binary key as Z85 printable text.\n \
   if (args.length () != 1)
     {
         print_usage ();
-        return octave_value (-1);  
+        return octave_value ();  
     }
 
   if(!args(0).is_uint8_type ())
     {
       error ("zeromq: expected input to be uint8 type data");
+      return octave_value ();  
     }
 
   NDArray data = args (0).array_value ();
@@ -55,6 +56,7 @@ Encode a binary key as Z85 printable text.\n \
   if (data.numel() % 4 != 0 || data.numel() == 0)
     {
       error ("zeromq: input data size must be divisible by 4");
+      return octave_value ();  
     }
 
 #ifdef ZMQ_CURVE

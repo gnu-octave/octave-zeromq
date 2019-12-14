@@ -1,3 +1,8 @@
+Summary of important user-visible changes for octave zeromq 1.5.0+:
+-------------------------------------------------------------------
+  *** minor updates for octave 6.0.0
+
+
 Summary of important user-visible changes for octave zeromq 1.5.0:
 -------------------------------------------------------------------
   *** use OCTAVE_LOCAL_BUFFER for temp mem usage

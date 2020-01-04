@@ -29,11 +29,18 @@ AC_CONFIG_MACRO_DIRS([m4])
 
 # Checks for programs.
 AC_PROG_CXX
+AC_PROG_GREP
+
 AC_LANG(C++)
 
 AC_CHECK_TOOL([MKOCTFILE], [mkoctfile], [none])
 if [ test "$MKOCTFILE" = "none" ]; then
   AC_MSG_ERROR([mkoctfile required to install $PACKAGE_NAME])
+fi
+
+AC_CHECK_TOOL([OCTAVE_CONFIG], [octave-config], [none])
+if [ test "$OCTAVE_CONFIG" = "none" ]; then
+  AC_MSG_ERROR([octave-config required to install $PACKAGE_NAME])
 fi
 
 # Checks for zeromq
@@ -103,7 +110,7 @@ LDFLAGS=$save_altsyms_LDFLAGS
 LIBS=$save_altsyms_LIBS
 
 
-TARGETS=zeromq.oct
+TARGETS="zeromq.oct archtests"
 AC_SUBST(TARGETS)
 
 AC_CONFIG_FILES([Makefile])

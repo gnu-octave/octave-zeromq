@@ -147,7 +147,6 @@ endif
 #	  $(MAKE) clean && $(RM) Makefile
 ##
 	$(MAKE) -C "$@" docs
-	cd "$@" && $(MAKE) tests
 	# remove dev stuff
 	cd "$@" && $(RM) -rf "devel" && $(RM) -f doc/mkfuncdocs.py
 	${FIX_PERMISSIONS} "$@"
@@ -263,26 +262,9 @@ check: $(install_stamp)
 .PHONY: clean
 
 clean: clean-tarballs clean-unpacked-release clean-install clean-docs
-	test -e inst/test && rmdir inst/test || true
 	test -e $(target_dir)/fntests.log && rm -f $(target_dir)/fntests.log || true
 	@echo "## Removing target directory (if empty)..."
 	test -e $(target_dir) && rmdir $(target_dir) || true
 	@echo
 	@echo "## Cleaning done"
 	@echo
-
-.PHONY: tests
-	
-CC_TST_SOURCES := $(shell $(GREP) --files-with-matches '^%!' src/*.cc)
-TST_SOURCES := $(patsubst src/%.cc,inst/test/%.cc-tst,$(CC_TST_SOURCES))
-
-inst/test:
-	@mkdir -p "$@"
-
-$(TST_SOURCES): inst/test/%.cc-tst: src/%.cc | inst/test
-	@echo "Extracting tests from $< ..."
-	@$(RM) -f "$@" "$@-t"
-	@(      echo "## Generated from $<"; \
-		$(GREP) '^%!' "$<") > "$@"
-
-tests: $(TST_SOURCES)

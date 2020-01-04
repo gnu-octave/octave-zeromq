@@ -474,11 +474,8 @@ octave_zeromq_socket::subsasgn (const std::string& type, const std::list<octave_
           ovl (1) = (idx.front ()) (0);
           ovl (2) = rhs;
           octave_value_list u = OCTAVE__FEVAL (std::string ("__zmq_properties__"), ovl, 1);
-          if (u.length() > 0)
-            {
-              count++;
-              retval = octave_value (this);
-            }
+          count++;
+          retval = octave_value (this);
         }
       else if (type.length () > 1 && type[1] == '.')
         {

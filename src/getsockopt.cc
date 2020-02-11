@@ -69,21 +69,21 @@ Get a the curve socket public key (string)\n \
 @item @code{ZMQ_CURVE_SERVERKEY}\n \
 Get a the curve socket public key (string)\n \
 @item @code{ZMQ_PLAIN_SERVER}\n \
-Get whether socket server will use plain authenication (1) or not (0)\n \
+Get whether socket server will use plain authentication (1) or not (0)\n \
 @item @code{ZMQ_PLAIN_USERNAME}\n \
 Get the plain socket username (string)\n \
 @item @code{ZMQ_PLAIN_PASSWORD}\n \
 Get the plain socket password (string)\n \
 @item @code{ZMQ_GSSAPI_SERVER}\n \
-Get whether socket server will use gssi authenication (1) or not (0)\n \
+Get whether socket server will use gssapi authentication (1) or not (0)\n \
 @item @code{ZMQ_GSSAPI_PLAINTEXT}\n \
-Get whether socket will encrypt gssi authenication (1) or not (0)\n \
+Get whether socket will encrypt gssapi authentication (1) or not (0)\n \
 @item @code{ZMQ_GSSAPI_PRINCIPAL}\n \
-Get the name of the gssiapi principal (string)\n \
+Get the name of the gssapi principal (string)\n \
 @item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
-Get the name of the gssiapi service principal (string)\n \
+Get the name of the gssapi service principal (string)\n \
 @item @code{ZMQ_MECHANISM}\n \
-Get the security mechinsm (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
+Get the security mechanism (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
 @end table\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \

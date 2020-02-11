@@ -61,19 +61,19 @@ Set the curve socket public key (string)\n \
 @item @code{ZMQ_CURVE_SERVERKEY}\n \
 Set the curve socket public key (string)\n \
 @item @code{ZMQ_PLAIN_SERVER}\n \
-Set whether socket server will use plain authenication (1) or not (0)\n \
+Set whether socket server will use plain authentication (1) or not (0)\n \
 @item @code{ZMQ_PLAIN_USERNAME}\n \
 Set the plain socket username (string)\n \
 @item @code{ZMQ_PLAIN_PASSWORD}\n \
 Set the plain socket password (string)\n \
 @item @code{ZMQ_GSSAPI_SERVER}\n \
-Set whether socket server will use gssi authenication (1) or not (0)\n \
+Set whether socket server will use gssapi authentication (1) or not (0)\n \
 @item @code{ZMQ_GSSAPI_PLAINTEXT}\n \
-Set whether socket will encrypt gssi authenication (1) or not (0)\n \
+Set whether socket will encrypt gssapi authentication (1) or not (0)\n \
 @item @code{ZMQ_GSSAPI_PRINCIPAL}\n \
-Set the name of the gssiapi principal (string)\n \
+Set the name of the gssapi principal (string)\n \
 @item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
-Set the name of the gssiapi service principal (string)\n \
+Set the name of the gssapi service principal (string)\n \
 @end table\n \
 \n \
 @seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE, ZMQ_CONNECT_TIMEOUT}\n \

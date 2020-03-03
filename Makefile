@@ -169,7 +169,7 @@ doc/$(package).pdf: doc/$(package).texi doc/functions.texi
 	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
 
 doc/functions.texi:
-	cd doc && ./mkfuncdocs.py --src-dir=../inst/ --src-dir=../src/ --func-prefix=zmq_ --ignore=zeromq ../INDEX > functions.texi
+	cd doc && ./mkfuncdocs.py --src-dir=../inst/ --src-dir=../src/ --func-prefix=zmq_ --ignore=zeromq ../INDEX | $(SED) 's/@seealso/@xseealso/g' > functions.texi
 
 # html_options = --eval 'options = get_html_options ("octave-forge");'
 ## Uncomment this for package documentation.

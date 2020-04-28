@@ -1,7 +1,8 @@
-Summary of important user-visible changes for octave zeromq 1.5.0+:
+Summary of important user-visible changes for octave zeromq 1.5.1:
 -------------------------------------------------------------------
-  *** minor updates for octave 6.0.0
+  *** minor updates for octave depreciated features
 
+  *** minor doc updates
 
 Summary of important user-visible changes for octave zeromq 1.5.0:
 -------------------------------------------------------------------

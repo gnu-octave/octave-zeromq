@@ -1,4 +1,4 @@
-// Copyright (C) 2016-2018 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2016-2020 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -43,7 +43,8 @@ On success, setsockopt will return @var{status} of true \n \
 Known valid @var{optionid}s are:\n \
 @table @asis\n \
 @item @code{ZMQ_SUBSCRIBE}\n \
-Subscribe to incoming messages matching the value. The value is either a string or a uint8 array that must match the start of any incoming message\n \
+Subscribe to incoming messages matching the value. The value is either a string or a uint8 array that\n \
+must match the start of any incoming message\n \
 @item @code{ZMQ_UNSUBSCRIBE}\n \
 Unsubscribe from incoming messages\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \

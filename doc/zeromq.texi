@@ -93,9 +93,9 @@ or can be installed in an off-line mode via a downloaded tarball.
 The toolkit has a dependency on the zeromq library (@url{https://zeromq.org}), so it must be installed in order
 to successfully install the ZeroMQ toolkit.
 
-For fedora: @code{yum install zeromq-devel} 
+For Fedora: @code{yum install zeromq-devel} 
 
-For ubuntu: @code{apt install libzmq-dev} 
+For Ubuntu: @code{apt install libzmq-dev} 
 
 The toolkit must be then be loaded once per each @acronym{GNU} Octave session in order to use its functionality.
 

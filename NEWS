@@ -1,3 +1,10 @@
+Summary of important user-visible changes for octave zeromq 1.5.1+:
+-------------------------------------------------------------------
+
+  *** bugfix ref count used by unique_clone
+
+  *** minor doc updates
+
 Summary of important user-visible changes for octave zeromq 1.5.1:
 -------------------------------------------------------------------
   *** minor updates for octave depreciated features

@@ -1,4 +1,4 @@
-// Copyright (C) 2016-2018 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2016-2020 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -41,7 +41,7 @@ Get the current value of an option.\n \
 Valid @var{optionid}s are:\n \
 @table @asis\n \
 @item @code{ZMQ_RCVMORE}\n \
-Flag for whether a message has been split into multiple messages. The return value with be either 0 or 1.\n \
+Flag for whether a message has been split into multiple messages. The return value will be either 0 or 1.\n \
 @item @code{ZMQ_TYPE}\n \
 Socket type for zeromq socket created with zmq_socket.\n \
 Valid types are the same as the socket type value specified with zmq_socket. \n \
@@ -49,7 +49,7 @@ Valid types are the same as the socket type value specified with zmq_socket. \n 
 Get the event state of zeromq socket.\n \
 The returned value is a bit mask that may contain the following set values:\n \
 @itemize\n \
-@item @code{ZMQ_POLLIN} set when at least one message available to read and zmq_recv will not block.\n \
+@item @code{ZMQ_POLLIN} set when at least one message is available to read and zmq_recv will not block.\n \
 @item @code{ZMQ_POLLOUT} set when at least one message can be written without zmq_send blocking.\n \
 @end itemize\n \
 @item @code{ZMQ_IDENTITY}\n \
@@ -59,7 +59,7 @@ Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Get the connect timeout value\n \
 @item @code{ZMQ_SOCKS_PROXY}\n \
-Get the socks5 proxy value (string)\n \
+Get the SOCKS5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
 Get whether socket is a curve server (1) or not (0)\n \
 @item @code{ZMQ_CURVE_PRIVATEKEY}\n \

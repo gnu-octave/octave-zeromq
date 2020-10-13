@@ -1,4 +1,4 @@
-// Copyright (C) 2018 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2018-2020 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -48,7 +48,7 @@ library supports the CURVE security mechanism\n \
 @item 'gssapi'\n \
 library supports the GSSAPI security mechanism\n \
 @item 'draft'\n \
-library was built with the draft api\n \
+library was built with the draft API.\n \
 @end table\n \
 \n \
 Returns the @var{yesno}, set to true if the feature is available, otherwise false. \

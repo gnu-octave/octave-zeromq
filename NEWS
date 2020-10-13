@@ -1,4 +1,4 @@
-Summary of important user-visible changes for octave zeromq 1.5.1+:
+Summary of important user-visible changes for octave zeromq 1.5.2:
 -------------------------------------------------------------------
 
   *** bugfix ref count used by unique_clone

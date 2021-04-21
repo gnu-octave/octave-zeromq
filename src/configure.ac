@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 #
-### Copyright (C) 2016-2020 John Donoghue <john.donoghue@ieee.org>
+### Copyright (C) 2016-2021 John Donoghue <john.donoghue@ieee.org>
 ###
 ### This program is free software; you can redistribute it and/or
 ### modify it under the terms of the GNU General Public License as
@@ -43,14 +43,10 @@ if [ test "$OCTAVE_CONFIG" = "none" ]; then
   AC_MSG_ERROR([octave-config required to install $PACKAGE_NAME])
 fi
 
-# Checks for zeromq
-have_zmq=no
-AC_CHECK_HEADERS([zmq.h],
-  [AC_SEARCH_LIBS([zmq_version], [zmq], [have_zmq=yes], [])], [] )
-
-if [ test "$have_zmq" != "yes" ]; then
-  AC_MSG_ERROR([$PACKAGE_NAME requires zeromq library])
-fi
+PKG_CHECK_MODULES([libzmq], [libzmq], 
+  [CXXFLAGS="$CXXFLAGS $libzmq_CFLAGS"; LIBS="$LIBS $libzmq_LIBS"],
+  [AC_MSG_ERROR([$PACKAGE_NAME requires zeromq library])]
+)
 
 # Checks for octave depreciated symbols
 ## Simple symbol alternatives of different Octave versions.

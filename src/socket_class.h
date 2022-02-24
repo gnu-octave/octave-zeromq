@@ -18,6 +18,10 @@
 // Octave Includes
 #include <octave/oct.h>
 
+#ifdef HAVE_CONFIG_H
+#  include "config.h"
+#endif
+
 // string
 #include <string>
 
@@ -27,7 +31,7 @@
 
 void init_types(void);
 
-class octave_zeromq_socket : public octave_base_value
+class octave_zeromq_socket : public OCTAVE_BASE_CLASS
 {
 public:
   /**

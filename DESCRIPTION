@@ -1,6 +1,6 @@
 Name: zeromq
-Version: 1.5.3
-Date: 2021-07-15
+Version: 1.5.4
+Date: 2022-05-02
 Author: John Donoghue <john.donoghue@ieee.org>
 Maintainer: John Donoghue <john.donoghue@ieee.org>
 Title: ZeroMQ Toolbox

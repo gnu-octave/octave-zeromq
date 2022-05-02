@@ -1,3 +1,10 @@
+Summary of important user-visible changes for octave zeromq 1.5.4:
+-------------------------------------------------------------------
+
+  *** use octave_base_dld_value class if available
+
+  *** allow libzmq fallback detection
+
 Summary of important user-visible changes for octave zeromq 1.5.3:
 -------------------------------------------------------------------
 

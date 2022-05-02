@@ -29,9 +29,13 @@ AC_CONFIG_MACRO_DIRS([m4])
 
 # Checks for programs.
 AC_PROG_CXX
+AC_PROG_CXXCPP
 AC_PROG_GREP
 
 AC_LANG(C++)
+
+# check can access std c files
+AC_CHECK_HEADERS([string.h])
 
 AC_CHECK_TOOL([MKOCTFILE], [mkoctfile], [none])
 if [ test "$MKOCTFILE" = "none" ]; then
@@ -43,10 +47,58 @@ if [ test "$OCTAVE_CONFIG" = "none" ]; then
   AC_MSG_ERROR([octave-config required to install $PACKAGE_NAME])
 fi
 
+save_CPPFLAGS="$CPPFLAGS"
 PKG_CHECK_MODULES([libzmq], [libzmq], 
-  [CXXFLAGS="$CXXFLAGS $libzmq_CFLAGS"; LIBS="$LIBS $libzmq_LIBS"],
-  [AC_MSG_ERROR([$PACKAGE_NAME requires zeromq library])]
+  [],
+  []
 )
+
+if test "$libzmq_CFLAGS$libzmq_LIBS" != "" ; then
+  CPPFLAGS="$libzmq_CFLAGS $save_CPPFLAGS"
+  AC_CHECK_HEADERS([zmq.h], ,
+     [libzmq_CFLAGS=""; libzmq_LIBS=""],
+   )
+fi
+
+if test "$libzmq_CFLAGS$libzmq_LIBS" == "" ; then
+  AC_MSG_NOTICE([Trying fallback libzmq detection])
+
+  # find headers first
+  AC_MSG_CHECKING([for zmq headers path])
+  found_header=
+  for p in [ /usr/include /usr/local/include /opt/include /mingw32/include /mingw64/include ]; do
+    for v in [ '' zmq ]; do
+      file_name="$p/$v/zmq.h"
+      if test -f $file_name; then 
+        CPPFLAGS="-I$p/$v $save_CPPFLAGS"
+        AC_COMPILE_IFELSE(
+          [AC_LANG_PROGRAM([
+           #include <zmq.h>
+          ],
+          [
+            int i=0;
+          ])],
+        [found_header="$p/$v"],
+        [])
+      fi
+    done
+  done
+
+  if test "$found_header" == "" ; then
+    AC_MSG_RESULT([not found])
+    AC_MSG_ERROR([Unable to find zmq headers]),
+  else
+    AC_MSG_RESULT([$found_header])
+    libzmq_CXXFLAGS="-I$found_header"
+    libzmq_LIBS=-lzmq
+  fi
+fi
+CPPFLAGS=$save_CPPFLAGS
+
+# save lib / inc path flags
+CXXFLAGS="$CXXFLAGS $libzmq_CFLAGS"
+LIBS="$LIBS $libzmq_LIBS"
+
 
 # Checks for octave depreciated symbols
 ## Simple symbol alternatives of different Octave versions.

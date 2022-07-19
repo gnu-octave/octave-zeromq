@@ -18,6 +18,23 @@ GREP ?= grep
 CUT ?= cut
 TR ?= tr
 TEXI2PDF  ?= texi2pdf -q
+MAKEINFO ?= makeinfo
+
+# work out a possible help generator
+ifeq ($(strip $(QHELPGENERATOR)),)
+  ifneq ($(shell qhelpgenerator-qt5 -v 2>/dev/null),)
+    QHELPGENERATOR = qhelpgenerator-qt5
+  else ifneq ($(shell qcollectiongenerator-qt5 -v 2>/dev/null),)
+    QHELPGENERATOR = qcollectiongenerator-qt5
+  #else ifneq ($(shell qhelpgenerator -qt5 -v 2>/dev/null),)
+  # v4 doesnt work
+  #  QHELPGENERATOR = qhelpgenerator -qt5
+  else ifneq ($(shell qcollectiongenerator -qt5 -v 2>/dev/null),)
+    QHELPGENERATOR = qcollectiongenerator -qt5
+  else
+    QHELPGENERATOR = true
+  endif
+endif
 
 ## Note the use of ':=' (immediate set) and not just '=' (lazy set).
 ## http://stackoverflow.com/a/448939/1609556
@@ -155,18 +172,32 @@ run_in_place = $(OCTAVE) --eval ' pkg ("local_list", "$(package_list)"); ' \
                          --eval ' pkg ("load", "$(package)"); '
 
 .PHONY: docs
-docs: doc/$(package).pdf
+docs: doc/$(package).pdf doc/$(package).qhc doc/$(package).html
 
 .PHONY: clean-docs
 clean-docs:
 	$(RM) -f doc/$(package).info
 	$(RM) -f doc/$(package).pdf
+	$(RM) -f doc/$(package).html
+	$(RM) -f doc/$(package).qhc
+	$(RM) -f doc/$(package).qch
 	$(RM) -f doc/functions.texi
 
 doc/$(package).pdf: doc/$(package).texi doc/functions.texi
 	cd doc && SOURCE_DATE_EPOCH=$(HG_TIMESTAMP) $(TEXI2PDF) $(package).texi
 	# remove temp files
 	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
+
+doc/$(package).html: doc/$(package).texi doc/functions.texi
+	cd doc && SOURCE_DATE_EPOCH=$(HG_TIMESTAMP) $(MAKEINFO) --html --css-ref=$(package).css  --no-split $(package).texi
+
+doc/$(package).qhc: doc/$(package).html
+	# try also create qch file if can
+	cd doc && ./mkqhcp.py $(package) && $(QHELPGENERATOR) $(package).qhcp -o $(package).qhc
+	cd doc && $(RM) -f $(package).qhcp $(package).qhp
+
+doc/$(package).info: doc/$(package).texi doc/functions.texi
+	cd doc && $(MAKEINFO) $(package).texi
 
 doc/functions.texi:
 	cd doc && ./mkfuncdocs.py --src-dir=../inst/ --src-dir=../src/ --func-prefix=zmq_ --ignore=zeromq ../INDEX | $(SED) 's/@seealso/@xseealso/g' > functions.texi

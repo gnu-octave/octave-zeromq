@@ -316,7 +316,20 @@ Set the name of the gssapi service principal (string)\n \
     ret = sock->setsockopt (opt, strvalue.c_str(), strvalue.length());
     break;
 #endif
-
+#ifdef ZMQ_PRIORITY
+  case ZMQ_PRIORITY:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, &value, sizeof(value));
+      }
+    break;
+#endif
   case ZMQ_IDENTITY:
     if (args (2).is_string ())
       {

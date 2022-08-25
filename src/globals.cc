@@ -365,6 +365,16 @@ DEFUN_DLD (__ZMQ_MECHANISM_GSSAPI, args, nargout,"zeromq option mechanism consta
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_PRIORITY", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_PRIORITY, args, nargout,"zeromq socket constant")
+{
+#ifdef ZMQ_PRIORITY
+  return octave_value(ZMQ_PRIORITY);
+#else
+  return octave_value(-1);
+#endif
+}
+
 
 #if 0
 %! % check that all the values exist

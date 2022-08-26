@@ -49,8 +49,12 @@ must match the start of any incoming message\n \
 Unsubscribe from incoming messages\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
 Set timeout for connect calls\n \
-@item @code{ZMQ_IDENTITY}\n \
+@item @code{ZMQ_IDENTITY} or @code{ZMQ_ROUTING_ID}\n \
 Set the identity of a socket (string or uint8 data)\n \
+@item @code{ZMQ_RATE}\n \
+Set the multicast data rate\n \
+@item @code{ZMQ_PRIORITY}\n \
+Set the socket priority (linux only)\n \
 @item @code{ZMQ_SOCKS_PROXY}\n \
 Set the socks5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
@@ -344,8 +348,11 @@ Set the name of the gssapi service principal (string)\n \
       }
     break;
 #endif
- 
+#ifdef ZMQ_ROUING_ID 
+  case ZMQ_ROUTING_ID:
+#else
   case ZMQ_IDENTITY:
+#endif
     if (args (2).is_string ())
       {
         strvalue = args (2).string_value ();

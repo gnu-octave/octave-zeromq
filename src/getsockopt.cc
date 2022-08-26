@@ -52,8 +52,12 @@ The returned value is a bit mask that may contain the following set values:\n \
 @item @code{ZMQ_POLLIN} set when at least one message is available to read and zmq_recv will not block.\n \
 @item @code{ZMQ_POLLOUT} set when at least one message can be written without zmq_send blocking.\n \
 @end itemize\n \
-@item @code{ZMQ_IDENTITY}\n \
+@item @code{ZMQ_IDENTITY} or @code{ZMQ_ROUTING_ID}\n \
 Get the socket identity value\n \
+@item @code{ZMQ_RATE}\n \
+Get the multicast data rate\n \
+@item @code{ZMQ_PRIORITY}\n \
+Get socket priority (linux only)\n \
 @item @code{ZMQ_LAST_ENDPOINT}\n \
 Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
@@ -189,7 +193,11 @@ Get the security mechanism (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
       ret = octave_value (value);
     }
     break;
+#ifdef ZMQ_ROUTING_ID
+ case ZMQ_ROUTING_ID:
+#else
  case ZMQ_IDENTITY:
+#endif
     {
       uint8_t value[256];
       size_t sz = sizeof (value);

@@ -139,7 +139,21 @@ DEFUN_DLD (__ZMQ_OPT_RCVMORE, args, nargout,"zeromq option constant")
 // PKG_ADD: autoload ("__ZMQ_OPT_IDENTITY", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_IDENTITY, args, nargout,"zeromq option constant")
 {
+#ifdef ZMQ_IDENTITY
   return octave_value(ZMQ_IDENTITY);
+#else
+  return octave_value(ZMQ_ROUTING_ID);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_ROUTING_ID", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_ROUTING_ID, args, nargout,"zeromq option constant")
+{
+#ifdef ZMQ_ROUTING_ID
+  return octave_value(ZMQ_ROUTING_ID);
+#else
+  return octave_value(ZMQ_IDENTITY);
+#endif
 }
 
 // PKG_ADD: autoload ("__ZMQ_OPT_TYPE", "zeromq.oct");

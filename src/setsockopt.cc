@@ -55,6 +55,8 @@ Set the identity of a socket (string or uint8 data)\n \
 Set the multicast data rate\n \
 @item @code{ZMQ_PRIORITY}\n \
 Set the socket priority (linux only)\n \
+@item @code{ZMQ_BACKLOG}\n \
+Set the queue length for incomming connections\n \
 @item @code{ZMQ_SOCKS_PROXY}\n \
 Set the socks5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \
@@ -336,6 +338,20 @@ Set the name of the gssapi service principal (string)\n \
 #endif
 #ifdef ZMQ_RATE
   case ZMQ_RATE:
+    if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
+      {
+        error("zeromq: expected integer parameter");
+        return octave_value (false);
+      }
+    else
+      {
+        int value = args (2).int_value ();
+        ret = sock->setsockopt (opt, &value, sizeof(value));
+      }
+    break;
+#endif
+#ifdef ZMQ_BACKLOG
+  case ZMQ_BACKLOG:
     if (args (2).OV_ISINTEGER () && !args (2).OV_ISFLOAT ())
       {
         error("zeromq: expected integer parameter");

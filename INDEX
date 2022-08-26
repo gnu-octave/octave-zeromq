@@ -60,6 +60,7 @@ ZeroMQ get/setsockopt constants
   ZMQ_PRIORITY
   ZMQ_RATE
   ZMQ_ROUTING_ID
+  ZMQ_BACKLOG
 ZeroMQ ZMQ_EVENTS flags
   ZMQ_POLLIN
   ZMQ_POLLOUT

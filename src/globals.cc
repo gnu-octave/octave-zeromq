@@ -1,4 +1,4 @@
-// Copyright (C) 2014-2019 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2014-2022 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -382,6 +382,7 @@ DEFUN_DLD (__ZMQ_MECHANISM_GSSAPI, args, nargout,"zeromq option mechanism consta
 // PKG_ADD: autoload ("__ZMQ_OPT_PRIORITY", "zeromq.oct");
 DEFUN_DLD (__ZMQ_OPT_PRIORITY, args, nargout,"zeromq socket constant")
 {
+  // NOTE: currently draft so may change
 #ifdef ZMQ_PRIORITY
   return octave_value(ZMQ_PRIORITY);
 #else
@@ -394,6 +395,16 @@ DEFUN_DLD (__ZMQ_OPT_RATE, args, nargout,"zeromq socket constant")
 {
 #ifdef ZMQ_RATE
   return octave_value(ZMQ_RATE);
+#else
+  return octave_value(-1);
+#endif
+}
+
+// PKG_ADD: autoload ("__ZMQ_OPT_BACKLOG", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_BACKLOG, args, nargout,"zeromq socket constant")
+{
+#ifdef ZMQ_BACKLOG
+  return octave_value(ZMQ_BACKLOG);
 #else
   return octave_value(-1);
 #endif

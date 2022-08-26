@@ -58,6 +58,8 @@ Get the socket identity value\n \
 Get the multicast data rate\n \
 @item @code{ZMQ_PRIORITY}\n \
 Get socket priority (linux only)\n \
+@item @code{ZMQ_BACKLOG}\n \
+Get length of queue for pending connections\n \
 @item @code{ZMQ_LAST_ENDPOINT}\n \
 Get the last endpoint the socket was connected to\n \
 @item @code{ZMQ_CONNECT_TIMEOUT}\n \
@@ -498,6 +500,19 @@ Get the security mechanism (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
 #endif 
 #ifdef ZMQ_RATE
   case ZMQ_RATE:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
+#ifdef ZMQ_BACKLOG
+  case ZMQ_BACKLOG:
     {
       int value;
       size_t sz = sizeof (value);

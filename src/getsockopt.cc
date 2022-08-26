@@ -488,6 +488,19 @@ Get the security mechanism (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
     }
     break;
 #endif 
+#ifdef ZMQ_RATE
+  case ZMQ_RATE:
+    {
+      int value;
+      size_t sz = sizeof (value);
+
+      if (! sock->getsockopt (opt, &value, &sz))
+        error ("zeromq: failed getsockopt");
+
+      ret = octave_value (value);
+    }
+    break;
+#endif 
 
   default:
     error ("zeromq: invalid getsockopt value %d", opt);

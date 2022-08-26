@@ -375,6 +375,16 @@ DEFUN_DLD (__ZMQ_OPT_PRIORITY, args, nargout,"zeromq socket constant")
 #endif
 }
 
+// PKG_ADD: autoload ("__ZMQ_OPT_RATE", "zeromq.oct");
+DEFUN_DLD (__ZMQ_OPT_RATE, args, nargout,"zeromq socket constant")
+{
+#ifdef ZMQ_RATE
+  return octave_value(ZMQ_RATE);
+#else
+  return octave_value(-1);
+#endif
+}
+
 
 #if 0
 %! % check that all the values exist

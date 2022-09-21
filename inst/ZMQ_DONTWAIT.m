@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_DONTWAIT
+## @deftypefn  {} {} ZMQ_DONTWAIT
 ##
 ## Constant for recv flag DONTWAIT
 ##

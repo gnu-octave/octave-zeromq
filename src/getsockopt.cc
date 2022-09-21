@@ -28,7 +28,7 @@
 // PKG_ADD: autoload ("zmq_getsockopt", "zeromq.oct");
 DEFUN_DLD (zmq_getsockopt, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} @var{value} =  zmq_getsockopt (@var{sock}, @var{optionid})\n \
+@deftypefn {} {@var{value} =} zmq_getsockopt (@var{sock}, @var{optionid})\n \
 \n\
 Get the current value of an option.\n \
 \n \

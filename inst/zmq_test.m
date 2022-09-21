@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} zmq_test
+## @deftypefn  {} {} zmq_test
 ##
 ## Perform zeromq Octave tests to exercise the oct file functionality.
 ##

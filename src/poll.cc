@@ -35,8 +35,8 @@
 // PKG_ADD: autoload ("zmq_poll", "zeromq.oct");
 DEFUN_DLD (zmq_poll, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{havedata} =  zmq_poll (@var{sock}, @var{timeout})\n \
-@deftypefnx {Loadable Function} @var{indexlist} =  zmq_poll (@var{socklist}, @var{timeout})\n \
+@deftypefn {} {@var{havedata} =} zmq_poll (@var{sock}, @var{timeout})\n \
+@deftypefnx {} {@var{indexlist} =} zmq_poll (@var{socklist}, @var{timeout})\n \
 \n\
 Wait up to timeout time for received data on socket.\n \
 \n \

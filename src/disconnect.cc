@@ -26,7 +26,7 @@
 // PKG_ADD: autoload ("zmq_disconnect", "zeromq.oct");
 DEFUN_DLD (zmq_disconnect, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} @var{status} =  zmq_connect (@var{sock}, @var{endpoint})\n \
+@deftypefn {} {@var{status} =} zmq_connect (@var{sock}, @var{endpoint})\n \
 \n\
 Disconnect a zeromq socket from an endpoint.\n \
 \n \

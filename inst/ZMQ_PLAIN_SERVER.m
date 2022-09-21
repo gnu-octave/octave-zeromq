@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_PLAIN_SERVER
+## @deftypefn  {} {} ZMQ_PLAIN_SERVER
 ##
 ## Constant for getsockopt and setsockopt PLAIN_SERVER value option
 ##

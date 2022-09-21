@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn {Function File} {} close (@var{s})
+## @deftypefn {} {} close (@var{s})
 ## Close the ZeroMQ socket represented by the object @var{s}.
 ##
 ## @var{s} is an ZeroMQ socket object returned by the @code{zmq_socket} 

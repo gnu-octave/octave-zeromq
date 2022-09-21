@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_ROUTER
+## @deftypefn  {} {} ZMQ_ROUTER
 ##
 ## Constant for router socket type.
 ##

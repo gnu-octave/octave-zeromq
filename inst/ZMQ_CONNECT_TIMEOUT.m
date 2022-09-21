@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_CONNECT_TIMEOUT
+## @deftypefn  {} {} ZMQ_CONNECT_TIMEOUT
 ##
 ## Constant for get/setsockopt connect timeout value
 ##

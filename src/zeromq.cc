@@ -82,7 +82,7 @@ Unbind a previously bound zeromq socket.\n \
 Get the zeromq library version numbers.\n \
 @end table\n \
 \n \
-Implemented functions depending on versionof libzmq are:\n \
+Implemented functions depending on version of libzmq are:\n \
 @table @asis\n \
 @item zmq_curve_keypair\n \
 Generate a random private/public keypair.\n \

@@ -29,7 +29,7 @@
 // PKG_ADD: autoload ("__zmq_properties__", "zeromq.oct");
 DEFUN_DLD (__zmq_properties__, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} {} __zmq_properties__ (@var{sock} ...)\n \
+@deftypefn {} {} __zmq_properties__ (@var{sock} ...)\n \
 \n\
 Internal function to get properties from a zmq socket\
 @end deftypefn")

@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_GSSAPI_SERVER
+## @deftypefn  {} {} ZMQ_GSSAPI_SERVER
 ##
 ## Constant for getsockopt and setsockopt GSSAPI_SERVER value option
 ##

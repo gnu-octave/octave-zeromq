@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_REP
+## @deftypefn  {} {} ZMQ_REP
 ##
 ## Constant for reply socket type.
 ##

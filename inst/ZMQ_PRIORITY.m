@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_PRIORITY
+## @deftypefn  {} {} ZMQ_PRIORITY
 ##
 ## Constant for getsockopt and setsockopt SO_PRIORITY value option
 ## in linux only.

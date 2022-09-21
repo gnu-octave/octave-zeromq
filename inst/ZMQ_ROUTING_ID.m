@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_ROUTING_ID
+## @deftypefn  {} {} ZMQ_ROUTING_ID
 ##
 ## Constant for getsockopt and setsockopt IDENTITY value option
 ##

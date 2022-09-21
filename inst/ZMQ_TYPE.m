@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_TYPE
+## @deftypefn  {} {} ZMQ_TYPE
 ##
 ## Constant for getsockopt TYPE value option
 ##

@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_errno", "zeromq.oct");
 DEFUN_DLD (zmq_errno, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{errornum} =  zmq_errno ()\n \
+@deftypefn {} @var{errornum} =  zmq_errno ()\n \
 \n\
 Get the value of errno from zeromq.\n \
 \n \

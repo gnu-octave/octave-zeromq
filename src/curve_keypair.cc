@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_curve_keypair", "zeromq.oct");
 DEFUN_DLD (zmq_curve_keypair, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} [ @var{publickey}, @var{privatekey} ]  =  zmq_curve_keypair ()\n \
+@deftypefn {} {[ @var{publickey}, @var{privatekey} ] =} zmq_curve_keypair ()\n \
 \n\
 Generate a random private/public keypair\n \
 \n \

@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_XSUB
+## @deftypefn  {} {} ZMQ_XSUB
 ##
 ## Constant for subscriber type.
 ##

@@ -29,7 +29,7 @@
 // PKG_ADD: autoload ("zmq_socket", "zeromq.oct");
 DEFUN_DLD (zmq_socket, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} {@var{sock} = } zmq_socket (@var{type})\n \
+@deftypefn {} {@var{sock} =} zmq_socket (@var{type})\n \
 \n\
 Create a zeromq socket.\n \
 \n \

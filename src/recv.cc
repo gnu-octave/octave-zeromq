@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_recv", "zeromq.oct");
 DEFUN_DLD (zmq_recv, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} data =  zmq_recv (@var{sock}, @var{len}[, @var{flags}])\n \
+@deftypefn {} {@var{data} =} zmq_recv (@var{sock}, @var{len}[, @var{flags}])\n \
 \n\
 Attempt to receive up to @var{len} bytes of data from  zeromq socket.\n \
 \n \

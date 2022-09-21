@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_SUBSCRIBE
+## @deftypefn  {} {} ZMQ_SUBSCRIBE
 ##
 ## Constant for setsockopt subscribe option
 ##

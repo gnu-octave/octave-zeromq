@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_has", "zeromq.oct");
 DEFUN_DLD (zmq_has, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} {@var{yesno} =} zmq_has (@var{feature})\n \
+@deftypefn {} {@var{yesno} =} zmq_has (@var{feature})\n \
 \n\
 Check if the zmq library supports a given feature.\n \
 \n \

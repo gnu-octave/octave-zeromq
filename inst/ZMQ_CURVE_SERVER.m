@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_CURVE_SERVER
+## @deftypefn  {} {} ZMQ_CURVE_SERVER
 ##
 ## Constant for getsockopt and setsockopt CURVE_SERVER value option
 ##

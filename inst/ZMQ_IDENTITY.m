@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_IDENITY
+## @deftypefn  {} {} ZMQ_IDENITY
 ##
 ## Constant for getsockopt and setsockopt IDENTITY value option
 ##

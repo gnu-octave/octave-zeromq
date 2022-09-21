@@ -29,8 +29,7 @@
 // PKG_ADD: autoload ("zmq_version", "zeromq.oct");
 DEFUN_DLD (zmq_version, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} [@var{major}, @var{minor}, @var{patch}] =  \
- zmq_version ()\n \
+@deftypefn {} {[@var{major}, @var{minor}, @var{patch}] =} zmq_version ()\n \
 \n\
 Get the ZeroMQ library version.\n \
 \n \

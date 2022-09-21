@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_MECHANISM
+## @deftypefn  {} {} ZMQ_MECHANISM
 ##
 ## Constant for getsockopt and setsockopt MECHANISM value option
 ##

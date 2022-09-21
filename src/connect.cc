@@ -26,7 +26,7 @@
 // PKG_ADD: autoload ("zmq_connect", "zeromq.oct");
 DEFUN_DLD (zmq_connect, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} @var{status} =  zmq_connect (@var{sock}, @var{endpoint})\n \
+@deftypefn {} {@var{status} =} zmq_connect (@var{sock}, @var{endpoint})\n \
 \n\
 Connect a zeromq socket to a endpoint.\n \
 \n \

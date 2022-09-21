@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_RCVMORE
+## @deftypefn  {} {} ZMQ_RCVMORE
 ##
 ## Constant for getsockopt RCVMORE value option
 ##

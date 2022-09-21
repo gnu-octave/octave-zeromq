@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_PLAIN_USERNAME
+## @deftypefn  {} {} ZMQ_PLAIN_USERNAME
 ##
 ## Constant for getsockopt and setsockopt PLAIN_USERNAME value option
 ##

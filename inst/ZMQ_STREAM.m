@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_STREAM
+## @deftypefn  {} {} ZMQ_STREAM
 ##
 ## Constant for stream socket type.
 ##

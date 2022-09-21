@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_EVENTS
+## @deftypefn  {} {} ZMQ_EVENTS
 ##
 ## Constant for getsockopt EVENTS value option
 ##

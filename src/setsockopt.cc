@@ -28,7 +28,7 @@
 // PKG_ADD: autoload ("zmq_setsockopt", "zeromq.oct");
 DEFUN_DLD (zmq_setsockopt, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} status =  zmq_setsockopt (@var{sock}, @var{optionid}, @var{value})\n \
+@deftypefn {} {@var{status} =} zmq_setsockopt (@var{sock}, @var{optionid}, @var{value})\n \
 \n\
 Set a socket option on a zeromq socket.\n \
 \n \

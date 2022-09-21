@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_z85_decode", "zeromq.oct");
 DEFUN_DLD (zmq_z85_decode, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{data} =  zmq_z85_decode (@var{instr})\n \
+@deftypefn {} {@var{data} =} zmq_z85_decode (@var{instr})\n \
 \n\
 Decode a z85 encoded string to a binary key.\n \
 \n \

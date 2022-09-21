@@ -28,7 +28,7 @@
 // PKG_ADD: autoload ("zmq_send", "zeromq.oct");
 DEFUN_DLD (zmq_send, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{count} =  zmq_send (@var{sock}, @var{data}[, @var{flags}])\n \
+@deftypefn {} {@var{count} =} zmq_send (@var{sock}, @var{data}[, @var{flags}])\n \
 \n\
 Attempt to send to @var{data} bytes of data to zeromq socket.\n \
 \n \

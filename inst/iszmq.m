@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn {Function File} {@var{tf} =} iszmq (@var{h})
+## @deftypefn {} {@var{tf} =} iszmq (@var{h})
 ##
 ## Determine whether @var{h} is a zeromq socket object.
 ##

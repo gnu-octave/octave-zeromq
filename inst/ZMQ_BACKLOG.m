@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_BACKLOG
+## @deftypefn  {} {} ZMQ_BACKLOG
 ##
 ## Constant for getsockopt and setsockopt to set backlog for pending connections
 ##

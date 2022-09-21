@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_RATE
+## @deftypefn  {} {} ZMQ_RATE
 ##
 ## Constant for getsockopt and setsockopt value option
 ##

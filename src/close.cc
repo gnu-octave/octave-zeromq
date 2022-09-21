@@ -26,7 +26,7 @@
 // PKG_ADD: autoload ("zmq_close", "zeromq.oct");
 DEFUN_DLD (zmq_close, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} {} zmq_close (@var{sock})\n \
+@deftypefn {} {} zmq_close (@var{sock})\n \
 \n\
 Close a zeromq socket.\n \
 \n \

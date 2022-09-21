@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_PAIR
+## @deftypefn  {} {} ZMQ_PAIR
 ##
 ## Constant for pair socket type.
 ##

@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_SOCKS_PROXY
+## @deftypefn  {} {} ZMQ_SOCKS_PROXY
 ##
 ## Constant for getsockopt and setsockopt SOCKS_PROXY value option
 ##

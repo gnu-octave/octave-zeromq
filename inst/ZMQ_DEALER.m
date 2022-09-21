@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_DEALER
+## @deftypefn  {} {} ZMQ_DEALER
 ##
 ## Constant for dealer socket type.
 ##

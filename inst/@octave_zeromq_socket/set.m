@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn {Function File} {} get (@var{s}, @var{prop}, @var{value} [, ...])
+## @deftypefn {} {} get (@var{s}, @var{prop}, @var{value} [, ...])
 ## set  property @var{prop} to @var{value} from a ZeroMQ socket represented by
 ## the object @var{s}.
 ##

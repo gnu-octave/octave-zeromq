@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_POLLOUT
+## @deftypefn  {} {} ZMQ_POLLOUT
 ##
 ## Constant bitmask value for getsockopt EVENTS value option
 ##

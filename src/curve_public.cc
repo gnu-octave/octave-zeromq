@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_curve_public", "zeromq.oct");
 DEFUN_DLD (zmq_curve_public, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{publickey} = zmq_curve_public (@var{privatekey})\n \
+@deftypefn {} {@var{publickey} =} zmq_curve_public (@var{privatekey})\n \
 \n\
 Derive the public key from a private key\n \
 \n \

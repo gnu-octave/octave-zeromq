@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_PLAIN_PASSWORD
+## @deftypefn  {} {} ZMQ_PLAIN_PASSWORD
 ##
 ## Constant for getsockopt and setsockopt PLAIN_PASSWORD value option
 ##

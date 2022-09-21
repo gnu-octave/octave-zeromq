@@ -27,7 +27,7 @@
 // PKG_ADD: autoload ("zmq_strerror", "zeromq.oct");
 DEFUN_DLD (zmq_strerror, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {Loadable Function} @var{errorstr} =  zmq_strerror ()\n \
+@deftypefn {} {@var{errorstr} =} zmq_strerror ()\n \
 \n\
 Get the last error from zeromq.\n \
 \n \

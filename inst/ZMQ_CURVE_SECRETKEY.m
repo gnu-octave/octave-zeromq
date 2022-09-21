@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_CURVE_PRIVATEKEY
+## @deftypefn  {} {} ZMQ_CURVE_PRIVATEKEY
 ##
 ## Constant for getsockopt and setsockopt CURVE_PRIVATEKEY value option
 ##

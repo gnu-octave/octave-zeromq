@@ -26,7 +26,7 @@
 // PKG_ADD: autoload ("zmq_unbind", "zeromq.oct");
 DEFUN_DLD (zmq_unbind, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {Loadable Function} status =  zmq_unbind (@var{sock}, @var{endpoint})\n \
+@deftypefn {} {@var{status} =} zmq_unbind (@var{sock}, @var{endpoint})\n \
 \n\
 Unbind a previously bound zeromq socket from a endpoint.\n \
 \n \

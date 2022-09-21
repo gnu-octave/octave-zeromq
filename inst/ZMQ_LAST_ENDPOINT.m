@@ -17,7 +17,7 @@
 ## <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*-
-## @deftypefn  {Command} {} ZMQ_LAST_ENDPOINT
+## @deftypefn  {} {} ZMQ_LAST_ENDPOINT
 ##
 ## Constant for getsockopt last endpoint value option
 ##

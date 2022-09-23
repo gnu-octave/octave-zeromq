@@ -32,13 +32,12 @@ DEFUN_DLD (zmq_setsockopt, args, nargout,
 \n\
 Set a socket option on a zeromq socket.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to connect.\n \
 \n\
 @var{optionid} - the setsockopt option to set.\n \
 \n\
 @var{value} - the value to set.\n \
-\n \
-On success, setsockopt will return @var{status} of true \n \
 \n \
 Known valid @var{optionid}s are:\n \
 @table @asis\n \
@@ -82,6 +81,10 @@ Set the name of the gssapi principal (string)\n \
 @item @code{ZMQ_GSSAPI_SERVICE_PRINCIPAL}\n \
 Set the name of the gssapi service principal (string)\n \
 @end table\n \
+\n \
+@subsubheading Outputs\n \
+@var{status} - status for setsockopt.\n \
+On success, setsockopt will return @var{status} of true \n \
 \n \
 @seealso {zmq_getsockopt, ZMQ_SUBSCRIBE, ZMQ_UNSUBSCRIBE, ZMQ_CONNECT_TIMEOUT}\n \
 @end deftypefn")

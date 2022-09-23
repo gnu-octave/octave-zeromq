@@ -33,6 +33,7 @@ DEFUN_DLD (zmq_socket, args, nargout,
 \n\
 Create a zeromq socket.\n \
 \n \
+@subsubheading Inputs\n \
 @var{type} - the socket type to create.\n \
 \n \
 Supported socket types are:\n \
@@ -63,7 +64,8 @@ Subscribe socket\n \
 Stream socket\n \
 @end table\n \
 \n \
-zmq_socket() returns an instance of @var{octave_zeromq_socket} class as the result.\n \
+@subsubheading Outputs\n \
+@var{sock} - an instance of @var{octave_zeromq_socket} class.\n \
 \n \
 @seealso {ZMQ_PUB, ZMQ_SUB, ZMQ_PUSH, ZMQ_PULL, ZMQ_REQ, ZMQ_REP, ZMQ_PAIR, ZMQ_DEALER, ZMQ_ROUTER, ZMQ_XPUB, ZMQ_XSUB, ZMQ_STREAM}\n \
 @end deftypefn")

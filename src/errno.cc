@@ -31,6 +31,9 @@ DEFUN_DLD (zmq_errno, args, nargout,
 \n\
 Get the value of errno from zeromq.\n \
 \n \
+@subsubheading Inputs\n \
+None\n \
+@subsubheading Outputs\n \
 @var{errornum} is the errno value of the calling thread.\n \
 \n \
 @end deftypefn")

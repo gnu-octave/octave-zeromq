@@ -31,8 +31,10 @@ DEFUN_DLD (zmq_curve_public, args, nargout,
 \n\
 Derive the public key from a private key\n \
 \n \
+@subsubheading Inputs\n \
 @var{privatekey} is a string that is the encoded private key. It must be 40 characters in length\n \
 \n \
+@subsubheading Outputs\n \
 @var{publickey} is a string that is the encoded public key\n \
 \n \
 @seealso{zmq_curve_keypair}\n \

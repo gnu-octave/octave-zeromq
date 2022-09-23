@@ -31,9 +31,11 @@ DEFUN_DLD (zmq_z85_encode, args, nargout,
 \n\
 Encode a binary key as Z85 printable text.\n \
 \n \
-@var{data} is uint8 data that must have a size divisible by 4.\n \
+@subsubheading Inputs\n \
+@var{data} - uint8 data that must have a size divisible by 4.\n \
 \n \
-@var{dest} is a string encoded data\
+@subsubheading Outputs\n \
+@var{dest} - string encoded data\
 \n \
 @end deftypefn")
 {

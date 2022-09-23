@@ -21,7 +21,10 @@
 ##
 ## Determine whether @var{h} is a zeromq socket object.
 ##
-## if @var{h} is a zeromq socket object, returns true, otherwise returns false.
+## @subsubheading Inputs
+## @var{h} - a potential zeromq socket object to check
+## @subsubheading Outputs
+## @var{tf} - true if @var{h} is a zeromq socket object, otherwise false.
 ##
 ## @seealso{zmq_socket}
 ## @end deftypefn

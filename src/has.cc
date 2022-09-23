@@ -31,6 +31,7 @@ DEFUN_DLD (zmq_has, args, nargout,
 \n\
 Check if the zmq library supports a given feature.\n \
 \n \
+@subsubheading Inputs\n \
 @var{feature} is the name of feature to check.\n \
 \n \
 Currently known features are:\n \
@@ -51,7 +52,8 @@ library supports the GSSAPI security mechanism\n \
 library was built with the draft API.\n \
 @end table\n \
 \n \
-Returns the @var{yesno}, set to true if the feature is available, otherwise false. \
+@subsubheading Outputs\n \
+@var{yesno} - set to true if the feature is available, otherwise false. \
 \n \
 @end deftypefn")
 {

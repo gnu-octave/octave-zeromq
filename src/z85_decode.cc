@@ -31,10 +31,11 @@ DEFUN_DLD (zmq_z85_decode, args, nargout,
 \n\
 Decode a z85 encoded string to a binary key.\n \
 \n \
-@var{instr} is a string encoded data\
+@subsubheading Inputs\n \
+@var{instr} - a string encoded data\n \
 \n \
-@var{data} is uint8 decoded data\n \
-\n \
+@subsubheading Outputs\n \
+@var{data} - uint8 decoded data\n \
 \n \
 @end deftypefn")
 {

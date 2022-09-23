@@ -1,4 +1,4 @@
-// Copyright (C) 2016-2018 John Donoghue <john.donoghue@ieee.org>
+// Copyright (C) 2016-2022 John Donoghue <john.donoghue@ieee.org>
 //
 // This program is free software; you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -26,14 +26,17 @@
 // PKG_ADD: autoload ("zmq_disconnect", "zeromq.oct");
 DEFUN_DLD (zmq_disconnect, args, nargout,
         "-*- texinfo -*-\n\
-@deftypefn {} {@var{status} =} zmq_connect (@var{sock}, @var{endpoint})\n \
+@deftypefn {} {@var{status} =} zmq_disconnect (@var{sock}, @var{endpoint})\n \
 \n\
 Disconnect a zeromq socket from an endpoint.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to disconnect from.\n \
 \n \
 @var{endpoint} - a previously connected endpoint string to disconnect.\n \
 \n \
+@subsubheading Outputs\n \
+@var{status} - status for disconnect.\n \
 On success, disconnect will return a @var{status} of true \n \
 \n \
 @seealso{zmq_socket, zmq_connect}\n \

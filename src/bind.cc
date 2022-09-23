@@ -30,10 +30,13 @@ DEFUN_DLD (zmq_bind, args, nargout,
 \n\
 Bind a zeromq socket to a endpoint.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to bind.\n \
 \n \
 @var{endpoint} - the endpoint string.\n \
 \n \
+@subsubheading Outputs\n \
+@var{status} - status for bind.\n \
 On success, bind will return a @var{status} of true \n \
 \n \
 @seealso { zmq_socket }\n \

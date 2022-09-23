@@ -32,11 +32,10 @@ DEFUN_DLD (zmq_getsockopt, args, nargout,
 \n\
 Get the current value of an option.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to connect.\n \
 \n \
 @var{optionid} - the setsockopt option to set.\n \
-\n \
-@var{value} - the value set for the option, or [].\n \
 \n \
 Valid @var{optionid}s are:\n \
 @table @asis\n \
@@ -91,6 +90,9 @@ Get the name of the gssapi service principal (string)\n \
 @item @code{ZMQ_MECHANISM}\n \
 Get the security mechanism (ZMQ_NULL, ZMQ_PLAIN, ZMQ_CURVE, ZMQ_GSSAPI)\n \
 @end table\n \
+\n \
+@subsubheading Outputs\n \
+@var{value} - the value set for the option, or [].\n \
 \n \
 @seealso{zmq_socket, zmq_setsockopt}\n \
 @end deftypefn")

@@ -28,17 +28,20 @@
 // PKG_ADD: autoload ("zmq_send", "zeromq.oct");
 DEFUN_DLD (zmq_send, args, nargout,
         "-*- texinfo -*-\n \
-@deftypefn {} {@var{count} =} zmq_send (@var{sock}, @var{data}[, @var{flags}])\n \
+@deftypefn {} {@var{count} =} zmq_send (@var{sock}, @var{data})\n \
+@deftypefnx {} {@var{count} =} zmq_send (@var{sock}, @var{data}, @var{flags})\n \
 \n\
 Attempt to send to @var{data} bytes of data to zeromq socket.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to receive from.\n \
 \n \
 @var{data} - data to send - either string or uint8 type.\n \
 \n \
 @var{flags} - optional flags to pass to send\n \
 \n \
-Returns @var{count} of bytes written to socket, or -1 on error.\n \
+@subsubheading Outputs\n \
+@var{count} - number of bytes written to socket, or -1 on error.\n \
 \n \
 @seealso {zmq_socket}\n \
 @end deftypefn")

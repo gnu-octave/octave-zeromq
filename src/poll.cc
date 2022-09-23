@@ -40,6 +40,7 @@ DEFUN_DLD (zmq_poll, args, nargout,
 \n\
 Wait up to timeout time for received data on socket.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to wait on.\n \
 \n \
 @var{socklist} - the array of sockets to wait on.\n \
@@ -47,6 +48,7 @@ Wait up to timeout time for received data on socket.\n \
 @var{timeout} - timeout time in milliseconds.\n \
 A value of 0 will return without waiting. A value of -1 will wait until there is data.\n \
 \n \
+@subsubheading Outputs\n \
 @var{havedata} - value of 1 if have data.\n \
 \n \
 @var{indexlist} - cell array of indexes to sockets that have data.\n \

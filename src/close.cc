@@ -30,7 +30,10 @@ DEFUN_DLD (zmq_close, args, nargout,
 \n\
 Close a zeromq socket.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket type to close.\n \
+@subsubheading Outputs\n \
+None\n \
 \n \
 @seealso { zmq_socket }\n \
 @end deftypefn")

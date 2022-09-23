@@ -29,11 +29,14 @@ DEFUN_DLD (zmq_connect, args, nargout,
 @deftypefn {} {@var{status} =} zmq_connect (@var{sock}, @var{endpoint})\n \
 \n\
 Connect a zeromq socket to a endpoint.\n \
+@subsubheading Inputs\n \
 \n \
 @var{sock} - the socket to connect.\n \
 \n \
 @var{endpoint} - the endpoint string.\n \
 \n \
+@subsubheading Outputs\n \
+@var{status} - status for connect.\n \
 On success, connect will return a @var{status} of true \n \
 \n \
 @seealso{zmq_socket}\n \

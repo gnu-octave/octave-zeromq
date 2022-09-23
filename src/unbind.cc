@@ -30,10 +30,13 @@ DEFUN_DLD (zmq_unbind, args, nargout,
 \n\
 Unbind a previously bound zeromq socket from a endpoint.\n \
 \n \
+@subsubheading Inputs\n \
 @var{sock} - the socket to unbind.\n \
 \n \
 @var{endpoint} - the endpoint string to unbind.\n \
 \n \
+@subsubheading Outputs\n \
+@var{status} - status for unbind.\n \
 On success, unbind will return a @var{status} of true \n \
 \n \
 @seealso { zmq_socket, zmq_bind }\n \

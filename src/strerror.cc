@@ -31,7 +31,10 @@ DEFUN_DLD (zmq_strerror, args, nargout,
 \n\
 Get the last error from zeromq.\n \
 \n \
-@var{errorstr} is a string representation of the last error \
+@subsubheading Inputs\n \
+None\n \
+@subsubheading Outputs\n \
+@var{errorstr} - a string representation of the last error \
 \n \
 @end deftypefn")
 {

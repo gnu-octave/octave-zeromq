@@ -31,6 +31,9 @@ DEFUN_DLD (zmq_curve_keypair, args, nargout,
 \n\
 Generate a random private/public keypair\n \
 \n \
+@subsubheading Inputs\n \
+None\n \
+@subsubheading Outputs\n \
 @var{publickey} is a string that is the encoded public key\n \
 \n \
 @var{privatekey} is a string that is the encoded private key\n \

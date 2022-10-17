@@ -18,7 +18,7 @@
 ### <http://www.gnu.org/licenses/>.
 
 AC_PREREQ([2.67])
-AC_INIT([octave zeromq package], [1.5.4])
+AC_INIT([octave zeromq package], [1.5.5])
 AC_CONFIG_HEADERS([config.h])
 
 # Avoid warnings for redefining AH-generated preprocessor symbols of

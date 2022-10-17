@@ -1,7 +1,12 @@
-Summary of important user-visible changes for octave zeromq 1.5.4+:
+Summary of important user-visible changes for octave zeromq 1.5.5:
 -------------------------------------------------------------------
 
-  *** added ZMQ_PRIORITY, ZMQ_RATE, ZMQ_ROUTING_ID, ZMQ_BACKLOG constant
+  *** added ZMQ_PRIORITY, ZMQ_RATE, ZMQ_ROUTING_ID, ZMQ_BACKLOG
+      constants
+
+  *** added Qt5 help documents
+
+  *** minor doc updates
 
 Summary of important user-visible changes for octave zeromq 1.5.4:
 -------------------------------------------------------------------

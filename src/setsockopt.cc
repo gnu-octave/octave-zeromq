@@ -55,7 +55,7 @@ Set the multicast data rate\n \
 @item @code{ZMQ_PRIORITY}\n \
 Set the socket priority (linux only)\n \
 @item @code{ZMQ_BACKLOG}\n \
-Set the queue length for incomming connections\n \
+Set the queue length for incoming connections\n \
 @item @code{ZMQ_SOCKS_PROXY}\n \
 Set the socks5 proxy value (string)\n \
 @item @code{ZMQ_CURVE_SERVER}\n \

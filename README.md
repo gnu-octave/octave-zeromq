@@ -38,9 +38,7 @@ Usage:
 Documentation
 ==============
 
-See the function list for octave-zeromq on [octave forge](https://octave.sourceforge.io/zeromq/overview.html) for function documentation.
-
-See the online manual for octave-zeromq on [octave forge](https://octave.sourceforge.io/zeromq/package_doc/) for complete documentation.
+Documentation for using the toolkit is available on [octave-zeromq github](https://gnu-octave.github.io/octave-audio/functiios)..
 
 Read the Octave [Octave zeromq package wiki](https://wiki.octave.org/Zeromq_package) for install tips and examples.
 

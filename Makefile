@@ -10,6 +10,7 @@
 ## without any warranty.
 
 TOPDIR := $(shell pwd)
+PACKAGE_REPO_DIR ?= $(TOPDIR)
 
 ## Some basic tools (can be overriden using environment variables)
 SED ?= sed
@@ -69,22 +70,22 @@ MKOCTFILE ?= mkoctfile
 ## Command used to set permissions before creating tarballs
 FIX_PERMISSIONS ?= chmod -R a+rX,u+w,go-w,ug-s
 
+## Detect which VCS is used
+vcs := $(if $(wildcard $(PACKAGE_REPO_DIR)/.hg),hg,$(if $(wildcard $(PACKAGE_REPO_DIR)/.git),git,unknown))
+ifeq ($(vcs),hg)
+release_dir_dep := $(PACKAGE_REPO_DIR)/.hg/dirstate
 HG           := hg
 HG_CMD        = $(HG) --config alias.$(1)=$(1) --config defaults.$(1)= $(1)
 HG_ID        := $(shell $(call HG_CMD,identify) --id | sed -e 's/+//' )
-HG_TIMESTAMP := $(firstword $(shell $(call HG_CMD,log) --rev $(HG_ID) --template '{date|hgdate}'))
-
-
-## Detect which VCS is used
-vcs := $(if $(wildcard .hg),hg,$(if $(wildcard .git),git,unknown))
-ifeq ($(vcs),hg)
-release_dir_dep := .hg/dirstate
+REPO_TIMESTAMP := $(firstword $(shell $(call HG_CMD,log) --rev $(HG_ID) --template '{date|hgdate}'))
 endif
 ifeq ($(vcs),git)
-release_dir_dep := .git/index
+release_dir_dep := $(PACKAGE_REPO_DIR)/.git/index
+GIT          := git
+REPO_TIMESTAMP := $(firstword $(shell $(GIT) log -n1 --date=unix --format="%ad"))
 endif
 
-TAR_REPRODUCIBLE_OPTIONS := --sort=name --mtime="@$(HG_TIMESTAMP)" --owner=0 --group=0 --numeric-owner
+TAR_REPRODUCIBLE_OPTIONS := --sort=name --mtime="@$(REPO_TIMESTAMP)" --owner=0 --group=0 --numeric-owner
 TAR_OPTIONS  := --format=ustar $(TAR_REPRODUCIBLE_OPTIONS)
 
 ## .PHONY indicates targets that are not filenames
@@ -145,10 +146,10 @@ clean-tarballs:
 $(release_dir): $(release_dir_dep)
 	-$(RM) -r "$@"
 ifeq (${vcs},hg)
-	hg archive --exclude ".hg*" --type files "$@"
+	$(HG) archive --exclude ".hg*" --type files "$@"
 endif
 ifeq (${vcs},git)
-	git archive --format=tar --prefix="$@/" HEAD | $(TAR) -x
+	$(GIT) archive --format=tar --prefix="$@/" HEAD | $(TAR) -x
 	$(RM) "$@/.gitignore"
 endif
 ## Don't fall back to run the supposed necessary contents of
@@ -159,14 +160,16 @@ endif
 ifneq (,$(wildcard src/bootstrap))
 	cd "$@/src" && ./bootstrap && $(RM) -r "autom4te.cache"
 endif
-## Uncomment this if your src/Makefile.in has these targets for
-## pre-building something for the release (e.g. documentation).
-#	cd "$@/src" && ./configure && $(MAKE) prebuild && \
-#	  $(MAKE) clean && $(RM) Makefile
-##
-	$(MAKE) -C "$@" docs
+ifneq (,$(wildcard src/configure))
+	cd "$@/src" && ./configure && $(MAKE) prebuild && \
+	  $(MAKE) PACKAGE_REPO_DIR=$(PACKAGE_REPO_DIR) distclean && $(RM) Makefile
+endif
+ifneq (,$(wildcard doc/mkfuncdocs.py))
+	$(MAKE) PACKAGE_REPO_DIR=$(PACKAGE_REPO_DIR) -C "$@" docs
+	cd "$@" && $(RM) -f doc/mkfuncdocs.py doc/mkqhcp.py
+endif
 	# remove dev stuff
-	cd "$@" && $(RM) -rf "devel" && $(RM) -f doc/mkfuncdocs.py
+	cd "$@" && $(RM) -rf "devel"
 	${FIX_PERMISSIONS} "$@"
 
 run_in_place = $(OCTAVE) --eval ' pkg ("local_list", "$(package_list)"); ' \
@@ -193,12 +196,12 @@ doc/version.texi: $(release_dir_dep)
 	@echo "@set DATE $(pkg_date)" >> $@
 
 doc/$(package).pdf: doc/$(package).texi doc/functions.texi doc/version.texi
-	cd doc && SOURCE_DATE_EPOCH=$(HG_TIMESTAMP) $(TEXI2PDF) $(package).texi
+	cd doc && SOURCE_DATE_EPOCH=$(REPO_TIMESTAMP) $(TEXI2PDF) $(package).texi
 	# remove temp files
 	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
 
 doc/$(package).html: doc/$(package).texi doc/functions.texi doc/version.texi
-	cd doc && SOURCE_DATE_EPOCH=$(HG_TIMESTAMP) $(MAKEINFO) --html --css-ref=$(package).css  --no-split $(package).texi
+	cd doc && SOURCE_DATE_EPOCH=$(REPO_TIMESTAMP) $(MAKEINFO) --html --css-ref=$(package).css  --no-split $(package).texi
 
 doc/$(package).qhc: doc/$(package).html
 	# try also create qch file if can

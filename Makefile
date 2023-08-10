@@ -54,7 +54,7 @@ html_tarball     := $(target_dir)/$(package)-html.tar.gz
 ## #50994 in Octaves scripts/pkg/private/install.m.  But at least the
 ## release directory above is needed in the relative form, for 'git
 ## archive --format=tar --prefix=$(release_dir).
-real_target_dir  := $(realpath .)/$(target_dir)
+real_target_dir  := $(realpath $(PACKAGE_REPO_DIR))/$(target_dir)
 installation_dir := $(real_target_dir)/.installation
 package_list     := $(installation_dir)/.octave_packages
 install_stamp    := $(installation_dir)/.install_stamp
@@ -171,6 +171,9 @@ endif
 	# remove dev stuff
 	cd "$@" && $(RM) -rf "devel"
 	${FIX_PERMISSIONS} "$@"
+
+	# ensure target dir date is now updated
+	touch "$@"
 
 run_in_place = $(OCTAVE) --eval ' pkg ("local_list", "$(package_list)"); ' \
                          --eval ' pkg ("load", "$(package)"); '

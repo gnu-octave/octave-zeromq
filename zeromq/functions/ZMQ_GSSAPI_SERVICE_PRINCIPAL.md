@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/28_ZMQGSSAPISERVICEPRINCIPAL/"
 pkg_name: "zeromq"
-pkg_version: "1.5.5"
+pkg_version: "1.5.6"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_GSSAPI_SERVICE_PRINCIPAL"
 category: "ZeroMQ get/setsockopt constants"

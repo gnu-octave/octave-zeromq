@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_zmqsetsockopt/"
 pkg_name: "zeromq"
-pkg_version: "1.5.5"
+pkg_version: "1.5.6"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_setsockopt"
 category: "ZeroMQ functions"
@@ -76,7 +76,7 @@ navigation:
 <dd><p>Set the socket priority (linux only)
  </p></dd>
 <dt><code class="code">ZMQ_BACKLOG</code></dt>
-<dd><p>Set the queue length for incomming connections
+<dd><p>Set the queue length for incoming connections
  </p></dd>
 <dt><code class="code">ZMQ_SOCKS_PROXY</code></dt>
 <dd><p>Set the socks5 proxy value (string)

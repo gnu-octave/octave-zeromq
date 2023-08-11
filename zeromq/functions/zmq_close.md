@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/9_zmqclose/"
 pkg_name: "zeromq"
-pkg_version: "1.5.5"
+pkg_version: "1.5.6"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_close"
 category: "ZeroMQ functions"

@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/13_ZMQSUBSCRIBE/"
 pkg_name: "zeromq"
-pkg_version: "1.5.5"
+pkg_version: "1.5.6"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_SUBSCRIBE"
 category: "ZeroMQ get/setsockopt constants"

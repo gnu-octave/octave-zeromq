@@ -3,7 +3,7 @@ layout: "function_list"
 permalink: "/functions/"
 title: "Zeromq Toolkit - Functions"
 pkg_name: "zeromq"
-version: "1.5.5"
+version: "1.5.6"
 description: "ZeroMQ bindings for GNU Octave"
 categories:
 - id: "15_ZeroMQoverview"

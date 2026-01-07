@@ -39,6 +39,10 @@ archtests: $(TST_SOURCES)
 zeromq.oct: $(OBJ)
 	$(MKOCTFILE) -o zeromq.oct $(OBJ) $(LDFLAGS) $(LIBS)
 
+.PHONY: prebuild
+prebuild:
+	# nothing to do
+
 .PHONY: clean
 .PHONY: distclean
 

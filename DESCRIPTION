@@ -1,6 +1,6 @@
 Name: zeromq
-Version: 1.5.6
-Date: 2023-08-11
+Version: 1.5.7
+Date: 2026-01-07
 Author: John Donoghue <john.donoghue@ieee.org>
 Maintainer: John Donoghue <john.donoghue@ieee.org>
 Title: ZeroMQ Toolbox
@@ -12,3 +12,4 @@ Autoload: no
 License: GPLv3+
 Url: https://gnu-octave.github.io/octave-zeromq/
 Repository: https://github.com/gnu-octave/octave-zeromq/
+Tracker: https://github.com/gnu-octave/octave-zeromq/issues

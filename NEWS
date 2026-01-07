@@ -1,3 +1,10 @@
+Summary of important user-visible changes for octave zeromq 1.5.7:
+-------------------------------------------------------------------
+
+  *** minor doc updates
+
+  *** Space in path support for windows. 
+
 Summary of important user-visible changes for octave zeromq 1.5.6:
 -------------------------------------------------------------------
 

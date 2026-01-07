@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/news/"
 title: "Zeromq Toolkit - News"
 pkg_name: "zeromq"
-version: "1.5.6"
+version: "1.5.7"
 description: "ZeroMQ bindings for GNU Octave"
 navigation:
 - id: "overview"
@@ -19,6 +19,13 @@ navigation:
   url: "/manual"
 ---
 <pre>
+Summary of important user-visible changes for octave zeromq 1.5.7:
+-------------------------------------------------------------------
+
+  *** minor doc updates
+
+  *** Space in path support for windows. 
+
 Summary of important user-visible changes for octave zeromq 1.5.6:
 -------------------------------------------------------------------
 

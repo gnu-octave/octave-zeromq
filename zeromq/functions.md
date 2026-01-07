@@ -3,7 +3,7 @@ layout: "function_list"
 permalink: "/functions/"
 title: "Zeromq Toolkit - Functions"
 pkg_name: "zeromq"
-version: "1.5.6"
+version: "1.5.7"
 description: "ZeroMQ bindings for GNU Octave"
 categories:
 - id: "15_ZeroMQoverview"
@@ -13,6 +13,7 @@ categories:
     name: "zeromq"
     description: "The zeromq package provides GNU Octave bindings to the ZeroMQ library to prov..."
     url: "/functions/6_zeromq/"
+  groups:
 - id: "16_ZeroMQfunctions"
   description: "ZeroMQ functions"
   functions:
@@ -96,6 +97,7 @@ categories:
     name: "zmq_z85_encode"
     description: "Encode a binary key as Z85 printable text."
     url: "/functions/14_zmqz85encode/"
+  groups:
 - id: "28_ZeroMQsockettypeconstants"
   description: "ZeroMQ socket type constants"
   functions:
@@ -147,6 +149,7 @@ categories:
     name: "ZMQ_XSUB"
     description: "Constant for subscriber type."
     url: "/functions/8_ZMQXSUB/"
+  groups:
 - id: "31_ZeroMQgetsetsockoptconstants"
   description: "ZeroMQ get/setsockopt constants"
   functions:
@@ -250,6 +253,7 @@ categories:
     name: "ZMQ_BACKLOG"
     description: "Constant for getsockopt and setsockopt to set backlog for pending connections"
     url: "/functions/11_ZMQBACKLOG/"
+  groups:
 - id: "23_ZeroMQZMQEVENTSflags"
   description: "ZeroMQ ZMQ_EVENTS flags"
   functions:
@@ -261,6 +265,7 @@ categories:
     name: "ZMQ_POLLOUT"
     description: "Constant bitmask value for getsockopt EVENTS value option"
     url: "/functions/11_ZMQPOLLOUT/"
+  groups:
 - id: "27_ZeroMQreceivesendoptions"
   description: "ZeroMQ receive send options"
   functions:
@@ -272,6 +277,7 @@ categories:
     name: "ZMQ_SNDMORE"
     description: "Constant for send flag SNDMORE"
     url: "/functions/11_ZMQSNDMORE/"
+  groups:
 - id: "27_ZeroMQZMQMECHANISMvalues"
   description: "ZeroMQ ZMQ_MECHANISM values"
   functions:
@@ -291,6 +297,7 @@ categories:
     name: "ZMQ_GSSAPI"
     description: "Constant value for getsockopt MECHANISM value option"
     url: "/functions/10_ZMQGSSAPI/"
+  groups:
 navigation:
 - id: "overview"
   name: "Overview"
@@ -300,24 +307,31 @@ navigation:
 - id: "15_ZeroMQoverview"
   name: "&nbsp;&nbsp;ZeroMQ overview"
   url: "/functions/#15_ZeroMQoverview"
+  subitems:
 - id: "16_ZeroMQfunctions"
   name: "&nbsp;&nbsp;ZeroMQ functions"
   url: "/functions/#16_ZeroMQfunctions"
+  subitems:
 - id: "28_ZeroMQsockettypeconstants"
   name: "&nbsp;&nbsp;ZeroMQ socket type constants"
   url: "/functions/#28_ZeroMQsockettypeconstants"
+  subitems:
 - id: "31_ZeroMQgetsetsockoptconstants"
   name: "&nbsp;&nbsp;ZeroMQ get/setsockopt constants"
   url: "/functions/#31_ZeroMQgetsetsockoptconstants"
+  subitems:
 - id: "23_ZeroMQZMQEVENTSflags"
   name: "&nbsp;&nbsp;ZeroMQ ZMQ_EVENTS flags"
   url: "/functions/#23_ZeroMQZMQEVENTSflags"
+  subitems:
 - id: "27_ZeroMQreceivesendoptions"
   name: "&nbsp;&nbsp;ZeroMQ receive send options"
   url: "/functions/#27_ZeroMQreceivesendoptions"
+  subitems:
 - id: "27_ZeroMQZMQMECHANISMvalues"
   name: "&nbsp;&nbsp;ZeroMQ ZMQ_MECHANISM values"
   url: "/functions/#27_ZeroMQZMQMECHANISMvalues"
+  subitems:
 - id: "news"
   name: "News"
   url: "/news"

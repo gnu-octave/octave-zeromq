@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Zeromq Toolkit - Manual"
 pkg_name: "zeromq"
-version: "1.5.6"
+version: "1.5.7"
 description: "ZeroMQ bindings for GNU Octave"
 navigation:
 - id: "overview"
@@ -31,25 +31,21 @@ navigation:
   url: "/manual/#Function-Reference-1"
 ---
 <div class="top-level-extent" id="Top">
-<div class="nav-panel">
-<p>
-Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and loading</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h1 class="top" id="Introduction">Introduction</h1>
 <p>The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave
 </p>
-<div class="element-contents" id="SEC_Contents">
+<div class="region-contents" id="SEC_Contents">
 <h2 class="contents-heading">Table of Contents</h2>
 <div class="contents">
 <ul class="toc-numbered-mark">
-  <li><a id="toc-Installing-and-loading-1" href="#Installing-and-loading">1 Installing and loading</a>
+  <li><a id="toc-Installing-and-loading" href="#Installing-and-loading">1 Installing and loading</a>
   <ul class="toc-numbered-mark">
     <li><a id="toc-Online-Direct-install" href="#Online-Direct-install">1.1 Online Direct install</a></li>
     <li><a id="toc-Off_002dline-install" href="#Off_002dline-install">1.2 Off-line install</a></li>
     <li><a id="toc-Loading" href="#Loading">1.3 Loading</a></li>
   </ul></li>
-  <li><a id="toc-Basic-Usage-Overview-1" href="#Basic-Usage-Overview">2 Basic Usage Overview</a></li>
-  <li><a id="toc-Examples-1" href="#Examples">3 Examples</a>
+  <li><a id="toc-Basic-Usage-Overview" href="#Basic-Usage-Overview">2 Basic Usage Overview</a></li>
+  <li><a id="toc-Examples" href="#Examples">3 Examples</a>
   <ul class="toc-numbered-mark">
     <li><a id="toc-Example1" href="#Example1">3.1 Example1</a></li>
     <li><a id="toc-Example2" href="#Example2">3.2 Example2</a></li>
@@ -57,9 +53,9 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
     <li><a id="toc-Example4" href="#Example4">3.4 Example4</a></li>
     <li><a id="toc-Example5" href="#Example5">3.5 Example5</a></li>
   </ul></li>
-  <li><a id="toc-Function-Reference-1" href="#Function-Reference">4 Function Reference</a>
+  <li><a id="toc-Function-Reference" href="#Function-Reference">4 Function Reference</a>
   <ul class="toc-numbered-mark">
-    <li><a id="toc-ZeroMQ-functions-1" href="#ZeroMQ-functions">4.1 ZeroMQ functions</a>
+    <li><a id="toc-ZeroMQ-functions" href="#ZeroMQ-functions">4.1 ZeroMQ functions</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-iszmq" href="#iszmq">4.1.1 iszmq</a></li>
       <li><a id="toc-zmq_005fbind" href="#zmq_005fbind">4.1.2 zmq_bind</a></li>
@@ -82,7 +78,7 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
       <li><a id="toc-zmq_005fz85_005fdecode" href="#zmq_005fz85_005fdecode">4.1.19 zmq_z85_decode</a></li>
       <li><a id="toc-zmq_005fz85_005fencode" href="#zmq_005fz85_005fencode">4.1.20 zmq_z85_encode</a></li>
     </ul></li>
-    <li><a id="toc-ZeroMQ-socket-type-constants-1" href="#ZeroMQ-socket-type-constants">4.2 ZeroMQ socket type constants</a>
+    <li><a id="toc-ZeroMQ-socket-type-constants" href="#ZeroMQ-socket-type-constants">4.2 ZeroMQ socket type constants</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-ZMQ_005fDEALER" href="#ZMQ_005fDEALER">4.2.1 ZMQ_DEALER</a></li>
       <li><a id="toc-ZMQ_005fPAIR" href="#ZMQ_005fPAIR">4.2.2 ZMQ_PAIR</a></li>
@@ -97,7 +93,7 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
       <li><a id="toc-ZMQ_005fXPUB" href="#ZMQ_005fXPUB">4.2.11 ZMQ_XPUB</a></li>
       <li><a id="toc-ZMQ_005fXSUB" href="#ZMQ_005fXSUB">4.2.12 ZMQ_XSUB</a></li>
     </ul></li>
-    <li><a id="toc-ZeroMQ-get_002fsetsockopt-constants-1" href="#ZeroMQ-get_002fsetsockopt-constants">4.3 ZeroMQ get/setsockopt constants</a>
+    <li><a id="toc-ZeroMQ-get_002fsetsockopt-constants" href="#ZeroMQ-get_002fsetsockopt-constants">4.3 ZeroMQ get/setsockopt constants</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-ZMQ_005fBACKLOG" href="#ZMQ_005fBACKLOG">4.3.1 ZMQ_BACKLOG</a></li>
       <li><a id="toc-ZMQ_005fCONNECT_005fTIMEOUT" href="#ZMQ_005fCONNECT_005fTIMEOUT">4.3.2 ZMQ_CONNECT_TIMEOUT</a></li>
@@ -125,17 +121,17 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
       <li><a id="toc-ZMQ_005fTYPE" href="#ZMQ_005fTYPE">4.3.24 ZMQ_TYPE</a></li>
       <li><a id="toc-ZMQ_005fUNSUBSCRIBE" href="#ZMQ_005fUNSUBSCRIBE">4.3.25 ZMQ_UNSUBSCRIBE</a></li>
     </ul></li>
-    <li><a id="toc-ZeroMQ-ZMQ_005fEVENTS-flags-1" href="#ZeroMQ-ZMQ_005fEVENTS-flags">4.4 ZeroMQ ZMQ_EVENTS flags</a>
+    <li><a id="toc-ZeroMQ-ZMQ_005fEVENTS-flags" href="#ZeroMQ-ZMQ_005fEVENTS-flags">4.4 ZeroMQ ZMQ_EVENTS flags</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-ZMQ_005fPOLLIN" href="#ZMQ_005fPOLLIN">4.4.1 ZMQ_POLLIN</a></li>
       <li><a id="toc-ZMQ_005fPOLLOUT" href="#ZMQ_005fPOLLOUT">4.4.2 ZMQ_POLLOUT</a></li>
     </ul></li>
-    <li><a id="toc-ZeroMQ-receive-send-options-1" href="#ZeroMQ-receive-send-options">4.5 ZeroMQ receive send options</a>
+    <li><a id="toc-ZeroMQ-receive-send-options" href="#ZeroMQ-receive-send-options">4.5 ZeroMQ receive send options</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-ZMQ_005fDONTWAIT" href="#ZMQ_005fDONTWAIT">4.5.1 ZMQ_DONTWAIT</a></li>
       <li><a id="toc-ZMQ_005fSNDMORE" href="#ZMQ_005fSNDMORE">4.5.2 ZMQ_SNDMORE</a></li>
     </ul></li>
-    <li><a id="toc-ZeroMQ-ZMQ_005fMECHANISM-values-1" href="#ZeroMQ-ZMQ_005fMECHANISM-values">4.6 ZeroMQ ZMQ_MECHANISM values</a>
+    <li><a id="toc-ZeroMQ-ZMQ_005fMECHANISM-values" href="#ZeroMQ-ZMQ_005fMECHANISM-values">4.6 ZeroMQ ZMQ_MECHANISM values</a>
     <ul class="toc-numbered-mark">
       <li><a id="toc-ZMQ_005fCURVE" href="#ZMQ_005fCURVE">4.6.1 ZMQ_CURVE</a></li>
       <li><a id="toc-ZMQ_005fGSSAPI" href="#ZMQ_005fGSSAPI">4.6.2 ZMQ_GSSAPI</a></li>
@@ -144,16 +140,12 @@ Next: <a href="#Installing-and-loading" accesskey="n" rel="next">Installing and 
     </ul></li>
   </ul></li>
   <li><a id="toc-GNU-General-Public-License" href="#Copying">Appendix A GNU General Public License</a></li>
-  <li><a id="toc-Index-1" href="#Index" rel="index">Index</a></li>
+  <li><a id="toc-Index" href="#Index" rel="index">Index</a></li>
 </ul>
 </div>
 </div>
 <hr>
 <div class="chapter-level-extent" id="Installing-and-loading">
-<div class="nav-panel">
-<p>
-Next: <a href="#Basic-Usage-Overview" accesskey="n" rel="next">Basic Usage Overview</a>, Previous: <a href="#Top" accesskey="p" rel="prev">Introduction</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="chapter" id="Installing-and-loading-1">1 Installing and loading</h2>
 <a class="index-entry-id" id="index-Installing-and-loading"></a>
 <p>The ZeroMQ toolkit must be installed and then loaded to be used.
@@ -170,11 +162,6 @@ to successfully install the ZeroMQ toolkit.
 </p>
 <p>The toolkit must be then be loaded once per each <abbr class="acronym">GNU</abbr> Octave session in order to use its functionality.
 </p>
-<ul class="mini-toc">
-<li><a href="#Online-Direct-install" accesskey="1">Online Direct install</a></li>
-<li><a href="#Off_002dline-install" accesskey="2">Off-line install</a></li>
-<li><a href="#Loading" accesskey="3">Loading</a></li>
-</ul>
 <div class="section-level-extent" id="Online-Direct-install">
 <h3 class="section">1.1 Online Direct install</h3>
 <a class="index-entry-id" id="index-Online-install"></a>
@@ -194,7 +181,7 @@ octave-forge using the following command within <abbr class="acronym">GNU</abbr>
 <abbr class="acronym">GNU</abbr> Octave, the package can be installed using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example-preformatted">pkg install zeromq-1.5.6.tar.gz
+<pre class="example-preformatted">pkg install zeromq-1.5.7.tar.gz
 </pre></div>
 </div>
 <div class="section-level-extent" id="Loading">
@@ -212,10 +199,6 @@ the toolkit must be loaded using the pkg load command:
 </div>
 </div>
 <div class="chapter-level-extent" id="Basic-Usage-Overview">
-<div class="nav-panel">
-<p>
-Next: <a href="#Examples" accesskey="n" rel="next">Examples</a>, Previous: <a href="#Installing-and-loading" accesskey="p" rel="prev">Installing and loading</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="chapter" id="Basic-Usage-Overview-1">2 Basic Usage Overview</h2>
 <a class="index-entry-id" id="index-Basic-Usage-Overview"></a>
 <p>The usage is very close to the ZeroMQ library C language bindings for the socket 
@@ -247,10 +230,6 @@ zmq_close (requester);
 <hr>
 </div>
 <div class="chapter-level-extent" id="Examples">
-<div class="nav-panel">
-<p>
-Next: <a href="#Function-Reference" accesskey="n" rel="next">Function Reference</a>, Previous: <a href="#Basic-Usage-Overview" accesskey="p" rel="prev">Basic Usage Overview</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="chapter" id="Examples-1">3 Examples</h2>
 <a class="index-entry-id" id="index-Examples"></a>
 <p>There are several examples that come with the toolkit.
@@ -261,13 +240,6 @@ Next: <a href="#Function-Reference" accesskey="n" rel="next">Function Reference<
 </p><div class="example">
 <pre class="example-preformatted">edit examples/zmq_example1
 </pre></div>
-<ul class="mini-toc">
-<li><a href="#Example1" accesskey="1">Example1</a></li>
-<li><a href="#Example2" accesskey="2">Example2</a></li>
-<li><a href="#Example3" accesskey="3">Example3</a></li>
-<li><a href="#Example4" accesskey="4">Example4</a></li>
-<li><a href="#Example5" accesskey="5">Example5</a></li>
-</ul>
 <div class="section-level-extent" id="Example1">
 <h3 class="section">3.1 Example1</h3>
 <a class="index-entry-id" id="index-Example1"></a>
@@ -321,57 +293,19 @@ and posts HEAD request.
 </div>
 </div>
 <div class="chapter-level-extent" id="Function-Reference">
-<div class="nav-panel">
-<p>
-Next: <a href="#Copying" accesskey="n" rel="next">GNU General Public License</a>, Previous: <a href="#Examples" accesskey="p" rel="prev">Examples</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="chapter" id="Function-Reference-1">4 Function Reference</h2>
 <a class="index-entry-id" id="index-Function-Reference"></a>
 <p>The functions currently available in the ZeroMQ toolkit are described below;
 </p>
-<ul class="mini-toc">
-<li><a href="#ZeroMQ-functions" accesskey="1">ZeroMQ functions</a></li>
-<li><a href="#ZeroMQ-socket-type-constants" accesskey="2">ZeroMQ socket type constants</a></li>
-<li><a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="3">ZeroMQ get/setsockopt constants</a></li>
-<li><a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="4">ZeroMQ ZMQ_EVENTS flags</a></li>
-<li><a href="#ZeroMQ-receive-send-options" accesskey="5">ZeroMQ receive send options</a></li>
-<li><a href="#ZeroMQ-ZMQ_005fMECHANISM-values" accesskey="6">ZeroMQ ZMQ_MECHANISM values</a></li>
-</ul>
 <hr>
 <div class="section-level-extent" id="ZeroMQ-functions">
-<div class="nav-panel">
-<p>
-Next: <a href="#ZeroMQ-socket-type-constants" accesskey="n" rel="next">ZeroMQ socket type constants</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-functions-1">4.1 ZeroMQ functions</h3>
 <a class="index-entry-id" id="index-ZeroMQ-functions"></a>
-<ul class="mini-toc">
-<li><a href="#iszmq" accesskey="1">iszmq</a></li>
-<li><a href="#zmq_005fbind" accesskey="2">zmq_bind</a></li>
-<li><a href="#zmq_005fclose" accesskey="3">zmq_close</a></li>
-<li><a href="#zmq_005fconnect" accesskey="4">zmq_connect</a></li>
-<li><a href="#zmq_005fcurve_005fkeypair" accesskey="5">zmq_curve_keypair</a></li>
-<li><a href="#zmq_005fcurve_005fpublic" accesskey="6">zmq_curve_public</a></li>
-<li><a href="#zmq_005fdisconnect" accesskey="7">zmq_disconnect</a></li>
-<li><a href="#zmq_005ferrno" accesskey="8">zmq_errno</a></li>
-<li><a href="#zmq_005fgetsockopt" accesskey="9">zmq_getsockopt</a></li>
-<li><a href="#zmq_005fhas">zmq_has</a></li>
-<li><a href="#zmq_005fpoll">zmq_poll</a></li>
-<li><a href="#zmq_005frecv">zmq_recv</a></li>
-<li><a href="#zmq_005fsend">zmq_send</a></li>
-<li><a href="#zmq_005fsetsockopt">zmq_setsockopt</a></li>
-<li><a href="#zmq_005fsocket">zmq_socket</a></li>
-<li><a href="#zmq_005fstrerror">zmq_strerror</a></li>
-<li><a href="#zmq_005funbind">zmq_unbind</a></li>
-<li><a href="#zmq_005fversion">zmq_version</a></li>
-<li><a href="#zmq_005fz85_005fdecode">zmq_z85_decode</a></li>
-<li><a href="#zmq_005fz85_005fencode">zmq_z85_encode</a></li>
-</ul>
 <div class="subsection-level-extent" id="iszmq">
 <h4 class="subsection">4.1.1 iszmq</h4>
 <a class="index-entry-id" id="index-iszmq"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-iszmq-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">tf</var> =</code> <strong class="def-name">iszmq</strong> <code class="def-code-arguments">(<var class="var">h</var>)</code><a class="copiable-link" href='#index-iszmq-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-iszmq-1"><span class="category-def">: </span><code class="def-type"><var class="var">tf</var> =</code> <strong class="def-name">iszmq</strong> <code class="def-code-arguments">(<var class="var">h</var>)</code></dt>
 <dd>
 <p>Determine whether <var class="var">h</var> is a zeromq socket object.
 </p>
@@ -386,8 +320,8 @@ Next: <a href="#ZeroMQ-socket-type-constants" accesskey="n" rel="next">ZeroMQ so
 <div class="subsection-level-extent" id="zmq_005fbind">
 <h4 class="subsection">4.1.2 zmq_bind</h4>
 <a class="index-entry-id" id="index-zmq_005fbind"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fbind-1"><span class="category-def">: </span><span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href='#index-zmq_005fbind-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fbind-1"><span class="category-def">: </span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
 <dd>
 <p>Bind a zeromq socket to a endpoint.
 </p>
@@ -406,8 +340,8 @@ On success, bind will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fclose">
 <h4 class="subsection">4.1.3 zmq_close</h4>
 <a class="index-entry-id" id="index-zmq_005fclose"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fclose-1"><span class="category-def">: </span><span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code><a class="copiable-link" href='#index-zmq_005fclose-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fclose-1"><span class="category-def">: </span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code></dt>
 <dd>
 <p>Close a zeromq socket.
 </p>
@@ -422,8 +356,8 @@ On success, bind will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fconnect">
 <h4 class="subsection">4.1.4 zmq_connect</h4>
 <a class="index-entry-id" id="index-zmq_005fconnect"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fconnect-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_connect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href='#index-zmq_005fconnect-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fconnect-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_connect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
 <dd>
 <p>Connect a zeromq socket to a endpoint.
 </p><h4 class="subsubheading" id="Inputs-3">Inputs</h4>
@@ -441,8 +375,8 @@ On success, connect will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fcurve_005fkeypair">
 <h4 class="subsection">4.1.5 zmq_curve_keypair</h4>
 <a class="index-entry-id" id="index-zmq_005fcurve_005fkeypair"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fcurve_005fkeypair-1"><span class="category-def">: </span><span><code class="def-type">[ <var class="var">publickey</var>, <var class="var">privatekey</var> ] =</code> <strong class="def-name">zmq_curve_keypair</strong> <code class="def-code-arguments">()</code><a class="copiable-link" href='#index-zmq_005fcurve_005fkeypair-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fkeypair-1"><span class="category-def">: </span><code class="def-type">[ <var class="var">publickey</var>, <var class="var">privatekey</var> ] =</code> <strong class="def-name">zmq_curve_keypair</strong> <code class="def-code-arguments">()</code></dt>
 <dd>
 <p>Generate a random private/public keypair
 </p>
@@ -459,8 +393,8 @@ On success, connect will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fcurve_005fpublic">
 <h4 class="subsection">4.1.6 zmq_curve_public</h4>
 <a class="index-entry-id" id="index-zmq_005fcurve_005fpublic"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fcurve_005fpublic-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code><a class="copiable-link" href='#index-zmq_005fcurve_005fpublic-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fpublic-1"><span class="category-def">: </span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code></dt>
 <dd>
 <p>Derive the public key from a private key
 </p>
@@ -476,8 +410,8 @@ On success, connect will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fdisconnect">
 <h4 class="subsection">4.1.7 zmq_disconnect</h4>
 <a class="index-entry-id" id="index-zmq_005fdisconnect"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fdisconnect-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href='#index-zmq_005fdisconnect-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fdisconnect-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
 <dd>
 <p>Disconnect a zeromq socket from an endpoint.
 </p>
@@ -496,8 +430,8 @@ On success, disconnect will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005ferrno">
 <h4 class="subsection">4.1.8 zmq_errno</h4>
 <a class="index-entry-id" id="index-zmq_005ferrno"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-_003d"><span class="category-def">: </span><span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code><a class="copiable-link" href='#index-_003d'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-_003d"><span class="category-def">: </span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code></dt>
 <dd>
 <p>Get the value of errno from zeromq.
 </p>
@@ -511,8 +445,8 @@ On success, disconnect will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fgetsockopt">
 <h4 class="subsection">4.1.9 zmq_getsockopt</h4>
 <a class="index-entry-id" id="index-zmq_005fgetsockopt"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fgetsockopt-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">value</var> =</code> <strong class="def-name">zmq_getsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>)</code><a class="copiable-link" href='#index-zmq_005fgetsockopt-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fgetsockopt-1"><span class="category-def">: </span><code class="def-type"><var class="var">value</var> =</code> <strong class="def-name">zmq_getsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>)</code></dt>
 <dd>
 <p>Get the current value of an option.
 </p>
@@ -605,8 +539,8 @@ The returned value is a bit mask that may contain the following set values:
 <div class="subsection-level-extent" id="zmq_005fhas">
 <h4 class="subsection">4.1.10 zmq_has</h4>
 <a class="index-entry-id" id="index-zmq_005fhas"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fhas-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code><a class="copiable-link" href='#index-zmq_005fhas-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fhas-1"><span class="category-def">: </span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code></dt>
 <dd>
 <p>Check if the zmq library supports a given feature.
 </p>
@@ -645,9 +579,9 @@ The returned value is a bit mask that may contain the following set values:
 <div class="subsection-level-extent" id="zmq_005fpoll">
 <h4 class="subsection">4.1.11 zmq_poll</h4>
 <a class="index-entry-id" id="index-zmq_005fpoll"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fpoll-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">havedata</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">timeout</var>)</code><a class="copiable-link" href='#index-zmq_005fpoll-1'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-zmq_005fpoll-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">indexlist</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">socklist</var>, <var class="var">timeout</var>)</code><a class="copiable-link" href='#index-zmq_005fpoll-2'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fpoll-1"><span class="category-def">: </span><code class="def-type"><var class="var">havedata</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">timeout</var>)</code></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fpoll-2"><span class="category-def">: </span><code class="def-type"><var class="var">indexlist</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">socklist</var>, <var class="var">timeout</var>)</code></dt>
 <dd>
 <p>Wait up to timeout time for received data on socket.
 </p>
@@ -671,9 +605,9 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <div class="subsection-level-extent" id="zmq_005frecv">
 <h4 class="subsection">4.1.12 zmq_recv</h4>
 <a class="index-entry-id" id="index-zmq_005frecv"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005frecv-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code><a class="copiable-link" href='#index-zmq_005frecv-1'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-zmq_005frecv-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code><a class="copiable-link" href='#index-zmq_005frecv-2'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005frecv-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005frecv-2"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code></dt>
 <dd>
 <p>Attempt to receive up to <var class="var">len</var> bytes of data from  zeromq socket.
 </p>
@@ -693,9 +627,9 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <div class="subsection-level-extent" id="zmq_005fsend">
 <h4 class="subsection">4.1.13 zmq_send</h4>
 <a class="index-entry-id" id="index-zmq_005fsend"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fsend-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>)</code><a class="copiable-link" href='#index-zmq_005fsend-1'></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn" id="index-zmq_005fsend-2"><span class="category-def">: </span><span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>, <var class="var">flags</var>)</code><a class="copiable-link" href='#index-zmq_005fsend-2'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fsend-1"><span class="category-def">: </span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>)</code></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fsend-2"><span class="category-def">: </span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>, <var class="var">flags</var>)</code></dt>
 <dd>
 <p>Attempt to send to <var class="var">data</var> bytes of data to zeromq socket.
 </p>
@@ -715,8 +649,8 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <div class="subsection-level-extent" id="zmq_005fsetsockopt">
 <h4 class="subsection">4.1.14 zmq_setsockopt</h4>
 <a class="index-entry-id" id="index-zmq_005fsetsockopt"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fsetsockopt-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code><a class="copiable-link" href='#index-zmq_005fsetsockopt-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fsetsockopt-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code></dt>
 <dd>
 <p>Set a socket option on a zeromq socket.
 </p>
@@ -798,8 +732,8 @@ On success, setsockopt will return <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fsocket">
 <h4 class="subsection">4.1.15 zmq_socket</h4>
 <a class="index-entry-id" id="index-zmq_005fsocket"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fsocket-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code><a class="copiable-link" href='#index-zmq_005fsocket-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fsocket-1"><span class="category-def">: </span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code></dt>
 <dd>
 <p>Create a zeromq socket.
 </p>
@@ -854,8 +788,8 @@ On success, setsockopt will return <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fstrerror">
 <h4 class="subsection">4.1.16 zmq_strerror</h4>
 <a class="index-entry-id" id="index-zmq_005fstrerror"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fstrerror-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code><a class="copiable-link" href='#index-zmq_005fstrerror-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fstrerror-1"><span class="category-def">: </span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code></dt>
 <dd>
 <p>Get the last error from zeromq.
 </p>
@@ -869,8 +803,8 @@ On success, setsockopt will return <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005funbind">
 <h4 class="subsection">4.1.17 zmq_unbind</h4>
 <a class="index-entry-id" id="index-zmq_005funbind"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005funbind-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_unbind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href='#index-zmq_005funbind-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005funbind-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_unbind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
 <dd>
 <p>Unbind a previously bound zeromq socket from a endpoint.
 </p>
@@ -889,8 +823,8 @@ On success, unbind will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fversion">
 <h4 class="subsection">4.1.18 zmq_version</h4>
 <a class="index-entry-id" id="index-zmq_005fversion"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fversion-1"><span class="category-def">: </span><span><code class="def-type">[<var class="var">major</var>, <var class="var">minor</var>, <var class="var">patch</var>] =</code> <strong class="def-name">zmq_version</strong> <code class="def-code-arguments">()</code><a class="copiable-link" href='#index-zmq_005fversion-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fversion-1"><span class="category-def">: </span><code class="def-type">[<var class="var">major</var>, <var class="var">minor</var>, <var class="var">patch</var>] =</code> <strong class="def-name">zmq_version</strong> <code class="def-code-arguments">()</code></dt>
 <dd>
 <p>Get the ZeroMQ library version.
 </p>
@@ -904,8 +838,8 @@ On success, unbind will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fz85_005fdecode">
 <h4 class="subsection">4.1.19 zmq_z85_decode</h4>
 <a class="index-entry-id" id="index-zmq_005fz85_005fdecode"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fz85_005fdecode-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code><a class="copiable-link" href='#index-zmq_005fz85_005fdecode-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fz85_005fdecode-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code></dt>
 <dd>
 <p>Decode a z85 encoded string to a binary key.
 </p>
@@ -920,8 +854,8 @@ On success, unbind will return a <var class="var">status</var> of true
 <div class="subsection-level-extent" id="zmq_005fz85_005fencode">
 <h4 class="subsection">4.1.20 zmq_z85_encode</h4>
 <a class="index-entry-id" id="index-zmq_005fz85_005fencode"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fz85_005fencode-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">dest</var> =</code> <strong class="def-name">zmq_z85_encode</strong> <code class="def-code-arguments">(<var class="var">data</var>)</code><a class="copiable-link" href='#index-zmq_005fz85_005fencode-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fz85_005fencode-1"><span class="category-def">: </span><code class="def-type"><var class="var">dest</var> =</code> <strong class="def-name">zmq_z85_encode</strong> <code class="def-code-arguments">(<var class="var">data</var>)</code></dt>
 <dd>
 <p>Encode a binary key as Z85 printable text.
 </p>
@@ -936,31 +870,13 @@ On success, unbind will return a <var class="var">status</var> of true
 </div>
 </div>
 <div class="section-level-extent" id="ZeroMQ-socket-type-constants">
-<div class="nav-panel">
-<p>
-Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">ZeroMQ get/setsockopt constants</a>, Previous: <a href="#ZeroMQ-functions" accesskey="p" rel="prev">ZeroMQ functions</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-socket-type-constants-1">4.2 ZeroMQ socket type constants</h3>
 <a class="index-entry-id" id="index-ZeroMQ-socket-type-constants"></a>
-<ul class="mini-toc">
-<li><a href="#ZMQ_005fDEALER" accesskey="1">ZMQ_DEALER</a></li>
-<li><a href="#ZMQ_005fPAIR" accesskey="2">ZMQ_PAIR</a></li>
-<li><a href="#ZMQ_005fPUB" accesskey="3">ZMQ_PUB</a></li>
-<li><a href="#ZMQ_005fPULL" accesskey="4">ZMQ_PULL</a></li>
-<li><a href="#ZMQ_005fPUSH" accesskey="5">ZMQ_PUSH</a></li>
-<li><a href="#ZMQ_005fREP" accesskey="6">ZMQ_REP</a></li>
-<li><a href="#ZMQ_005fREQ" accesskey="7">ZMQ_REQ</a></li>
-<li><a href="#ZMQ_005fROUTER" accesskey="8">ZMQ_ROUTER</a></li>
-<li><a href="#ZMQ_005fSTREAM" accesskey="9">ZMQ_STREAM</a></li>
-<li><a href="#ZMQ_005fSUB">ZMQ_SUB</a></li>
-<li><a href="#ZMQ_005fXPUB">ZMQ_XPUB</a></li>
-<li><a href="#ZMQ_005fXSUB">ZMQ_XSUB</a></li>
-</ul>
 <div class="subsection-level-extent" id="ZMQ_005fDEALER">
 <h4 class="subsection">4.2.1 ZMQ_DEALER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fDEALER"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fDEALER-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_DEALER</strong><a class="copiable-link" href='#index-ZMQ_005fDEALER-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fDEALER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_DEALER</strong></dt>
 <dd>
 <p>Constant for dealer socket type.
 </p>
@@ -970,8 +886,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fPAIR">
 <h4 class="subsection">4.2.2 ZMQ_PAIR</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPAIR"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPAIR-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PAIR</strong><a class="copiable-link" href='#index-ZMQ_005fPAIR-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPAIR-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PAIR</strong></dt>
 <dd>
 <p>Constant for pair socket type.
 </p>
@@ -981,8 +897,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fPUB">
 <h4 class="subsection">4.2.3 ZMQ_PUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPUB"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPUB-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PUB</strong><a class="copiable-link" href='#index-ZMQ_005fPUB-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PUB</strong></dt>
 <dd>
 <p>Constant for publisher type.
 </p>
@@ -992,8 +908,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fPULL">
 <h4 class="subsection">4.2.4 ZMQ_PULL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPULL"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPULL-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PULL</strong><a class="copiable-link" href='#index-ZMQ_005fPULL-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPULL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PULL</strong></dt>
 <dd>
 <p>Constant for pull socket type.
 </p>
@@ -1003,8 +919,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fPUSH">
 <h4 class="subsection">4.2.5 ZMQ_PUSH</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPUSH"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPUSH-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PUSH</strong><a class="copiable-link" href='#index-ZMQ_005fPUSH-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPUSH-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PUSH</strong></dt>
 <dd>
 <p>Constant for push socket type.
 </p>
@@ -1014,8 +930,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fREP">
 <h4 class="subsection">4.2.6 ZMQ_REP</h4>
 <a class="index-entry-id" id="index-ZMQ_005fREP"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fREP-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_REP</strong><a class="copiable-link" href='#index-ZMQ_005fREP-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fREP-1"><span class="category-def">: </span><strong class="def-name">ZMQ_REP</strong></dt>
 <dd>
 <p>Constant for reply socket type.
 </p>
@@ -1025,8 +941,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fREQ">
 <h4 class="subsection">4.2.7 ZMQ_REQ</h4>
 <a class="index-entry-id" id="index-ZMQ_005fREQ"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fREQ-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_REQ</strong><a class="copiable-link" href='#index-ZMQ_005fREQ-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fREQ-1"><span class="category-def">: </span><strong class="def-name">ZMQ_REQ</strong></dt>
 <dd>
 <p>Constant for request socket type.
 </p>
@@ -1036,8 +952,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fROUTER">
 <h4 class="subsection">4.2.8 ZMQ_ROUTER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fROUTER"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fROUTER-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_ROUTER</strong><a class="copiable-link" href='#index-ZMQ_005fROUTER-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fROUTER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_ROUTER</strong></dt>
 <dd>
 <p>Constant for router socket type.
 </p>
@@ -1047,8 +963,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fSTREAM">
 <h4 class="subsection">4.2.9 ZMQ_STREAM</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSTREAM"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fSTREAM-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_STREAM</strong><a class="copiable-link" href='#index-ZMQ_005fSTREAM-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fSTREAM-1"><span class="category-def">: </span><strong class="def-name">ZMQ_STREAM</strong></dt>
 <dd>
 <p>Constant for stream socket type.
 </p>
@@ -1058,8 +974,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fSUB">
 <h4 class="subsection">4.2.10 ZMQ_SUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSUB"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fSUB-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_SUB</strong><a class="copiable-link" href='#index-ZMQ_005fSUB-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fSUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SUB</strong></dt>
 <dd>
 <p>Constant for subscriber type.
 </p>
@@ -1069,8 +985,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fXPUB">
 <h4 class="subsection">4.2.11 ZMQ_XPUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fXPUB"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fXPUB-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_XPUB</strong><a class="copiable-link" href='#index-ZMQ_005fXPUB-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fXPUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_XPUB</strong></dt>
 <dd>
 <p>Constant for publisher type.
 </p>
@@ -1080,8 +996,8 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 <div class="subsection-level-extent" id="ZMQ_005fXSUB">
 <h4 class="subsection">4.2.12 ZMQ_XSUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fXSUB"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fXSUB-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_XSUB</strong><a class="copiable-link" href='#index-ZMQ_005fXSUB-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fXSUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_XSUB</strong></dt>
 <dd>
 <p>Constant for subscriber type.
 </p>
@@ -1091,44 +1007,13 @@ Next: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="n" rel="next">Ze
 </div>
 </div>
 <div class="section-level-extent" id="ZeroMQ-get_002fsetsockopt-constants">
-<div class="nav-panel">
-<p>
-Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ_EVENTS flags</a>, Previous: <a href="#ZeroMQ-socket-type-constants" accesskey="p" rel="prev">ZeroMQ socket type constants</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-get_002fsetsockopt-constants-1">4.3 ZeroMQ get/setsockopt constants</h3>
 <a class="index-entry-id" id="index-ZeroMQ-get_002fsetsockopt-constants"></a>
-<ul class="mini-toc">
-<li><a href="#ZMQ_005fBACKLOG" accesskey="1">ZMQ_BACKLOG</a></li>
-<li><a href="#ZMQ_005fCONNECT_005fTIMEOUT" accesskey="2">ZMQ_CONNECT_TIMEOUT</a></li>
-<li><a href="#ZMQ_005fCURVE_005fPUBLICKEY" accesskey="3">ZMQ_CURVE_PUBLICKEY</a></li>
-<li><a href="#ZMQ_005fCURVE_005fSECRETKEY" accesskey="4">ZMQ_CURVE_SECRETKEY</a></li>
-<li><a href="#ZMQ_005fCURVE_005fSERVER" accesskey="5">ZMQ_CURVE_SERVER</a></li>
-<li><a href="#ZMQ_005fCURVE_005fSERVERKEY" accesskey="6">ZMQ_CURVE_SERVERKEY</a></li>
-<li><a href="#ZMQ_005fEVENTS" accesskey="7">ZMQ_EVENTS</a></li>
-<li><a href="#ZMQ_005fGSSAPI_005fPLAINTEXT" accesskey="8">ZMQ_GSSAPI_PLAINTEXT</a></li>
-<li><a href="#ZMQ_005fGSSAPI_005fPRINCIPAL" accesskey="9">ZMQ_GSSAPI_PRINCIPAL</a></li>
-<li><a href="#ZMQ_005fGSSAPI_005fSERVER">ZMQ_GSSAPI_SERVER</a></li>
-<li><a href="#ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL">ZMQ_GSSAPI_SERVICE_PRINCIPAL</a></li>
-<li><a href="#ZMQ_005fIDENTITY">ZMQ_IDENTITY</a></li>
-<li><a href="#ZMQ_005fLAST_005fENDPOINT">ZMQ_LAST_ENDPOINT</a></li>
-<li><a href="#ZMQ_005fMECHANISM">ZMQ_MECHANISM</a></li>
-<li><a href="#ZMQ_005fPLAIN_005fPASSWORD">ZMQ_PLAIN_PASSWORD</a></li>
-<li><a href="#ZMQ_005fPLAIN_005fSERVER">ZMQ_PLAIN_SERVER</a></li>
-<li><a href="#ZMQ_005fPLAIN_005fUSERNAME">ZMQ_PLAIN_USERNAME</a></li>
-<li><a href="#ZMQ_005fPRIORITY">ZMQ_PRIORITY</a></li>
-<li><a href="#ZMQ_005fRATE">ZMQ_RATE</a></li>
-<li><a href="#ZMQ_005fRCVMORE">ZMQ_RCVMORE</a></li>
-<li><a href="#ZMQ_005fROUTING_005fID">ZMQ_ROUTING_ID</a></li>
-<li><a href="#ZMQ_005fSOCKS_005fPROXY">ZMQ_SOCKS_PROXY</a></li>
-<li><a href="#ZMQ_005fSUBSCRIBE">ZMQ_SUBSCRIBE</a></li>
-<li><a href="#ZMQ_005fTYPE">ZMQ_TYPE</a></li>
-<li><a href="#ZMQ_005fUNSUBSCRIBE">ZMQ_UNSUBSCRIBE</a></li>
-</ul>
 <div class="subsection-level-extent" id="ZMQ_005fBACKLOG">
 <h4 class="subsection">4.3.1 ZMQ_BACKLOG</h4>
 <a class="index-entry-id" id="index-ZMQ_005fBACKLOG"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fBACKLOG-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_BACKLOG</strong><a class="copiable-link" href='#index-ZMQ_005fBACKLOG-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fBACKLOG-1"><span class="category-def">: </span><strong class="def-name">ZMQ_BACKLOG</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt to set backlog for pending connections
 </p>
@@ -1138,8 +1023,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fCONNECT_005fTIMEOUT">
 <h4 class="subsection">4.3.2 ZMQ_CONNECT_TIMEOUT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCONNECT_005fTIMEOUT"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCONNECT_005fTIMEOUT-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong><a class="copiable-link" href='#index-ZMQ_005fCONNECT_005fTIMEOUT-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCONNECT_005fTIMEOUT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong></dt>
 <dd>
 <p>Constant for get/setsockopt connect timeout value
 </p>
@@ -1149,8 +1034,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fCURVE_005fPUBLICKEY">
 <h4 class="subsection">4.3.3 ZMQ_CURVE_PUBLICKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fPUBLICKEY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCURVE_005fPUBLICKEY-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE_PUBLICKEY</strong><a class="copiable-link" href='#index-ZMQ_005fCURVE_005fPUBLICKEY-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPUBLICKEY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_PUBLICKEY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_PUBLICKEY value option
 </p>
@@ -1160,8 +1045,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fCURVE_005fSECRETKEY">
 <h4 class="subsection">4.3.4 ZMQ_CURVE_SECRETKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSECRETKEY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCURVE_005fPRIVATEKEY"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE_PRIVATEKEY</strong><a class="copiable-link" href='#index-ZMQ_005fCURVE_005fPRIVATEKEY'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPRIVATEKEY"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_PRIVATEKEY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_PRIVATEKEY value option
 </p>
@@ -1171,8 +1056,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fCURVE_005fSERVER">
 <h4 class="subsection">4.3.5 ZMQ_CURVE_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSERVER"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCURVE_005fSERVER-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE_SERVER</strong><a class="copiable-link" href='#index-ZMQ_005fCURVE_005fSERVER-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_SERVER</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_SERVER value option
 </p>
@@ -1182,8 +1067,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fCURVE_005fSERVERKEY">
 <h4 class="subsection">4.3.6 ZMQ_CURVE_SERVERKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSERVERKEY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCURVE_005fSERVERKEY-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE_SERVERKEY</strong><a class="copiable-link" href='#index-ZMQ_005fCURVE_005fSERVERKEY-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVERKEY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_SERVERKEY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_SERVERKEY value option
 </p>
@@ -1193,8 +1078,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fEVENTS">
 <h4 class="subsection">4.3.7 ZMQ_EVENTS</h4>
 <a class="index-entry-id" id="index-ZMQ_005fEVENTS"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fEVENTS-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_EVENTS</strong><a class="copiable-link" href='#index-ZMQ_005fEVENTS-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fEVENTS-1"><span class="category-def">: </span><strong class="def-name">ZMQ_EVENTS</strong></dt>
 <dd>
 <p>Constant for getsockopt EVENTS value option
 </p>
@@ -1204,8 +1089,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fGSSAPI_005fPLAINTEXT">
 <h4 class="subsection">4.3.8 ZMQ_GSSAPI_PLAINTEXT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_PLAINTEXT</strong><a class="copiable-link" href='#index-ZMQ_005fGSSAPI_005fPLAINTEXT-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_PLAINTEXT</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_PLAINTEXT value option
 </p>
@@ -1215,8 +1100,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fGSSAPI_005fPRINCIPAL">
 <h4 class="subsection">4.3.9 ZMQ_GSSAPI_PRINCIPAL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong><a class="copiable-link" href='#index-ZMQ_005fGSSAPI_005fPRINCIPAL-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_PRINCIPAL value option
 </p>
@@ -1226,8 +1111,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fGSSAPI_005fSERVER">
 <h4 class="subsection">4.3.10 ZMQ_GSSAPI_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fSERVER"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fGSSAPI_005fSERVER-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong><a class="copiable-link" href='#index-ZMQ_005fGSSAPI_005fSERVER-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_SERVER value option
 </p>
@@ -1237,8 +1122,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL">
 <h4 class="subsection">4.3.11 ZMQ_GSSAPI_SERVICE_PRINCIPAL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_SERVICE_PRINCIPAL</strong><a class="copiable-link" href='#index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_SERVICE_PRINCIPAL</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_SERVICE_PRINCIPAL value option
 </p>
@@ -1248,8 +1133,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fIDENTITY">
 <h4 class="subsection">4.3.12 ZMQ_IDENTITY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fIDENTITY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fIDENITY"><span class="category-def">: </span><span><strong class="def-name">ZMQ_IDENITY</strong><a class="copiable-link" href='#index-ZMQ_005fIDENITY'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fIDENITY"><span class="category-def">: </span><strong class="def-name">ZMQ_IDENITY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>
@@ -1259,8 +1144,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fLAST_005fENDPOINT">
 <h4 class="subsection">4.3.13 ZMQ_LAST_ENDPOINT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fLAST_005fENDPOINT"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fLAST_005fENDPOINT-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_LAST_ENDPOINT</strong><a class="copiable-link" href='#index-ZMQ_005fLAST_005fENDPOINT-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fLAST_005fENDPOINT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_LAST_ENDPOINT</strong></dt>
 <dd>
 <p>Constant for getsockopt last endpoint value option
 </p>
@@ -1270,8 +1155,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fMECHANISM">
 <h4 class="subsection">4.3.14 ZMQ_MECHANISM</h4>
 <a class="index-entry-id" id="index-ZMQ_005fMECHANISM"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fMECHANISM-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_MECHANISM</strong><a class="copiable-link" href='#index-ZMQ_005fMECHANISM-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fMECHANISM-1"><span class="category-def">: </span><strong class="def-name">ZMQ_MECHANISM</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt MECHANISM value option
 </p>
@@ -1281,8 +1166,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fPLAIN_005fPASSWORD">
 <h4 class="subsection">4.3.15 ZMQ_PLAIN_PASSWORD</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fPASSWORD"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPLAIN_005fPASSWORD-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PLAIN_PASSWORD</strong><a class="copiable-link" href='#index-ZMQ_005fPLAIN_005fPASSWORD-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fPASSWORD-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_PASSWORD</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_PASSWORD value option
 </p>
@@ -1292,8 +1177,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fPLAIN_005fSERVER">
 <h4 class="subsection">4.3.16 ZMQ_PLAIN_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fSERVER"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPLAIN_005fSERVER-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PLAIN_SERVER</strong><a class="copiable-link" href='#index-ZMQ_005fPLAIN_005fSERVER-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_SERVER</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_SERVER value option
 </p>
@@ -1303,8 +1188,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fPLAIN_005fUSERNAME">
 <h4 class="subsection">4.3.17 ZMQ_PLAIN_USERNAME</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fUSERNAME"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPLAIN_005fUSERNAME-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PLAIN_USERNAME</strong><a class="copiable-link" href='#index-ZMQ_005fPLAIN_005fUSERNAME-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fUSERNAME-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_USERNAME</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_USERNAME value option
 </p>
@@ -1314,8 +1199,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fPRIORITY">
 <h4 class="subsection">4.3.18 ZMQ_PRIORITY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPRIORITY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPRIORITY-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PRIORITY</strong><a class="copiable-link" href='#index-ZMQ_005fPRIORITY-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPRIORITY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PRIORITY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt SO_PRIORITY value option
  in linux only.
@@ -1326,8 +1211,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fRATE">
 <h4 class="subsection">4.3.19 ZMQ_RATE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fRATE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fRATE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_RATE</strong><a class="copiable-link" href='#index-ZMQ_005fRATE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fRATE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_RATE</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt value option
 </p>
@@ -1339,8 +1224,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fRCVMORE">
 <h4 class="subsection">4.3.20 ZMQ_RCVMORE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fRCVMORE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fRCVMORE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_RCVMORE</strong><a class="copiable-link" href='#index-ZMQ_005fRCVMORE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fRCVMORE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_RCVMORE</strong></dt>
 <dd>
 <p>Constant for getsockopt RCVMORE value option
 </p>
@@ -1350,8 +1235,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fROUTING_005fID">
 <h4 class="subsection">4.3.21 ZMQ_ROUTING_ID</h4>
 <a class="index-entry-id" id="index-ZMQ_005fROUTING_005fID"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fROUTING_005fID-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_ROUTING_ID</strong><a class="copiable-link" href='#index-ZMQ_005fROUTING_005fID-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fROUTING_005fID-1"><span class="category-def">: </span><strong class="def-name">ZMQ_ROUTING_ID</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>
@@ -1361,8 +1246,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fSOCKS_005fPROXY">
 <h4 class="subsection">4.3.22 ZMQ_SOCKS_PROXY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSOCKS_005fPROXY"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fSOCKS_005fPROXY-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_SOCKS_PROXY</strong><a class="copiable-link" href='#index-ZMQ_005fSOCKS_005fPROXY-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fSOCKS_005fPROXY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SOCKS_PROXY</strong></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt SOCKS_PROXY value option
 </p>
@@ -1372,8 +1257,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fSUBSCRIBE">
 <h4 class="subsection">4.3.23 ZMQ_SUBSCRIBE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSUBSCRIBE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fSUBSCRIBE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_SUBSCRIBE</strong><a class="copiable-link" href='#index-ZMQ_005fSUBSCRIBE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fSUBSCRIBE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SUBSCRIBE</strong></dt>
 <dd>
 <p>Constant for setsockopt subscribe option
 </p>
@@ -1383,8 +1268,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fTYPE">
 <h4 class="subsection">4.3.24 ZMQ_TYPE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fTYPE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fTYPE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_TYPE</strong><a class="copiable-link" href='#index-ZMQ_005fTYPE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fTYPE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_TYPE</strong></dt>
 <dd>
 <p>Constant for getsockopt TYPE value option
 </p>
@@ -1394,8 +1279,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 <div class="subsection-level-extent" id="ZMQ_005fUNSUBSCRIBE">
 <h4 class="subsection">4.3.25 ZMQ_UNSUBSCRIBE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fUNSUBSCRIBE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fUNSUBSCRIBE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_UNSUBSCRIBE</strong><a class="copiable-link" href='#index-ZMQ_005fUNSUBSCRIBE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fUNSUBSCRIBE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_UNSUBSCRIBE</strong></dt>
 <dd>
 <p>Constant for setsockopt unsubscribe option
 </p>
@@ -1405,21 +1290,13 @@ Next: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="n" rel="next">ZeroMQ ZMQ
 </div>
 </div>
 <div class="section-level-extent" id="ZeroMQ-ZMQ_005fEVENTS-flags">
-<div class="nav-panel">
-<p>
-Next: <a href="#ZeroMQ-receive-send-options" accesskey="n" rel="next">ZeroMQ receive send options</a>, Previous: <a href="#ZeroMQ-get_002fsetsockopt-constants" accesskey="p" rel="prev">ZeroMQ get/setsockopt constants</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-ZMQ_005fEVENTS-flags-1">4.4 ZeroMQ ZMQ_EVENTS flags</h3>
 <a class="index-entry-id" id="index-ZeroMQ-ZMQ_005fEVENTS-flags"></a>
-<ul class="mini-toc">
-<li><a href="#ZMQ_005fPOLLIN" accesskey="1">ZMQ_POLLIN</a></li>
-<li><a href="#ZMQ_005fPOLLOUT" accesskey="2">ZMQ_POLLOUT</a></li>
-</ul>
 <div class="subsection-level-extent" id="ZMQ_005fPOLLIN">
 <h4 class="subsection">4.4.1 ZMQ_POLLIN</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPOLLIN"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPOLLIN-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_POLLIN</strong><a class="copiable-link" href='#index-ZMQ_005fPOLLIN-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLIN-1"><span class="category-def">: </span><strong class="def-name">ZMQ_POLLIN</strong></dt>
 <dd>
 <p>Constant bitmask value for getsockopt EVENTS value option
 </p>
@@ -1429,8 +1306,8 @@ Next: <a href="#ZeroMQ-receive-send-options" accesskey="n" rel="next">ZeroMQ rec
 <div class="subsection-level-extent" id="ZMQ_005fPOLLOUT">
 <h4 class="subsection">4.4.2 ZMQ_POLLOUT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPOLLOUT"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPOLLOUT-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_POLLOUT</strong><a class="copiable-link" href='#index-ZMQ_005fPOLLOUT-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLOUT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_POLLOUT</strong></dt>
 <dd>
 <p>Constant bitmask value for getsockopt EVENTS value option
 </p>
@@ -1440,21 +1317,13 @@ Next: <a href="#ZeroMQ-receive-send-options" accesskey="n" rel="next">ZeroMQ rec
 </div>
 </div>
 <div class="section-level-extent" id="ZeroMQ-receive-send-options">
-<div class="nav-panel">
-<p>
-Next: <a href="#ZeroMQ-ZMQ_005fMECHANISM-values" accesskey="n" rel="next">ZeroMQ ZMQ_MECHANISM values</a>, Previous: <a href="#ZeroMQ-ZMQ_005fEVENTS-flags" accesskey="p" rel="prev">ZeroMQ ZMQ_EVENTS flags</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-receive-send-options-1">4.5 ZeroMQ receive send options</h3>
 <a class="index-entry-id" id="index-ZeroMQ-receive-send-options"></a>
-<ul class="mini-toc">
-<li><a href="#ZMQ_005fDONTWAIT" accesskey="1">ZMQ_DONTWAIT</a></li>
-<li><a href="#ZMQ_005fSNDMORE" accesskey="2">ZMQ_SNDMORE</a></li>
-</ul>
 <div class="subsection-level-extent" id="ZMQ_005fDONTWAIT">
 <h4 class="subsection">4.5.1 ZMQ_DONTWAIT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fDONTWAIT"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fDONTWAIT-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_DONTWAIT</strong><a class="copiable-link" href='#index-ZMQ_005fDONTWAIT-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fDONTWAIT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_DONTWAIT</strong></dt>
 <dd>
 <p>Constant for recv flag DONTWAIT
 </p>
@@ -1464,8 +1333,8 @@ Next: <a href="#ZeroMQ-ZMQ_005fMECHANISM-values" accesskey="n" rel="next">ZeroMQ
 <div class="subsection-level-extent" id="ZMQ_005fSNDMORE">
 <h4 class="subsection">4.5.2 ZMQ_SNDMORE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSNDMORE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fSNDMORE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_SNDMORE</strong><a class="copiable-link" href='#index-ZMQ_005fSNDMORE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fSNDMORE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SNDMORE</strong></dt>
 <dd>
 <p>Constant for send flag SNDMORE
 </p>
@@ -1475,23 +1344,13 @@ Next: <a href="#ZeroMQ-ZMQ_005fMECHANISM-values" accesskey="n" rel="next">ZeroMQ
 </div>
 </div>
 <div class="section-level-extent" id="ZeroMQ-ZMQ_005fMECHANISM-values">
-<div class="nav-panel">
-<p>
-Previous: <a href="#ZeroMQ-receive-send-options" accesskey="p" rel="prev">ZeroMQ receive send options</a>, Up: <a href="#Function-Reference" accesskey="u" rel="up">Function Reference</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h3 class="section" id="ZeroMQ-ZMQ_005fMECHANISM-values-1">4.6 ZeroMQ ZMQ_MECHANISM values</h3>
 <a class="index-entry-id" id="index-ZeroMQ-ZMQ_005fMECHANISM-values"></a>
-<ul class="mini-toc">
-<li><a href="#ZMQ_005fCURVE" accesskey="1">ZMQ_CURVE</a></li>
-<li><a href="#ZMQ_005fGSSAPI" accesskey="2">ZMQ_GSSAPI</a></li>
-<li><a href="#ZMQ_005fNULL" accesskey="3">ZMQ_NULL</a></li>
-<li><a href="#ZMQ_005fPLAIN" accesskey="4">ZMQ_PLAIN</a></li>
-</ul>
 <div class="subsection-level-extent" id="ZMQ_005fCURVE">
 <h4 class="subsection">4.6.1 ZMQ_CURVE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fCURVE-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE</strong><a class="copiable-link" href='#index-ZMQ_005fCURVE-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE</strong></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1501,8 +1360,8 @@ Previous: <a href="#ZeroMQ-receive-send-options" accesskey="p" rel="prev">ZeroMQ
 <div class="subsection-level-extent" id="ZMQ_005fGSSAPI">
 <h4 class="subsection">4.6.2 ZMQ_GSSAPI</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fGSSAPI-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI</strong><a class="copiable-link" href='#index-ZMQ_005fGSSAPI-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI</strong></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1512,8 +1371,8 @@ Previous: <a href="#ZeroMQ-receive-send-options" accesskey="p" rel="prev">ZeroMQ
 <div class="subsection-level-extent" id="ZMQ_005fNULL">
 <h4 class="subsection">4.6.3 ZMQ_NULL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fNULL"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fNULL-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_NULL</strong><a class="copiable-link" href='#index-ZMQ_005fNULL-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fNULL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_NULL</strong></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1523,8 +1382,8 @@ Previous: <a href="#ZeroMQ-receive-send-options" accesskey="p" rel="prev">ZeroMQ
 <div class="subsection-level-extent" id="ZMQ_005fPLAIN">
 <h4 class="subsection">4.6.4 ZMQ_PLAIN</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN"></a>
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-ZMQ_005fPLAIN-1"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PLAIN</strong><a class="copiable-link" href='#index-ZMQ_005fPLAIN-1'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN</strong></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1535,10 +1394,6 @@ Previous: <a href="#ZeroMQ-receive-send-options" accesskey="p" rel="prev">ZeroMQ
 </div>
 </div>
 <div class="appendix-level-extent" id="Copying">
-<div class="nav-panel">
-<p>
-Next: <a href="#Index" accesskey="n" rel="next">Index</a>, Previous: <a href="#Function-Reference" accesskey="p" rel="prev">Function Reference</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="appendix" id="GNU-General-Public-License">Appendix A GNU General Public License</h2>
 <a class="index-entry-id" id="index-warranty"></a>
 <a class="index-entry-id" id="index-copyright"></a>
@@ -2198,10 +2053,6 @@ first, please read <a class="url" href="http://www.gnu.org/philosophy/why-not-lg
 <hr>
 </div>
 <div class="unnumbered-level-extent" id="Index">
-<div class="nav-panel">
-<p>
-Previous: <a href="#Copying" accesskey="p" rel="prev">GNU General Public License</a>, Up: <a href="#Top" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Index" title="Index" rel="index">Index</a>]</p>
-</div>
 <h2 class="unnumbered" id="Index-1">Index</h2>
  
 <div class="printindex cp-printindex">
@@ -2224,112 +2075,112 @@ Previous: <a href="#Copying" accesskey="p" rel="prev">GNU General Public License
 <a class="summary-letter-printindex" href="#Index_cp_letter-Z"><b>Z</b></a>
  &nbsp; 
 </td></tr></table>
-<table class="cp-entries-printindex" border="0">
-<tr><td></td><th class="entries-header-printindex">Index Entry</th><td>&nbsp;</td><th class="sections-header-printindex"> Section</th></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-B">B</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Basic-Usage-Overview">Basic Usage Overview</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-C">C</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-copyright">copyright</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-E">E</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Example1">Example1</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Example2">Example2</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Example3">Example3</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Example4">Example4</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Example5">Example5</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Examples">Examples</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-F">F</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Function-Reference">Function Reference</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Function-Reference">Function Reference</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-I">I</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Installing-and-loading">Installing and loading</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-iszmq">iszmq</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-L">L</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Loading">Loading</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-O">O</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Off_002dline-install">Off-line install</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Online-install">Online install</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-W">W</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-warranty">warranty</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
-<tr><th id="Index_cp_letter-Z">Z</th><td></td><td></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-functions">ZeroMQ functions</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-receive-send-options">ZeroMQ receive send options</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fBACKLOG">ZMQ_BACKLOG</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fbind">zmq_bind</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fclose">zmq_close</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fconnect">zmq_connect</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCONNECT_005fTIMEOUT">ZMQ_CONNECT_TIMEOUT</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE">ZMQ_CURVE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fcurve_005fkeypair">zmq_curve_keypair</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fcurve_005fpublic">zmq_curve_public</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fPUBLICKEY">ZMQ_CURVE_PUBLICKEY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSECRETKEY">ZMQ_CURVE_SECRETKEY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSERVER">ZMQ_CURVE_SERVER</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSERVERKEY">ZMQ_CURVE_SERVERKEY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fDEALER">ZMQ_DEALER</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fdisconnect">zmq_disconnect</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fDONTWAIT">ZMQ_DONTWAIT</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005ferrno">zmq_errno</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fEVENTS">ZMQ_EVENTS</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fgetsockopt">zmq_getsockopt</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI">ZMQ_GSSAPI</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fPLAINTEXT">ZMQ_GSSAPI_PLAINTEXT</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fPRINCIPAL">ZMQ_GSSAPI_PRINCIPAL</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fSERVER">ZMQ_GSSAPI_SERVER</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL">ZMQ_GSSAPI_SERVICE_PRINCIPAL</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fhas">zmq_has</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fIDENTITY">ZMQ_IDENTITY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fLAST_005fENDPOINT">ZMQ_LAST_ENDPOINT</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fMECHANISM">ZMQ_MECHANISM</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fNULL">ZMQ_NULL</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPAIR">ZMQ_PAIR</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN">ZMQ_PLAIN</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fPASSWORD">ZMQ_PLAIN_PASSWORD</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fSERVER">ZMQ_PLAIN_SERVER</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fUSERNAME">ZMQ_PLAIN_USERNAME</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fpoll">zmq_poll</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPOLLIN">ZMQ_POLLIN</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPOLLOUT">ZMQ_POLLOUT</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPRIORITY">ZMQ_PRIORITY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPUB">ZMQ_PUB</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPULL">ZMQ_PULL</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPUSH">ZMQ_PUSH</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fRATE">ZMQ_RATE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fRCVMORE">ZMQ_RCVMORE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005frecv">zmq_recv</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fREP">ZMQ_REP</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fREQ">ZMQ_REQ</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fROUTER">ZMQ_ROUTER</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fROUTING_005fID">ZMQ_ROUTING_ID</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsend">zmq_send</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsetsockopt">zmq_setsockopt</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSNDMORE">ZMQ_SNDMORE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsocket">zmq_socket</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSOCKS_005fPROXY">ZMQ_SOCKS_PROXY</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSTREAM">ZMQ_STREAM</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fstrerror">zmq_strerror</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSUB">ZMQ_SUB</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSUBSCRIBE">ZMQ_SUBSCRIBE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fTYPE">ZMQ_TYPE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005funbind">zmq_unbind</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fUNSUBSCRIBE">ZMQ_UNSUBSCRIBE</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fversion">zmq_version</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fXPUB">ZMQ_XPUB</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fXSUB">ZMQ_XSUB</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fz85_005fdecode">zmq_z85_decode</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fz85_005fencode">zmq_z85_encode</a>:</td><td>&nbsp;</td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
-<tr><td colspan="4"> <hr></td></tr>
+<table class="cp-entries-printindex">
+<tr><td></td><th class="entries-header-printindex">Index Entry</th><th class="sections-header-printindex">Section</th></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-B">B</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Basic-Usage-Overview">Basic Usage Overview</a></td><td class="printindex-index-section"><a href="#Basic-Usage-Overview">Basic Usage Overview</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-C">C</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-copyright">copyright</a></td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-E">E</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Example1">Example1</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Example2">Example2</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Example3">Example3</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Example4">Example4</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Example5">Example5</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Examples">Examples</a></td><td class="printindex-index-section"><a href="#Examples">Examples</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-F">F</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Function-Reference">Function Reference</a></td><td class="printindex-index-section"><a href="#Function-Reference">Function Reference</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-I">I</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Installing-and-loading">Installing and loading</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-iszmq">iszmq</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-L">L</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Loading">Loading</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-O">O</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Off_002dline-install">Off-line install</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Online-install">Online install</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-W">W</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-warranty">warranty</a></td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr><th id="Index_cp_letter-Z">Z</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-functions">ZeroMQ functions</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fBACKLOG">ZMQ_BACKLOG</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fbind">zmq_bind</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fclose">zmq_close</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fconnect">zmq_connect</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCONNECT_005fTIMEOUT">ZMQ_CONNECT_TIMEOUT</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE">ZMQ_CURVE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fcurve_005fkeypair">zmq_curve_keypair</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fcurve_005fpublic">zmq_curve_public</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fPUBLICKEY">ZMQ_CURVE_PUBLICKEY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSECRETKEY">ZMQ_CURVE_SECRETKEY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSERVER">ZMQ_CURVE_SERVER</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fCURVE_005fSERVERKEY">ZMQ_CURVE_SERVERKEY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fDEALER">ZMQ_DEALER</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fdisconnect">zmq_disconnect</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fDONTWAIT">ZMQ_DONTWAIT</a></td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005ferrno">zmq_errno</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fEVENTS">ZMQ_EVENTS</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fgetsockopt">zmq_getsockopt</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI">ZMQ_GSSAPI</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fPLAINTEXT">ZMQ_GSSAPI_PLAINTEXT</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fPRINCIPAL">ZMQ_GSSAPI_PRINCIPAL</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fSERVER">ZMQ_GSSAPI_SERVER</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL">ZMQ_GSSAPI_SERVICE_PRINCIPAL</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fhas">zmq_has</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fIDENTITY">ZMQ_IDENTITY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fLAST_005fENDPOINT">ZMQ_LAST_ENDPOINT</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fMECHANISM">ZMQ_MECHANISM</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fNULL">ZMQ_NULL</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPAIR">ZMQ_PAIR</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN">ZMQ_PLAIN</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fMECHANISM-values">ZeroMQ ZMQ_MECHANISM values</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fPASSWORD">ZMQ_PLAIN_PASSWORD</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fSERVER">ZMQ_PLAIN_SERVER</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPLAIN_005fUSERNAME">ZMQ_PLAIN_USERNAME</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fpoll">zmq_poll</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPOLLIN">ZMQ_POLLIN</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPOLLOUT">ZMQ_POLLOUT</a></td><td class="printindex-index-section"><a href="#ZeroMQ-ZMQ_005fEVENTS-flags">ZeroMQ ZMQ_EVENTS flags</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPRIORITY">ZMQ_PRIORITY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPUB">ZMQ_PUB</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPULL">ZMQ_PULL</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fPUSH">ZMQ_PUSH</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fRATE">ZMQ_RATE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fRCVMORE">ZMQ_RCVMORE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005frecv">zmq_recv</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fREP">ZMQ_REP</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fREQ">ZMQ_REQ</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fROUTER">ZMQ_ROUTER</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fROUTING_005fID">ZMQ_ROUTING_ID</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsend">zmq_send</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsetsockopt">zmq_setsockopt</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSNDMORE">ZMQ_SNDMORE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-receive-send-options">ZeroMQ receive send options</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fsocket">zmq_socket</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSOCKS_005fPROXY">ZMQ_SOCKS_PROXY</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSTREAM">ZMQ_STREAM</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fstrerror">zmq_strerror</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSUB">ZMQ_SUB</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fSUBSCRIBE">ZMQ_SUBSCRIBE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fTYPE">ZMQ_TYPE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005funbind">zmq_unbind</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fUNSUBSCRIBE">ZMQ_UNSUBSCRIBE</a></td><td class="printindex-index-section"><a href="#ZeroMQ-get_002fsetsockopt-constants">ZeroMQ get/setsockopt constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fversion">zmq_version</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fXPUB">ZMQ_XPUB</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-ZMQ_005fXSUB">ZMQ_XSUB</a></td><td class="printindex-index-section"><a href="#ZeroMQ-socket-type-constants">ZeroMQ socket type constants</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fz85_005fdecode">zmq_z85_decode</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-zmq_005fz85_005fencode">zmq_z85_encode</a></td><td class="printindex-index-section"><a href="#ZeroMQ-functions">ZeroMQ functions</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
 </table>
 <table class="cp-letters-footer-printindex"><tr><th>Jump to: &nbsp; </th><td><a class="summary-letter-printindex" href="#Index_cp_letter-B"><b>B</b></a>
  &nbsp; 

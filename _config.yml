@@ -25,6 +25,7 @@ logo: "/assets/octave-zeromq.png"
 description: >- # this means to ignore newlines until "baseurl:"
   ZeroMQ Toolkit for GNU Octave
 baseurl: "" # the subpath of your site, e.g. /blog
+pkg: zeromq
 url: "https://gnu-octave.github.io/octave-zeromq/"
 twitter_username: jekyllrb
 github_username:  jekyll

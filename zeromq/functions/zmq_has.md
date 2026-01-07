@@ -2,10 +2,10 @@
 layout: "default"
 permalink: "/functions/7_zmqhas/"
 pkg_name: "zeromq"
-pkg_version: "1.5.6"
+pkg_version: "1.5.7"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_has"
-category: "ZeroMQ functions"
+category: "ZeroMQ ZMQ_MECHANISM values"
 func_name: "zmq_has"
 navigation:
 - id: "overview"
@@ -17,24 +17,31 @@ navigation:
 - id: "15_ZeroMQoverview"
   name: "&nbsp;&nbsp;ZeroMQ overview"
   url: "/functions/#15_ZeroMQoverview"
+  subitems:
 - id: "16_ZeroMQfunctions"
   name: "&nbsp;&nbsp;ZeroMQ functions"
   url: "/functions/#16_ZeroMQfunctions"
+  subitems:
 - id: "28_ZeroMQsockettypeconstants"
   name: "&nbsp;&nbsp;ZeroMQ socket type constants"
   url: "/functions/#28_ZeroMQsockettypeconstants"
+  subitems:
 - id: "31_ZeroMQgetsetsockoptconstants"
   name: "&nbsp;&nbsp;ZeroMQ get/setsockopt constants"
   url: "/functions/#31_ZeroMQgetsetsockoptconstants"
+  subitems:
 - id: "23_ZeroMQZMQEVENTSflags"
   name: "&nbsp;&nbsp;ZeroMQ ZMQ_EVENTS flags"
   url: "/functions/#23_ZeroMQZMQEVENTSflags"
+  subitems:
 - id: "27_ZeroMQreceivesendoptions"
   name: "&nbsp;&nbsp;ZeroMQ receive send options"
   url: "/functions/#27_ZeroMQreceivesendoptions"
+  subitems:
 - id: "27_ZeroMQZMQMECHANISMvalues"
   name: "&nbsp;&nbsp;ZeroMQ ZMQ_MECHANISM values"
   url: "/functions/#27_ZeroMQZMQMECHANISMvalues"
+  subitems:
 - id: "news"
   name: "News"
   url: "/news"
@@ -42,12 +49,12 @@ navigation:
   name: "Manual"
   url: "/manual"
 ---
-<dl class="first-deftypefn">
-<dt class="deftypefn" id="index-zmq_005fhas"><span class="category-def">: </span><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code><a class="copiable-link" href='#index-zmq_005fhas'></a></span></dt>
+<dl class="first-deftypefn def-block">
+<dt class="deftypefn def-line" id="index-zmq_005fhas"><span class="category-def">: </span><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code><a class="copiable-link" href="#index-zmq_005fhas"></a></span></dt>
 <dd> 
 <p>Check if the zmq library supports a given feature.
 </p> 
-<h4 class="subsubheading" id="Inputs">Inputs</h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
 <p><var class="var">feature</var> is the name of feature to check.
 </p> 
 <p>Currently known features are:
@@ -75,6 +82,6 @@ navigation:
  </p></dd>
 </dl>
  
-<h4 class="subsubheading" id="Outputs">Outputs</h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
 <p><var class="var">yesno</var> - set to true if the feature is available, otherwise false. 
  </p></dd></dl>

@@ -38,3 +38,6 @@ function __load_zeromq__ ()
     # do nothing
   end_try_catch
 endfunction
+
+%!test
+%! # private load func - no test

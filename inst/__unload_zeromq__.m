@@ -38,3 +38,6 @@ function __unload_zeromq__ ()
     # do nothing
   end_try_catch
 endfunction
+
+%!test
+%! # private unload - no test

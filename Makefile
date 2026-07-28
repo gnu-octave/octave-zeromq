@@ -2,7 +2,7 @@
 ## Copyright 2015-2016 Oliver Heimlich
 ## Copyright 2017 Julien Bect <jbect@users.sf.net>
 ## Copyright 2017 Olaf Till <i7tiol@t-online.de>
-## Copyright 2018-2023 John Donoghue <john.donoghue@ieee.org>
+## Copyright 2018-2026 John Donoghue <john.donoghue@ieee.org>
 ##
 ## Copying and distribution of this file, with or without modification,
 ## are permitted in any medium without royalty provided the copyright
@@ -212,7 +212,7 @@ doc/$(package).pdf: doc/$(package).texi doc/functions.texi doc/version.texi
 	cd doc && $(RM) -f $(package).aux $(package).cp $(package).cps $(package).fn  $(package).fns $(package).log $(package).toc
 
 doc/$(package).html: doc/$(package).texi doc/functions.texi doc/version.texi
-	cd doc && SOURCE_DATE_EPOCH=$(REPO_TIMESTAMP) $(MAKEINFO) --html --css-ref=$(package).css $(MAKEINFO_HTML_OPTIONS) $(package).texi -o - | $(MAKEINFO_HTML_FILTER) > $(package).html
+	cd doc && SOURCE_DATE_EPOCH=$(REPO_TIMESTAMP) $(MAKEINFO) --html --css-ref=octave.css $(MAKEINFO_HTML_OPTIONS) $(package).texi -o - | $(MAKEINFO_HTML_FILTER) > $(package).html
 
 doc/$(package).qhc: doc/$(package).html
 	# try also create qch file if can

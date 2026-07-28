@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/8_zmqrecv/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_recv"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,19 +50,19 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005frecv"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code><a class="copiable-link" href="#index-zmq_005frecv"></a></span></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005frecv-1"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code><a class="copiable-link" href="#index-zmq_005frecv-1"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005frecv"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005frecv-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code></span></dt>
 <dd> 
 <p>Attempt to receive up to <var class="var">len</var> bytes of data from  zeromq socket.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">sock</var> - the socket to receive from.
 </p> 
 <p><var class="var">len</var> - number of bytes to read.
 </p> 
 <p><var class="var">flags</var> - optional flags to pass to recv
 </p> 
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">data</var> - the read data in an uint8 array.  
  </p>
 <p><strong class="strong">See also:</strong> zmq_socket.

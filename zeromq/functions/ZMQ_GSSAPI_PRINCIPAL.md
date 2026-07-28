@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/20_ZMQGSSAPIPRINCIPAL/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_GSSAPI_PRINCIPAL"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong><a class="copiable-link" href="#index-ZMQ_005fGSSAPI_005fPRINCIPAL"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL"><span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_PRINCIPAL value option
 </p>

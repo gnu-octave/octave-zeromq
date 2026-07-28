@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/17_ZMQGSSAPISERVER/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_GSSAPI_SERVER"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVER"><span class="category-def">: </span><span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong><a class="copiable-link" href="#index-ZMQ_005fGSSAPI_005fSERVER"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVER"><span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_SERVER value option
 </p>

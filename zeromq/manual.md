@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/manual/"
 title: "Zeromq Toolkit - Manual"
 pkg_name: "zeromq"
-version: "1.5.7"
+version: "1.5.8"
 description: "ZeroMQ bindings for GNU Octave"
 navigation:
 - id: "overview"
@@ -32,7 +32,7 @@ navigation:
 ---
 <div class="top-level-extent" id="Top">
 <h1 class="top" id="Introduction">Introduction</h1>
-<p>The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave
+<p>The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave.
 </p>
 <div class="region-contents" id="SEC_Contents">
 <h2 class="contents-heading">Table of Contents</h2>
@@ -40,8 +40,8 @@ navigation:
 <ul class="toc-numbered-mark">
   <li><a id="toc-Installing-and-loading" href="#Installing-and-loading">1 Installing and loading</a>
   <ul class="toc-numbered-mark">
-    <li><a id="toc-Online-Direct-install" href="#Online-Direct-install">1.1 Online Direct install</a></li>
-    <li><a id="toc-Off_002dline-install" href="#Off_002dline-install">1.2 Off-line install</a></li>
+    <li><a id="toc-Online-Direct-installation" href="#Online-Direct-installation">1.1 Online Direct installation</a></li>
+    <li><a id="toc-Offline-installation" href="#Offline-installation">1.2 Offline installation</a></li>
     <li><a id="toc-Loading" href="#Loading">1.3 Loading</a></li>
   </ul></li>
   <li><a id="toc-Basic-Usage-Overview" href="#Basic-Usage-Overview">2 Basic Usage Overview</a></li>
@@ -150,7 +150,7 @@ navigation:
 <a class="index-entry-id" id="index-Installing-and-loading"></a>
 <p>The ZeroMQ toolkit must be installed and then loaded to be used.
 </p>
-<p>It can be installed in <abbr class="acronym">GNU</abbr> Octave directly from octave-forge,
+<p>It can be installed in <abbr class="acronym">GNU</abbr> Octave directly from Octave Forge,
 or can be installed in an off-line mode via a downloaded tarball.
 </p>
 <p>The toolkit has a dependency on the zeromq library (<a class="url" href="https://zeromq.org">https://zeromq.org</a>), so it must be installed in order
@@ -160,13 +160,13 @@ to successfully install the ZeroMQ toolkit.
 </p>
 <p>For Ubuntu: <code class="code">apt install libzmq-dev</code> 
 </p>
-<p>The toolkit must be then be loaded once per each <abbr class="acronym">GNU</abbr> Octave session in order to use its functionality.
+<p>The toolkit must then be loaded once in each <abbr class="acronym">GNU</abbr> Octave session in order to use its functionality.
 </p>
-<div class="section-level-extent" id="Online-Direct-install">
-<h3 class="section">1.1 Online Direct install</h3>
-<a class="index-entry-id" id="index-Online-install"></a>
+<div class="section-level-extent" id="Online-Direct-installation">
+<h3 class="section">1.1 Online Direct installation</h3>
+<a class="index-entry-id" id="index-Online-installation"></a>
 <p>With an internet connection available, the ZeroMQ package can be installed from
-octave-forge using the following command within <abbr class="acronym">GNU</abbr> Octave:
+Octave Forge using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
 <pre class="example-preformatted">pkg install -forge zeromq
@@ -174,14 +174,14 @@ octave-forge using the following command within <abbr class="acronym">GNU</abbr>
 <p>The latest released version of the toolkit will be downloaded and installed.
 </p>
 </div>
-<div class="section-level-extent" id="Off_002dline-install">
-<h3 class="section">1.2 Off-line install</h3>
-<a class="index-entry-id" id="index-Off_002dline-install"></a>
+<div class="section-level-extent" id="Offline-installation">
+<h3 class="section">1.2 Offline installation</h3>
+<a class="index-entry-id" id="index-Offline-installation"></a>
 <p>With the ZeroMQ toolkit package already downloaded, and in the current directory when running
 <abbr class="acronym">GNU</abbr> Octave, the package can be installed using the following command within <abbr class="acronym">GNU</abbr> Octave:
 </p>
 <div class="example">
-<pre class="example-preformatted">pkg install zeromq-1.5.7.tar.gz
+<pre class="example-preformatted">pkg install zeromq-1.5.8.tar.gz
 </pre></div>
 </div>
 <div class="section-level-extent" id="Loading">
@@ -201,12 +201,11 @@ the toolkit must be loaded using the pkg load command:
 <div class="chapter-level-extent" id="Basic-Usage-Overview">
 <h2 class="chapter" id="Basic-Usage-Overview-1">2 Basic Usage Overview</h2>
 <a class="index-entry-id" id="index-Basic-Usage-Overview"></a>
-<p>The usage is very close to the ZeroMQ library C language bindings for the socket 
-creation and manipulation with the exception of creating a zeromq context, 
-which is automatically done in the bindings internals.
+<p>Usage is very similar to the ZeroMQ C language bindings for socket creation and manipulation,
+with the exception of creating a ZeroMQ context, which is handled automatically by the bindings.
 </p>
-<p>For example, a basic client that does a request / reply from a server on port
-local port 5555 (available as zmq_example1.m):
+<p>For example, a basic client that performs a request/reply exchange with a server on local port 5555
+(available as zmq_example1.m):
 </p>
 <div class="example">
 <pre class="example-preformatted">
@@ -221,7 +220,7 @@ zmq_close (requester);
 </pre></div>
 <p>An overview of the package can be displayed by running <code class="code">help zeromq</code>
 </p>
-<p>Help for each function can be displayed by  <code class="code">help thefunctionname</code>
+<p>Help for each function can be displayed by  <code class="code">help functionname</code>
 </p>
 <p>ie: 
 </p><div class="example">
@@ -263,8 +262,8 @@ from example 1 will connect to and responds back to client &rsquo;requests&rsquo
 <div class="section-level-extent" id="Example3">
 <h3 class="section">3.3 Example3</h3>
 <a class="index-entry-id" id="index-Example3"></a>
-<p>Simple server PUB socket example that creates &rsquo;weather&rsquo; server sends
-weather updates for random zip codes.
+<p>Simple PUB socket server example that creates a &rsquo;weather&rsquo; server and
+sends weather updates for random ZIP codes.
 </p>
 <div class="example">
 <pre class="example-preformatted">edit examples/zmq_example3
@@ -273,8 +272,8 @@ weather updates for random zip codes.
 <div class="section-level-extent" id="Example4">
 <h3 class="section">3.4 Example4</h3>
 <a class="index-entry-id" id="index-Example4"></a>
-<p>Simple client SUB socket example that creates client that connects to the &rsquo;weather&rsquo;
-server and subscribes for weather updates from zip-code 10001.
+<p>Simple SUB socket client example that connects to the &rsquo;weather&rsquo; server and
+subscribes to weather updates for ZIP code 10001.
 </p>
 <div class="example">
 <pre class="example-preformatted">edit examples/zmq_example4
@@ -283,7 +282,7 @@ server and subscribes for weather updates from zip-code 10001.
 <div class="section-level-extent" id="Example5">
 <h3 class="section">3.5 Example5</h3>
 <a class="index-entry-id" id="index-Example5"></a>
-<p>Simple client STREAM socket example that creates client that connects to octave.org
+<p>Simple client STREAM socket example that creates a client that connects to octave.org
 and posts HEAD request.
 </p>
 <div class="example">
@@ -305,7 +304,7 @@ and posts HEAD request.
 <h4 class="subsection">4.1.1 iszmq</h4>
 <a class="index-entry-id" id="index-iszmq"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-iszmq-1"><span class="category-def">: </span><code class="def-type"><var class="var">tf</var> =</code> <strong class="def-name">iszmq</strong> <code class="def-code-arguments">(<var class="var">h</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-iszmq-1"><span><code class="def-type"><var class="var">tf</var> =</code> <strong class="def-name">iszmq</strong> <code class="def-code-arguments">(<var class="var">h</var>)</code></span></dt>
 <dd>
 <p>Determine whether <var class="var">h</var> is a zeromq socket object.
 </p>
@@ -321,9 +320,9 @@ and posts HEAD request.
 <h4 class="subsection">4.1.2 zmq_bind</h4>
 <a class="index-entry-id" id="index-zmq_005fbind"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fbind-1"><span class="category-def">: </span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fbind-1"><span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd>
-<p>Bind a zeromq socket to a endpoint.
+<p>Bind a ZeroMQ socket to an endpoint.
 </p>
 <h4 class="subsubheading" id="Inputs-1">Inputs</h4>
 <p><var class="var">sock</var> - the socket to bind.
@@ -341,7 +340,7 @@ On success, bind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.3 zmq_close</h4>
 <a class="index-entry-id" id="index-zmq_005fclose"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fclose-1"><span class="category-def">: </span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fclose-1"><span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code></span></dt>
 <dd>
 <p>Close a zeromq socket.
 </p>
@@ -357,9 +356,9 @@ On success, bind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.4 zmq_connect</h4>
 <a class="index-entry-id" id="index-zmq_005fconnect"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fconnect-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_connect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fconnect-1"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_connect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd>
-<p>Connect a zeromq socket to a endpoint.
+<p>Connect a zeromq socket to an endpoint.
 </p><h4 class="subsubheading" id="Inputs-3">Inputs</h4>
 <p><var class="var">sock</var> - the socket to connect.
 </p>
@@ -376,7 +375,7 @@ On success, connect will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.5 zmq_curve_keypair</h4>
 <a class="index-entry-id" id="index-zmq_005fcurve_005fkeypair"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fkeypair-1"><span class="category-def">: </span><code class="def-type">[ <var class="var">publickey</var>, <var class="var">privatekey</var> ] =</code> <strong class="def-name">zmq_curve_keypair</strong> <code class="def-code-arguments">()</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fkeypair-1"><span><code class="def-type">[ <var class="var">publickey</var>, <var class="var">privatekey</var> ] =</code> <strong class="def-name">zmq_curve_keypair</strong> <code class="def-code-arguments">()</code></span></dt>
 <dd>
 <p>Generate a random private/public keypair
 </p>
@@ -394,7 +393,7 @@ On success, connect will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.6 zmq_curve_public</h4>
 <a class="index-entry-id" id="index-zmq_005fcurve_005fpublic"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fpublic-1"><span class="category-def">: </span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fpublic-1"><span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code></span></dt>
 <dd>
 <p>Derive the public key from a private key
 </p>
@@ -411,7 +410,7 @@ On success, connect will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.7 zmq_disconnect</h4>
 <a class="index-entry-id" id="index-zmq_005fdisconnect"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fdisconnect-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fdisconnect-1"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd>
 <p>Disconnect a zeromq socket from an endpoint.
 </p>
@@ -431,7 +430,7 @@ On success, disconnect will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.8 zmq_errno</h4>
 <a class="index-entry-id" id="index-zmq_005ferrno"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-_003d"><span class="category-def">: </span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code></dt>
+<dt class="deftypefn def-line" id="index-_003d"><span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code></span></dt>
 <dd>
 <p>Get the value of errno from zeromq.
 </p>
@@ -446,7 +445,7 @@ On success, disconnect will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.9 zmq_getsockopt</h4>
 <a class="index-entry-id" id="index-zmq_005fgetsockopt"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fgetsockopt-1"><span class="category-def">: </span><code class="def-type"><var class="var">value</var> =</code> <strong class="def-name">zmq_getsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fgetsockopt-1"><span><code class="def-type"><var class="var">value</var> =</code> <strong class="def-name">zmq_getsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>)</code></span></dt>
 <dd>
 <p>Get the current value of an option.
 </p>
@@ -540,7 +539,7 @@ The returned value is a bit mask that may contain the following set values:
 <h4 class="subsection">4.1.10 zmq_has</h4>
 <a class="index-entry-id" id="index-zmq_005fhas"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fhas-1"><span class="category-def">: </span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fhas-1"><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code></span></dt>
 <dd>
 <p>Check if the zmq library supports a given feature.
 </p>
@@ -580,8 +579,8 @@ The returned value is a bit mask that may contain the following set values:
 <h4 class="subsection">4.1.11 zmq_poll</h4>
 <a class="index-entry-id" id="index-zmq_005fpoll"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fpoll-1"><span class="category-def">: </span><code class="def-type"><var class="var">havedata</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">timeout</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fpoll-2"><span class="category-def">: </span><code class="def-type"><var class="var">indexlist</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">socklist</var>, <var class="var">timeout</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fpoll-1"><span><code class="def-type"><var class="var">havedata</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">timeout</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fpoll-2"><span><code class="def-type"><var class="var">indexlist</var> =</code> <strong class="def-name">zmq_poll</strong> <code class="def-code-arguments">(<var class="var">socklist</var>, <var class="var">timeout</var>)</code></span></dt>
 <dd>
 <p>Wait up to timeout time for received data on socket.
 </p>
@@ -606,8 +605,8 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <h4 class="subsection">4.1.12 zmq_recv</h4>
 <a class="index-entry-id" id="index-zmq_005frecv"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005frecv-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005frecv-2"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005frecv-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005frecv-2"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_recv</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">len</var>, <var class="var">flags</var>)</code></span></dt>
 <dd>
 <p>Attempt to receive up to <var class="var">len</var> bytes of data from  zeromq socket.
 </p>
@@ -628,8 +627,8 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <h4 class="subsection">4.1.13 zmq_send</h4>
 <a class="index-entry-id" id="index-zmq_005fsend"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fsend-1"><span class="category-def">: </span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>)</code></dt>
-<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fsend-2"><span class="category-def">: </span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>, <var class="var">flags</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fsend-1"><span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>)</code></span></dt>
+<dt class="deftypefnx def-cmd-deftypefn def-line" id="index-zmq_005fsend-2"><span><code class="def-type"><var class="var">count</var> =</code> <strong class="def-name">zmq_send</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">data</var>, <var class="var">flags</var>)</code></span></dt>
 <dd>
 <p>Attempt to send to <var class="var">data</var> bytes of data to zeromq socket.
 </p>
@@ -650,7 +649,7 @@ A value of 0 will return without waiting. A value of -1 will wait until there is
 <h4 class="subsection">4.1.14 zmq_setsockopt</h4>
 <a class="index-entry-id" id="index-zmq_005fsetsockopt"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fsetsockopt-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fsetsockopt-1"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code></span></dt>
 <dd>
 <p>Set a socket option on a zeromq socket.
 </p>
@@ -733,7 +732,7 @@ On success, setsockopt will return <var class="var">status</var> of true
 <h4 class="subsection">4.1.15 zmq_socket</h4>
 <a class="index-entry-id" id="index-zmq_005fsocket"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fsocket-1"><span class="category-def">: </span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fsocket-1"><span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code></span></dt>
 <dd>
 <p>Create a zeromq socket.
 </p>
@@ -789,7 +788,7 @@ On success, setsockopt will return <var class="var">status</var> of true
 <h4 class="subsection">4.1.16 zmq_strerror</h4>
 <a class="index-entry-id" id="index-zmq_005fstrerror"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fstrerror-1"><span class="category-def">: </span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fstrerror-1"><span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code></span></dt>
 <dd>
 <p>Get the last error from zeromq.
 </p>
@@ -804,7 +803,7 @@ On success, setsockopt will return <var class="var">status</var> of true
 <h4 class="subsection">4.1.17 zmq_unbind</h4>
 <a class="index-entry-id" id="index-zmq_005funbind"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005funbind-1"><span class="category-def">: </span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_unbind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005funbind-1"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_unbind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd>
 <p>Unbind a previously bound zeromq socket from a endpoint.
 </p>
@@ -824,7 +823,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.18 zmq_version</h4>
 <a class="index-entry-id" id="index-zmq_005fversion"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fversion-1"><span class="category-def">: </span><code class="def-type">[<var class="var">major</var>, <var class="var">minor</var>, <var class="var">patch</var>] =</code> <strong class="def-name">zmq_version</strong> <code class="def-code-arguments">()</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fversion-1"><span><code class="def-type">[<var class="var">major</var>, <var class="var">minor</var>, <var class="var">patch</var>] =</code> <strong class="def-name">zmq_version</strong> <code class="def-code-arguments">()</code></span></dt>
 <dd>
 <p>Get the ZeroMQ library version.
 </p>
@@ -839,7 +838,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.19 zmq_z85_decode</h4>
 <a class="index-entry-id" id="index-zmq_005fz85_005fdecode"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fz85_005fdecode-1"><span class="category-def">: </span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fz85_005fdecode-1"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code></span></dt>
 <dd>
 <p>Decode a z85 encoded string to a binary key.
 </p>
@@ -855,7 +854,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.1.20 zmq_z85_encode</h4>
 <a class="index-entry-id" id="index-zmq_005fz85_005fencode"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fz85_005fencode-1"><span class="category-def">: </span><code class="def-type"><var class="var">dest</var> =</code> <strong class="def-name">zmq_z85_encode</strong> <code class="def-code-arguments">(<var class="var">data</var>)</code></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fz85_005fencode-1"><span><code class="def-type"><var class="var">dest</var> =</code> <strong class="def-name">zmq_z85_encode</strong> <code class="def-code-arguments">(<var class="var">data</var>)</code></span></dt>
 <dd>
 <p>Encode a binary key as Z85 printable text.
 </p>
@@ -876,7 +875,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.1 ZMQ_DEALER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fDEALER"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fDEALER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_DEALER</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fDEALER-1"><span><strong class="def-name">ZMQ_DEALER</strong></span></dt>
 <dd>
 <p>Constant for dealer socket type.
 </p>
@@ -887,7 +886,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.2 ZMQ_PAIR</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPAIR"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPAIR-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PAIR</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPAIR-1"><span><strong class="def-name">ZMQ_PAIR</strong></span></dt>
 <dd>
 <p>Constant for pair socket type.
 </p>
@@ -898,7 +897,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.3 ZMQ_PUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPUB"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PUB</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPUB-1"><span><strong class="def-name">ZMQ_PUB</strong></span></dt>
 <dd>
 <p>Constant for publisher type.
 </p>
@@ -909,7 +908,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.4 ZMQ_PULL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPULL"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPULL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PULL</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPULL-1"><span><strong class="def-name">ZMQ_PULL</strong></span></dt>
 <dd>
 <p>Constant for pull socket type.
 </p>
@@ -920,7 +919,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.5 ZMQ_PUSH</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPUSH"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPUSH-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PUSH</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPUSH-1"><span><strong class="def-name">ZMQ_PUSH</strong></span></dt>
 <dd>
 <p>Constant for push socket type.
 </p>
@@ -931,7 +930,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.6 ZMQ_REP</h4>
 <a class="index-entry-id" id="index-ZMQ_005fREP"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fREP-1"><span class="category-def">: </span><strong class="def-name">ZMQ_REP</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fREP-1"><span><strong class="def-name">ZMQ_REP</strong></span></dt>
 <dd>
 <p>Constant for reply socket type.
 </p>
@@ -942,7 +941,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.7 ZMQ_REQ</h4>
 <a class="index-entry-id" id="index-ZMQ_005fREQ"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fREQ-1"><span class="category-def">: </span><strong class="def-name">ZMQ_REQ</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fREQ-1"><span><strong class="def-name">ZMQ_REQ</strong></span></dt>
 <dd>
 <p>Constant for request socket type.
 </p>
@@ -953,7 +952,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.8 ZMQ_ROUTER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fROUTER"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fROUTER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_ROUTER</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fROUTER-1"><span><strong class="def-name">ZMQ_ROUTER</strong></span></dt>
 <dd>
 <p>Constant for router socket type.
 </p>
@@ -964,7 +963,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.9 ZMQ_STREAM</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSTREAM"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fSTREAM-1"><span class="category-def">: </span><strong class="def-name">ZMQ_STREAM</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fSTREAM-1"><span><strong class="def-name">ZMQ_STREAM</strong></span></dt>
 <dd>
 <p>Constant for stream socket type.
 </p>
@@ -975,7 +974,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.10 ZMQ_SUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSUB"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fSUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SUB</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fSUB-1"><span><strong class="def-name">ZMQ_SUB</strong></span></dt>
 <dd>
 <p>Constant for subscriber type.
 </p>
@@ -986,7 +985,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.11 ZMQ_XPUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fXPUB"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fXPUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_XPUB</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fXPUB-1"><span><strong class="def-name">ZMQ_XPUB</strong></span></dt>
 <dd>
 <p>Constant for publisher type.
 </p>
@@ -997,7 +996,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.2.12 ZMQ_XSUB</h4>
 <a class="index-entry-id" id="index-ZMQ_005fXSUB"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fXSUB-1"><span class="category-def">: </span><strong class="def-name">ZMQ_XSUB</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fXSUB-1"><span><strong class="def-name">ZMQ_XSUB</strong></span></dt>
 <dd>
 <p>Constant for subscriber type.
 </p>
@@ -1013,7 +1012,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.1 ZMQ_BACKLOG</h4>
 <a class="index-entry-id" id="index-ZMQ_005fBACKLOG"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fBACKLOG-1"><span class="category-def">: </span><strong class="def-name">ZMQ_BACKLOG</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fBACKLOG-1"><span><strong class="def-name">ZMQ_BACKLOG</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt to set backlog for pending connections
 </p>
@@ -1024,7 +1023,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.2 ZMQ_CONNECT_TIMEOUT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCONNECT_005fTIMEOUT"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCONNECT_005fTIMEOUT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCONNECT_005fTIMEOUT-1"><span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong></span></dt>
 <dd>
 <p>Constant for get/setsockopt connect timeout value
 </p>
@@ -1035,7 +1034,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.3 ZMQ_CURVE_PUBLICKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fPUBLICKEY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPUBLICKEY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_PUBLICKEY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPUBLICKEY-1"><span><strong class="def-name">ZMQ_CURVE_PUBLICKEY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_PUBLICKEY value option
 </p>
@@ -1046,7 +1045,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.4 ZMQ_CURVE_SECRETKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSECRETKEY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPRIVATEKEY"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_PRIVATEKEY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fPRIVATEKEY"><span><strong class="def-name">ZMQ_CURVE_PRIVATEKEY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_PRIVATEKEY value option
 </p>
@@ -1057,7 +1056,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.5 ZMQ_CURVE_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSERVER"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_SERVER</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVER-1"><span><strong class="def-name">ZMQ_CURVE_SERVER</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_SERVER value option
 </p>
@@ -1068,7 +1067,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.6 ZMQ_CURVE_SERVERKEY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE_005fSERVERKEY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVERKEY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE_SERVERKEY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVERKEY-1"><span><strong class="def-name">ZMQ_CURVE_SERVERKEY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_SERVERKEY value option
 </p>
@@ -1079,7 +1078,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.7 ZMQ_EVENTS</h4>
 <a class="index-entry-id" id="index-ZMQ_005fEVENTS"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fEVENTS-1"><span class="category-def">: </span><strong class="def-name">ZMQ_EVENTS</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fEVENTS-1"><span><strong class="def-name">ZMQ_EVENTS</strong></span></dt>
 <dd>
 <p>Constant for getsockopt EVENTS value option
 </p>
@@ -1090,7 +1089,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.8 ZMQ_GSSAPI_PLAINTEXT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_PLAINTEXT</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPLAINTEXT-1"><span><strong class="def-name">ZMQ_GSSAPI_PLAINTEXT</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_PLAINTEXT value option
 </p>
@@ -1101,7 +1100,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.9 ZMQ_GSSAPI_PRINCIPAL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fPRINCIPAL-1"><span><strong class="def-name">ZMQ_GSSAPI_PRINCIPAL</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_PRINCIPAL value option
 </p>
@@ -1112,7 +1111,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.10 ZMQ_GSSAPI_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fSERVER"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVER-1"><span><strong class="def-name">ZMQ_GSSAPI_SERVER</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_SERVER value option
 </p>
@@ -1123,7 +1122,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.11 ZMQ_GSSAPI_SERVICE_PRINCIPAL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI_SERVICE_PRINCIPAL</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI_005fSERVICE_005fPRINCIPAL-1"><span><strong class="def-name">ZMQ_GSSAPI_SERVICE_PRINCIPAL</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt GSSAPI_SERVICE_PRINCIPAL value option
 </p>
@@ -1134,7 +1133,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.12 ZMQ_IDENTITY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fIDENTITY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fIDENITY"><span class="category-def">: </span><strong class="def-name">ZMQ_IDENITY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fIDENITY"><span><strong class="def-name">ZMQ_IDENITY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>
@@ -1145,7 +1144,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.13 ZMQ_LAST_ENDPOINT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fLAST_005fENDPOINT"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fLAST_005fENDPOINT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_LAST_ENDPOINT</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fLAST_005fENDPOINT-1"><span><strong class="def-name">ZMQ_LAST_ENDPOINT</strong></span></dt>
 <dd>
 <p>Constant for getsockopt last endpoint value option
 </p>
@@ -1156,7 +1155,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.14 ZMQ_MECHANISM</h4>
 <a class="index-entry-id" id="index-ZMQ_005fMECHANISM"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fMECHANISM-1"><span class="category-def">: </span><strong class="def-name">ZMQ_MECHANISM</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fMECHANISM-1"><span><strong class="def-name">ZMQ_MECHANISM</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt MECHANISM value option
 </p>
@@ -1167,7 +1166,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.15 ZMQ_PLAIN_PASSWORD</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fPASSWORD"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fPASSWORD-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_PASSWORD</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fPASSWORD-1"><span><strong class="def-name">ZMQ_PLAIN_PASSWORD</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_PASSWORD value option
 </p>
@@ -1178,7 +1177,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.16 ZMQ_PLAIN_SERVER</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fSERVER"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fSERVER-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_SERVER</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fSERVER-1"><span><strong class="def-name">ZMQ_PLAIN_SERVER</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_SERVER value option
 </p>
@@ -1189,7 +1188,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.17 ZMQ_PLAIN_USERNAME</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN_005fUSERNAME"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fUSERNAME-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN_USERNAME</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN_005fUSERNAME-1"><span><strong class="def-name">ZMQ_PLAIN_USERNAME</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt PLAIN_USERNAME value option
 </p>
@@ -1200,7 +1199,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.18 ZMQ_PRIORITY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPRIORITY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPRIORITY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PRIORITY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPRIORITY-1"><span><strong class="def-name">ZMQ_PRIORITY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt SO_PRIORITY value option
  in linux only.
@@ -1212,7 +1211,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.19 ZMQ_RATE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fRATE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fRATE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_RATE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fRATE-1"><span><strong class="def-name">ZMQ_RATE</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt value option
 </p>
@@ -1225,7 +1224,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.20 ZMQ_RCVMORE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fRCVMORE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fRCVMORE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_RCVMORE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fRCVMORE-1"><span><strong class="def-name">ZMQ_RCVMORE</strong></span></dt>
 <dd>
 <p>Constant for getsockopt RCVMORE value option
 </p>
@@ -1236,7 +1235,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.21 ZMQ_ROUTING_ID</h4>
 <a class="index-entry-id" id="index-ZMQ_005fROUTING_005fID"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fROUTING_005fID-1"><span class="category-def">: </span><strong class="def-name">ZMQ_ROUTING_ID</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fROUTING_005fID-1"><span><strong class="def-name">ZMQ_ROUTING_ID</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>
@@ -1247,7 +1246,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.22 ZMQ_SOCKS_PROXY</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSOCKS_005fPROXY"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fSOCKS_005fPROXY-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SOCKS_PROXY</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fSOCKS_005fPROXY-1"><span><strong class="def-name">ZMQ_SOCKS_PROXY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt SOCKS_PROXY value option
 </p>
@@ -1258,7 +1257,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.23 ZMQ_SUBSCRIBE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSUBSCRIBE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fSUBSCRIBE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SUBSCRIBE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fSUBSCRIBE-1"><span><strong class="def-name">ZMQ_SUBSCRIBE</strong></span></dt>
 <dd>
 <p>Constant for setsockopt subscribe option
 </p>
@@ -1269,7 +1268,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.24 ZMQ_TYPE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fTYPE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fTYPE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_TYPE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fTYPE-1"><span><strong class="def-name">ZMQ_TYPE</strong></span></dt>
 <dd>
 <p>Constant for getsockopt TYPE value option
 </p>
@@ -1280,7 +1279,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.3.25 ZMQ_UNSUBSCRIBE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fUNSUBSCRIBE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fUNSUBSCRIBE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_UNSUBSCRIBE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fUNSUBSCRIBE-1"><span><strong class="def-name">ZMQ_UNSUBSCRIBE</strong></span></dt>
 <dd>
 <p>Constant for setsockopt unsubscribe option
 </p>
@@ -1296,7 +1295,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.4.1 ZMQ_POLLIN</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPOLLIN"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLIN-1"><span class="category-def">: </span><strong class="def-name">ZMQ_POLLIN</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLIN-1"><span><strong class="def-name">ZMQ_POLLIN</strong></span></dt>
 <dd>
 <p>Constant bitmask value for getsockopt EVENTS value option
 </p>
@@ -1307,7 +1306,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.4.2 ZMQ_POLLOUT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPOLLOUT"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLOUT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_POLLOUT</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPOLLOUT-1"><span><strong class="def-name">ZMQ_POLLOUT</strong></span></dt>
 <dd>
 <p>Constant bitmask value for getsockopt EVENTS value option
 </p>
@@ -1323,7 +1322,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.5.1 ZMQ_DONTWAIT</h4>
 <a class="index-entry-id" id="index-ZMQ_005fDONTWAIT"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fDONTWAIT-1"><span class="category-def">: </span><strong class="def-name">ZMQ_DONTWAIT</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fDONTWAIT-1"><span><strong class="def-name">ZMQ_DONTWAIT</strong></span></dt>
 <dd>
 <p>Constant for recv flag DONTWAIT
 </p>
@@ -1334,7 +1333,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.5.2 ZMQ_SNDMORE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fSNDMORE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fSNDMORE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_SNDMORE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fSNDMORE-1"><span><strong class="def-name">ZMQ_SNDMORE</strong></span></dt>
 <dd>
 <p>Constant for send flag SNDMORE
 </p>
@@ -1350,7 +1349,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.6.1 ZMQ_CURVE</h4>
 <a class="index-entry-id" id="index-ZMQ_005fCURVE"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE-1"><span class="category-def">: </span><strong class="def-name">ZMQ_CURVE</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE-1"><span><strong class="def-name">ZMQ_CURVE</strong></span></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1361,7 +1360,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.6.2 ZMQ_GSSAPI</h4>
 <a class="index-entry-id" id="index-ZMQ_005fGSSAPI"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI-1"><span class="category-def">: </span><strong class="def-name">ZMQ_GSSAPI</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fGSSAPI-1"><span><strong class="def-name">ZMQ_GSSAPI</strong></span></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1372,7 +1371,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.6.3 ZMQ_NULL</h4>
 <a class="index-entry-id" id="index-ZMQ_005fNULL"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fNULL-1"><span class="category-def">: </span><strong class="def-name">ZMQ_NULL</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fNULL-1"><span><strong class="def-name">ZMQ_NULL</strong></span></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -1383,7 +1382,7 @@ On success, unbind will return a <var class="var">status</var> of true
 <h4 class="subsection">4.6.4 ZMQ_PLAIN</h4>
 <a class="index-entry-id" id="index-ZMQ_005fPLAIN"></a>
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN-1"><span class="category-def">: </span><strong class="def-name">ZMQ_PLAIN</strong></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN-1"><span><strong class="def-name">ZMQ_PLAIN</strong></span></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>
@@ -2103,8 +2102,8 @@ first, please read <a class="url" href="http://www.gnu.org/philosophy/why-not-lg
 <tr><td></td><td class="printindex-index-entry"><a href="#index-Loading">Loading</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
 <tr><td colspan="3"><hr></td></tr>
 <tr><th id="Index_cp_letter-O">O</th></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Off_002dline-install">Off-line install</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Online-install">Online install</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Offline-installation">Offline installation</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-Online-installation">Online installation</a></td><td class="printindex-index-section"><a href="#Installing-and-loading">Installing and loading</a></td></tr>
 <tr><td colspan="3"><hr></td></tr>
 <tr><th id="Index_cp_letter-W">W</th></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-warranty">warranty</a></td><td class="printindex-index-section"><a href="#Copying">Copying</a></td></tr>

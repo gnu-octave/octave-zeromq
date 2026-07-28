@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/6_zeromq/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zeromq"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zeromq"><span class="category-def">Package: </span><span><strong class="def-name">zeromq</strong><a class="copiable-link" href="#index-zeromq"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zeromq"><span class="category-def">Package: </span><span><strong class="def-name">zeromq</strong></span></dt>
 <dd><p>The zeromq package provides GNU Octave bindings to the ZeroMQ library to provide
  fast distributed messaging options using IPC, TCP, TIPC and multi-casting.
 </p> 

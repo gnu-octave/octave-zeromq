@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/12_zmqstrerror/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_strerror"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,12 +50,12 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fstrerror"><span class="category-def">: </span><span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code><a class="copiable-link" href="#index-zmq_005fstrerror"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fstrerror"><span><code class="def-type"><var class="var">errorstr</var> =</code> <strong class="def-name">zmq_strerror</strong> <code class="def-code-arguments">()</code></span></dt>
 <dd> 
 <p>Get the last error from zeromq.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p>None
- </p><h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+ </p><h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">errorstr</var> - a string representation of the last error 
  </p></dd></dl>

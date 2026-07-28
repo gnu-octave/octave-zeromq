@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/8_zmqbind/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_bind"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,16 +50,16 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fbind"><span class="category-def">: </span><span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href="#index-zmq_005fbind"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fbind"><span><code class="def-type">status =</code> <strong class="def-name">zmq_bind</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd> 
-<p>Bind a zeromq socket to a endpoint.
+<p>Bind a ZeroMQ socket to an endpoint.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">sock</var> - the socket to bind.
 </p> 
 <p><var class="var">endpoint</var> - the endpoint string.
 </p> 
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">status</var> - status for bind.
  On success, bind will return a <var class="var">status</var> of true 
 </p> 

@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/12_ZMQIDENTITY/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_IDENTITY"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fIDENITY"><span class="category-def">: </span><span><strong class="def-name">ZMQ_IDENITY</strong><a class="copiable-link" href="#index-ZMQ_005fIDENITY"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fIDENITY"><span><strong class="def-name">ZMQ_IDENITY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>

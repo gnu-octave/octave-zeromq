@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/19_ZMQCONNECTTIMEOUT/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_CONNECT_TIMEOUT"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCONNECT_005fTIMEOUT"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong><a class="copiable-link" href="#index-ZMQ_005fCONNECT_005fTIMEOUT"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCONNECT_005fTIMEOUT"><span><strong class="def-name">ZMQ_CONNECT_TIMEOUT</strong></span></dt>
 <dd>
 <p>Constant for get/setsockopt connect timeout value
 </p>

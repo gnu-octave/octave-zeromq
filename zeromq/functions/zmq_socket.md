@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/10_zmqsocket/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_socket"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,11 +50,11 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fsocket"><span class="category-def">: </span><span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code><a class="copiable-link" href="#index-zmq_005fsocket"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fsocket"><span><code class="def-type"><var class="var">sock</var> =</code> <strong class="def-name">zmq_socket</strong> <code class="def-code-arguments">(<var class="var">type</var>)</code></span></dt>
 <dd> 
 <p>Create a zeromq socket.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">type</var> - the socket type to create.
 </p> 
 <p>Supported socket types are:
@@ -97,7 +97,7 @@ navigation:
  </p></dd>
 </dl>
  
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">sock</var> - an instance of <var class="var">octave_zeromq_socket</var> class.
 </p> 
 </dd></dl>

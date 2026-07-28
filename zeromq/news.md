@@ -3,7 +3,7 @@ layout: "default"
 permalink: "/news/"
 title: "Zeromq Toolkit - News"
 pkg_name: "zeromq"
-version: "1.5.7"
+version: "1.5.8"
 description: "ZeroMQ bindings for GNU Octave"
 navigation:
 - id: "overview"
@@ -19,6 +19,13 @@ navigation:
   url: "/manual"
 ---
 <pre>
+Summary of important user-visible changes for octave zeromq 1.5.8:
+-------------------------------------------------------------------
+
+  *** minor doc updates
+
+  *** updates for Octave 12+ compatibility
+
 Summary of important user-visible changes for octave zeromq 1.5.7:
 -------------------------------------------------------------------
 

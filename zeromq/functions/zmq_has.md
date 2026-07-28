@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/7_zmqhas/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_has"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,11 +50,11 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fhas"><span class="category-def">: </span><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code><a class="copiable-link" href="#index-zmq_005fhas"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fhas"><span><code class="def-type"><var class="var">yesno</var> =</code> <strong class="def-name">zmq_has</strong> <code class="def-code-arguments">(<var class="var">feature</var>)</code></span></dt>
 <dd> 
 <p>Check if the zmq library supports a given feature.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">feature</var> is the name of feature to check.
 </p> 
 <p>Currently known features are:
@@ -82,6 +82,6 @@ navigation:
  </p></dd>
 </dl>
  
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">yesno</var> - set to true if the feature is available, otherwise false. 
  </p></dd></dl>

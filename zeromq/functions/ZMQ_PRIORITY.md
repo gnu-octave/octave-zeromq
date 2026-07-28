@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/12_ZMQPRIORITY/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_PRIORITY"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPRIORITY"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PRIORITY</strong><a class="copiable-link" href="#index-ZMQ_005fPRIORITY"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPRIORITY"><span><strong class="def-name">ZMQ_PRIORITY</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt SO_PRIORITY value option
  in linux only.

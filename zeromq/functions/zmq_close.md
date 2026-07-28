@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/9_zmqclose/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_close"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,13 +50,13 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fclose"><span class="category-def">: </span><span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code><a class="copiable-link" href="#index-zmq_005fclose"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fclose"><span><strong class="def-name">zmq_close</strong> <code class="def-code-arguments">(<var class="var">sock</var>)</code></span></dt>
 <dd> 
 <p>Close a zeromq socket.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">sock</var> - the socket type to close.
- </p><h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+ </p><h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p>None
 </p> 
 </dd></dl>

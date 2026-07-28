@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/16_zmqcurvepublic/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_curve_public"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,14 +50,14 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fpublic"><span class="category-def">: </span><span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code><a class="copiable-link" href="#index-zmq_005fcurve_005fpublic"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fcurve_005fpublic"><span><code class="def-type"><var class="var">publickey</var> =</code> <strong class="def-name">zmq_curve_public</strong> <code class="def-code-arguments">(<var class="var">privatekey</var>)</code></span></dt>
 <dd> 
 <p>Derive the public key from a private key
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">privatekey</var> is a string that is the encoded private key. It must be 40 characters in length
 </p> 
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">publickey</var> is a string that is the encoded public key
 </p> 
 

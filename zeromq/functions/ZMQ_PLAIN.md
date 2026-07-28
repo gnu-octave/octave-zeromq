@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/9_ZMQPLAIN/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_PLAIN"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN"><span class="category-def">: </span><span><strong class="def-name">ZMQ_PLAIN</strong><a class="copiable-link" href="#index-ZMQ_005fPLAIN"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fPLAIN"><span><strong class="def-name">ZMQ_PLAIN</strong></span></dt>
 <dd>
 <p>Constant value for getsockopt MECHANISM value option
 </p>

@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_zmqdisconnect/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_disconnect"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,16 +50,16 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fdisconnect"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code><a class="copiable-link" href="#index-zmq_005fdisconnect"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fdisconnect"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_disconnect</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">endpoint</var>)</code></span></dt>
 <dd> 
 <p>Disconnect a zeromq socket from an endpoint.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">sock</var> - the socket to disconnect from.
 </p> 
 <p><var class="var">endpoint</var> - a previously connected endpoint string to disconnect.
 </p> 
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">status</var> - status for disconnect.
  On success, disconnect will return a <var class="var">status</var> of true 
 </p> 

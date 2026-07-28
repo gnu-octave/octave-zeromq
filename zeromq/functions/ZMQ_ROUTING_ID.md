@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_ZMQROUTINGID/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_ROUTING_ID"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fROUTING_005fID"><span class="category-def">: </span><span><strong class="def-name">ZMQ_ROUTING_ID</strong><a class="copiable-link" href="#index-ZMQ_005fROUTING_005fID"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fROUTING_005fID"><span><strong class="def-name">ZMQ_ROUTING_ID</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt IDENTITY value option
 </p>

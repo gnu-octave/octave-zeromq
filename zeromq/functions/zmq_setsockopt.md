@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_zmqsetsockopt/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_setsockopt"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,11 +50,11 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fsetsockopt"><span class="category-def">: </span><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code><a class="copiable-link" href="#index-zmq_005fsetsockopt"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fsetsockopt"><span><code class="def-type"><var class="var">status</var> =</code> <strong class="def-name">zmq_setsockopt</strong> <code class="def-code-arguments">(<var class="var">sock</var>, <var class="var">optionid</var>, <var class="var">value</var>)</code></span></dt>
 <dd> 
 <p>Set a socket option on a zeromq socket.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">sock</var> - the socket to connect.
 </p> 
 <p><var class="var">optionid</var> - the setsockopt option to set.
@@ -123,7 +123,7 @@ navigation:
  </p></dd>
 </dl>
  
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">status</var> - status for setsockopt.
  On success, setsockopt will return <var class="var">status</var> of true 
 </p> 

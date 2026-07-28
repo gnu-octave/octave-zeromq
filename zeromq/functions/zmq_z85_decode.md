@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/14_zmqz85decode/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_z85_decode"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,14 +50,14 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-zmq_005fz85_005fdecode"><span class="category-def">: </span><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code><a class="copiable-link" href="#index-zmq_005fz85_005fdecode"></a></span></dt>
+<dt class="deftypefn def-line" id="index-zmq_005fz85_005fdecode"><span><code class="def-type"><var class="var">data</var> =</code> <strong class="def-name">zmq_z85_decode</strong> <code class="def-code-arguments">(<var class="var">instr</var>)</code></span></dt>
 <dd> 
 <p>Decode a z85 encoded string to a binary key.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p><var class="var">instr</var> - a string encoded data
 </p> 
-<h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+<h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">data</var> - uint8 decoded data
 </p> 
 </dd></dl>

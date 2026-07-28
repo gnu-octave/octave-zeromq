@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/9_zmqerrno/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - zmq_errno"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,13 +50,13 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-_003d"><span class="category-def">: </span><span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code><a class="copiable-link" href="#index-_003d"></a></span></dt>
+<dt class="deftypefn def-line" id="index-_003d"><span><code class="def-type"><var class="var">errornum</var></code> <strong class="def-name">=</strong> <code class="def-code-arguments">zmq_errno ()</code></span></dt>
 <dd> 
 <p>Get the value of errno from zeromq.
 </p> 
-<h4 class="subsubheading" id="Inputs"><span>Inputs<a class="copiable-link" href="#Inputs"></a></span></h4>
+<h4 class="subsubheading" id="Inputs"><span>Inputs</span></h4>
 <p>None
- </p><h4 class="subsubheading" id="Outputs"><span>Outputs<a class="copiable-link" href="#Outputs"></a></span></h4>
+ </p><h4 class="subsubheading" id="Outputs"><span>Outputs</span></h4>
 <p><var class="var">errornum</var> is the errno value of the calling thread.
 </p> 
 </dd></dl>

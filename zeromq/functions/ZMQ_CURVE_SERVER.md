@@ -2,7 +2,7 @@
 layout: "default"
 permalink: "/functions/16_ZMQCURVESERVER/"
 pkg_name: "zeromq"
-pkg_version: "1.5.7"
+pkg_version: "1.5.8"
 pkg_description: "ZeroMQ bindings for GNU Octave"
 title: "Zeromq Toolkit - ZMQ_CURVE_SERVER"
 category: "ZeroMQ ZMQ_MECHANISM values"
@@ -50,7 +50,7 @@ navigation:
   url: "/manual"
 ---
 <dl class="first-deftypefn def-block">
-<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVER"><span class="category-def">: </span><span><strong class="def-name">ZMQ_CURVE_SERVER</strong><a class="copiable-link" href="#index-ZMQ_005fCURVE_005fSERVER"></a></span></dt>
+<dt class="deftypefn def-line" id="index-ZMQ_005fCURVE_005fSERVER"><span><strong class="def-name">ZMQ_CURVE_SERVER</strong></span></dt>
 <dd>
 <p>Constant for getsockopt and setsockopt CURVE_SERVER value option
 </p>

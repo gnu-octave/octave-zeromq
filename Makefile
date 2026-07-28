@@ -173,6 +173,10 @@ ifneq (,$(wildcard doc/mkfuncdocs.py))
 endif
 	# remove dev stuff
 	cd "$@" && $(RM) -rf "devel"
+
+ifneq (,$(wildcard doc/mkdoccache.m))
+	$(MAKE) -C "$@" doc-cache
+endif
 	${FIX_PERMISSIONS} "$@"
 
 	# ensure target dir date is now updated
@@ -272,6 +276,14 @@ clean-install:
 	-$(RM) -r $(installation_dir)
 	@echo
 
+# Doc cache
+.PHONY: doc-cache clean-doc-cache
+doc-cache:
+	cd doc && ./mkdoccache.m ../inst
+
+clean-doc-cache:
+	$(RM) -f inst/doc-cache
+
 
 ##
 ## Recipes for testing purposes
@@ -311,7 +323,7 @@ check: $(install_stamp)
 
 .PHONY: clean
 
-clean: clean-tarballs clean-unpacked-release clean-install clean-docs
+clean: clean-tarballs clean-unpacked-release clean-install clean-docs clean-doc-cache
 	test -e $(target_dir)/fntests.log && rm -f $(target_dir)/fntests.log || true
 	@echo "## Removing target directory (if empty)..."
 	test -e $(target_dir) && rmdir $(target_dir) || true

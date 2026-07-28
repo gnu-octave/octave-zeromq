@@ -28,7 +28,7 @@ DEFUN_DLD (zmq_connect, args, nargout,
         "-*- texinfo -*-\n\
 @deftypefn {} {@var{status} =} zmq_connect (@var{sock}, @var{endpoint})\n \
 \n\
-Connect a zeromq socket to a endpoint.\n \
+Connect a zeromq socket to an endpoint.\n \
 @subsubheading Inputs\n \
 \n \
 @var{sock} - the socket to connect.\n \

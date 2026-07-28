@@ -7,7 +7,7 @@
 
 @c %*** Start of HEADER
 @setfilename zeromq.info
-@settitle Octave ZeroMQ - ZeroMQ bindings for GNU octave
+@settitle Octave ZeroMQ - ZeroMQ bindings for GNU Octave
 @afourpaper
 @paragraphindent 0
 @finalout
@@ -68,7 +68,7 @@ To download a copy of the @acronym{GNU} Octave zeromq package, please visit
 @ifnottex
 @node Top
 @top Introduction
-The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave
+The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave.
 @end ifnottex
 
 @menu
@@ -87,7 +87,7 @@ The ZeroMQ toolkit is a set of  ZeroMQ bindings for GNU Octave
 
 The ZeroMQ toolkit must be installed and then loaded to be used.
 
-It can be installed in @acronym{GNU} Octave directly from octave-forge,
+It can be installed in @acronym{GNU} Octave directly from Octave Forge,
 or can be installed in an off-line mode via a downloaded tarball.
 
 The toolkit has a dependency on the zeromq library (@url{https://zeromq.org}), so it must be installed in order
@@ -97,12 +97,12 @@ For Fedora: @code{yum install zeromq-devel}
 
 For Ubuntu: @code{apt install libzmq-dev} 
 
-The toolkit must be then be loaded once per each @acronym{GNU} Octave session in order to use its functionality.
+The toolkit must then be loaded once in each @acronym{GNU} Octave session in order to use its functionality.
 
-@section Online Direct install
-@cindex Online install
+@section Online Direct installation
+@cindex Online installation
 With an internet connection available, the ZeroMQ package can be installed from
-octave-forge using the following command within @acronym{GNU} Octave:
+Octave Forge using the following command within @acronym{GNU} Octave:
 
 @example
 pkg install -forge zeromq
@@ -110,8 +110,8 @@ pkg install -forge zeromq
 
 The latest released version of the toolkit will be downloaded and installed.
 
-@section Off-line install
-@cindex Off-line install
+@section Offline installation
+@cindex Offline installation
 With the ZeroMQ toolkit package already downloaded, and in the current directory when running
 @acronym{GNU} Octave, the package can be installed using the following command within @acronym{GNU} Octave:
 
@@ -135,12 +135,11 @@ The toolkit must be loaded on each @acronym{GNU} Octave session.
 @chapter Basic Usage Overview
 @cindex Basic Usage Overview
 
-The usage is very close to the ZeroMQ library C language bindings for the socket 
-creation and manipulation with the exception of creating a zeromq context, 
-which is automatically done in the bindings internals.
+Usage is very similar to the ZeroMQ C language bindings for socket creation and manipulation,
+with the exception of creating a ZeroMQ context, which is handled automatically by the bindings.
 
-For example, a basic client that does a request / reply from a server on port
-local port 5555 (available as zmq_example1.m):
+For example, a basic client that performs a request/reply exchange with a server on local port 5555
+(available as zmq_example1.m):
 
 @example
 
@@ -158,7 +157,7 @@ zmq_close (requester);
 
 An overview of the package can be displayed by running @code{help zeromq}
 
-Help for each function can be displayed by  @code{help thefunctionname}
+Help for each function can be displayed by  @code{help functionname}
 
 ie: 
 @example
@@ -204,8 +203,8 @@ edit examples/zmq_example2
 @section Example3
 @cindex Example3
 
-Simple server PUB socket example that creates 'weather' server sends
-weather updates for random zip codes.
+Simple PUB socket server example that creates a 'weather' server and
+sends weather updates for random ZIP codes.
 
 @example
 edit examples/zmq_example3
@@ -214,8 +213,8 @@ edit examples/zmq_example3
 @section Example4
 @cindex Example4
 
-Simple client SUB socket example that creates client that connects to the 'weather'
-server and subscribes for weather updates from zip-code 10001.
+Simple SUB socket client example that connects to the 'weather' server and
+subscribes to weather updates for ZIP code 10001.
 
 @example
 edit examples/zmq_example4
@@ -223,7 +222,7 @@ edit examples/zmq_example4
 
 @section Example5
 @cindex Example5
-Simple client STREAM socket example that creates client that connects to octave.org
+Simple client STREAM socket example that creates a client that connects to octave.org
 and posts HEAD request.
 
 @example
